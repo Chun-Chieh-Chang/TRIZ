@@ -11,12 +11,20 @@
 - **Google AI Studio 官方規格基準 (Google AI Studio Specification Baseline)**：
   - **官方文檔**: `https://ai.google.dev/gemini-api/docs/models`
   - **API Base URL**: `https://generativelanguage.googleapis.com`
-  - **官方現行活躍模型**:
-    - `gemini-2.5-flash`（主力推薦：高速度、多模態、支援 Structured JSON 格式化輸出）
-    - `gemini-2.5-pro`（旗艦：頂級複雜深思推理）
-    - `gemini-2.5-flash-lite`（超低延遲、成本優化）
-    - `gemini-3.1-pro`（次世代高階推理）
-    - `gemini-1.5-flash` / `gemini-1.5-pro`（經典長文本相容）
+  - **官方現行活躍模型矩陣**:
+    - **Gemini 3.x 系列 (最新世代旗艦與推理)**:
+      - `gemini-3.7-flash` (最新旗艦・原生多模態與深度推理)
+      - `gemini-3.6-flash` (程式碼與 Agentic 執行專精)
+      - `gemini-3.5-flash` (多步驟工作流與長程任務)
+      - `gemini-3.5-flash-lite` (超低延遲高輸送量)
+      - `gemini-3.1-pro` (次世代高階深思推理)
+      - `gemini-3-flash-preview` (Gemini 3 Flash 預覽版)
+    - **Gemini 2.5 系列 (成熟穩定主力)**:
+      - `gemini-2.5-flash`（主力推薦：高速度、多模態、支援 Structured JSON 格式化輸出）
+      - `gemini-2.5-pro`（旗艦：頂級複雜深思推理）
+      - `gemini-2.5-flash-lite`（超低延遲、成本優化）
+    - **Gemini 1.5 系列 (經典相容)**:
+      - `gemini-1.5-flash` / `gemini-1.5-pro`（經典長文本相容）
   - **淘汰狀態 (Deprecated/Shutdown)**：
     - `gemini-2.0-flash`、`gemini-2.0-flash-lite` 已於 2026/06 官方下線停用，專案內不得作為預設主力。
 - **Agnes AI 官方規格基準 (Agnes AI Specification Baseline)**：
@@ -28,7 +36,7 @@
   - 必須常態開放 Custom Model ID 與 Custom Base URL，保障未來生態擴展性。
 
 ## 3. 錯誤萃取與自我演化紀錄 (Self-Evolution Log)
-- **2026-08-15 錯誤萃取（Google AI Studio 官方模型精確對齊）**：
-  - **現象**：過去模型列表中混入已於 2026 年中下線之舊預覽模型（如 `gemini-2.0-flash`），未依 Google AI Studio 官方文檔對齊現行活躍清單。
-  - **根因 (RCA)**：未即時查閱 `ai.google.dev/gemini-api/docs/models` 官方最新生命週期文檔。
-  - **預防機制 (CAPA)**：全面對齊官方 `gemini-2.5-flash`、`gemini-2.5-pro`、`gemini-3.1-pro` 等官方現行標準模型 ID，並寫入本 `AGENTS.md`。
+- **2026-08-15 錯誤萃取（Google AI Studio 3.x 系列完整對齊）**：
+  - **現象**：前次校正時遺漏了 Google 官方最新釋出的 Gemini 3.x 旗艦系列（`gemini-3.7-flash`、`gemini-3.6-flash`、`gemini-3.5-flash` 等）。
+  - **根因 (RCA)**：未完整梳理 Google AI Studio 官方文檔中關於 Gemini 3 全家族的最新世代清單。
+  - **預防機制 (CAPA)**：將 Gemini 3.x 家族完整模型標識符納入標準下拉選單，並寫入本 `AGENTS.md`。

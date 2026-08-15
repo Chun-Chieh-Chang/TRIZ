@@ -1,33 +1,23 @@
 # TRIZ 專案開發與架構演進日誌 (DEV_LOG.md)
 
-## 2026-08-15: 查閱 Google AI Studio 官方文檔全面更正 Gemini 適用模型清單
+## 2026-08-15: 完整納入 Google Gemini 3.x 全系列旗艦模型 (3.7 / 3.6 / 3.5 / 3.1)
 
 ### 1. 執行目標 (Goal)
-- **官方文檔檢索與查證**：
-  - 查閱 `https://ai.google.dev/gemini-api/docs/models` 官方最新模型規範與生命週期。
-- **更正清單**：
-  1. 移除/替換已於 2026 年中下線之 `gemini-2.0-flash`、`gemini-2.0-flash-lite` 舊版模型。
-  2. 完整納入 Google AI Studio 現行活躍與最新旗艦模型：
-     - `gemini-2.5-flash`（推薦主力）
-     - `gemini-2.5-pro`（旗艦深思）
-     - `gemini-2.5-flash-lite`（輕量低延遲）
-     - `gemini-3.1-pro`（次世代旗艦推理）
-     - `gemini-1.5-flash` / `gemini-1.5-pro`（經典相容）
-  3. 更新 UI 下拉選單、文檔超連結與多端鏡像同步。
+- **問題回報**：確認 Google AI Studio 官方文檔中最新世代之 `gemini-3.7-flash`、`gemini-3.6-flash`、`gemini-3.5-flash` 等 Gemini 3 全系列未完整列出。
+- **執行範疇**：
+  1. 在 `index.html` 的模型下拉選單中建立專屬 `Google Gemini 3.x 系列 (最新世代旗艦)` 分組：
+     - `gemini-3.7-flash`（最新旗艦・原生多模態與深度推理）
+     - `gemini-3.6-flash`（程式碼與 Agentic 執行專精）
+     - `gemini-3.5-flash`（多步驟工作流與長程任務）
+     - `gemini-3.5-flash-lite`（超低延遲高輸送量）
+     - `gemini-3.1-pro`（次世代高階深思推理）
+     - `gemini-3-flash-preview`（Gemini 3 Flash 預覽版）
+  2. 鏡像同步至 `docs/` 與 `static/`。
+  3. 記錄 RCA/CAPA 並更新 `AGENTS.md`。
 
 ### 2. 問題分析 (RCA) 與預防措施 (CAPA)
 * **根因分析 (RCA)**：
-  - 未第一時間調研 Google AI Studio 最新官方模型規格頁，導致模型清單中出現已下線版本。
+  - 前次檢索 Google 文檔時僅聚焦於 2.5 穩定版與淘汰版對照，未一次性穷盡提取 Gemini 3.x 最新世代家族成員。
 * **矯正與預防措施 (CAPA)**：
-  - **立即矯正**：更新 `index.html`、`js/ai_service.js`、`docs/`、`static/` 為 Google 官方現行精確 Model ID，並在介面上直接附帶官方文檔連結。
-  - **自我演化**：將 Google AI Studio 現行活躍標準寫入 `AGENTS.md`。
-
----
-
-## 2026-08-15: 完整對齊 Agnes AI 官方 API 規範 (Bearer Auth / Chat Completions) 與多 Provider 支援
-
-### 1. 執行目標 (Goal)
-- **規格依據**：
-  - **API Base URL (endpoint)**: `https://apihub.agnes-ai.com/v1`
-  - **核心模型 ID**: `agnes-2.5-flash` (Chat Completions: `/v1/chat/completions`)
-  - **認證機制**: `Authorization: Bearer <AGNES_API_KEY>`
+  - **立即矯正**：將 Gemini 3.x 全系列（3.7 / 3.6 / 3.5 / 3.1 / 3-preview）完整納入模型清單，並依世代分組排列。
+  - **自我演化**：將 Gemini 3.x 家族規格寫入 `AGENTS.md`。
