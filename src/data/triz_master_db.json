@@ -1,0 +1,8134 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "title": "TRIZ Master Knowledge Database",
+    "updated": "2026-08-14"
+  },
+  "parameters": [
+    {
+      "id": 1,
+      "name": "Weight of moving object (移動物體的重量)",
+      "keywords": [
+        "weight",
+        "mass",
+        "heavy",
+        "light",
+        "moving",
+        "重量",
+        "質量",
+        "重",
+        "輕",
+        "移動"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Weight of stationary object (靜止物體的重量)",
+      "keywords": [
+        "weight",
+        "mass",
+        "heavy",
+        "light",
+        "stationary",
+        "fixed",
+        "重量",
+        "質量",
+        "靜止",
+        "固定"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Length of moving object (移動物體的長度)",
+      "keywords": [
+        "length",
+        "long",
+        "short",
+        "dimension",
+        "moving",
+        "長度",
+        "尺寸",
+        "長",
+        "短",
+        "移動"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Length of stationary object (靜止物體的長度)",
+      "keywords": [
+        "length",
+        "long",
+        "short",
+        "dimension",
+        "stationary",
+        "fixed",
+        "長度",
+        "尺寸",
+        "長",
+        "短",
+        "靜止"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Area of moving object (移動物體的面積)",
+      "keywords": [
+        "area",
+        "surface",
+        "size",
+        "moving",
+        "面積",
+        "表面積",
+        "大小",
+        "移動"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Area of stationary object (靜止物體的面積)",
+      "keywords": [
+        "area",
+        "surface",
+        "size",
+        "stationary",
+        "面積",
+        "表面積",
+        "大小",
+        "靜止"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Volume of moving object (移動物體的體積)",
+      "keywords": [
+        "volume",
+        "space",
+        "size",
+        "moving",
+        "體積",
+        "空間",
+        "移動"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Volume of stationary object (靜止物體的體積)",
+      "keywords": [
+        "volume",
+        "space",
+        "size",
+        "stationary",
+        "體積",
+        "空間",
+        "靜止"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Speed (速度)",
+      "keywords": [
+        "speed",
+        "velocity",
+        "fast",
+        "slow",
+        "rate",
+        "速度",
+        "快",
+        "慢",
+        "速率"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Force (力)",
+      "keywords": [
+        "force",
+        "strength",
+        "power",
+        "torque",
+        "pressure",
+        "load",
+        "力",
+        "強度",
+        "力量",
+        "扭矩",
+        "壓力",
+        "負載"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Stress or pressure (應力或壓力)",
+      "keywords": [
+        "stress",
+        "pressure",
+        "tension",
+        "compression",
+        "應力",
+        "壓力",
+        "張力",
+        "壓縮"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Shape (形狀)",
+      "keywords": [
+        "shape",
+        "form",
+        "geometry",
+        "contour",
+        "configuration",
+        "形狀",
+        "外形",
+        "幾何",
+        "輪廓"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Stability of the object's composition (物體結構的穩定性)",
+      "keywords": [
+        "stability",
+        "composition",
+        "integrity",
+        "structure",
+        "穩定性",
+        "結構",
+        "成分",
+        "完整性"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Strength (強度)",
+      "keywords": [
+        "strength",
+        "durability",
+        "resistance",
+        "fragility",
+        "強度",
+        "耐用",
+        "抵抗力",
+        "脆弱"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Durability of moving object (移動物體的耐久性)",
+      "keywords": [
+        "durability",
+        "life",
+        "wear",
+        "moving",
+        "耐久性",
+        "壽命",
+        "磨損",
+        "移動"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Durability of non-moving object (靜止物體的耐久性)",
+      "keywords": [
+        "durability",
+        "life",
+        "wear",
+        "stationary",
+        "耐久性",
+        "壽命",
+        "磨損",
+        "靜止"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Temperature (溫度)",
+      "keywords": [
+        "temperature",
+        "heat",
+        "cold",
+        "thermal",
+        "hot",
+        "溫度",
+        "熱",
+        "冷",
+        "溫"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Illumination intensity (光照強度)",
+      "keywords": [
+        "illumination",
+        "light",
+        "brightness",
+        "intensity",
+        "dark",
+        "光照",
+        "亮度",
+        "光",
+        "明暗"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Energy spent by moving object (移動物體消耗的能量)",
+      "keywords": [
+        "energy",
+        "power",
+        "consumption",
+        "moving",
+        "能量",
+        "功耗",
+        "消耗",
+        "移動"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Energy spent by stationary object (靜止物體消耗的能量)",
+      "keywords": [
+        "energy",
+        "power",
+        "consumption",
+        "stationary",
+        "能量",
+        "功耗",
+        "消耗",
+        "靜止"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Power (功率)",
+      "keywords": [
+        "power",
+        "wattage",
+        "output",
+        "功率",
+        "瓦數",
+        "輸出"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Loss of Energy (能量損失)",
+      "keywords": [
+        "loss of energy",
+        "waste",
+        "efficiency",
+        "dissipation",
+        "能量損失",
+        "浪費",
+        "效率",
+        "散失"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Loss of substance (物質損失)",
+      "keywords": [
+        "loss of substance",
+        "material loss",
+        "waste",
+        "leak",
+        "物質損失",
+        "材料損失",
+        "浪費",
+        "洩漏"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Loss of Information (信息損失)",
+      "keywords": [
+        "loss of information",
+        "data loss",
+        "error",
+        "noise",
+        "信息損失",
+        "數據損失",
+        "錯誤",
+        "雜訊"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Loss of Time (時間損失)",
+      "keywords": [
+        "loss of time",
+        "delay",
+        "slow",
+        "wait",
+        "時間損失",
+        "延遲",
+        "慢",
+        "等待"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Quantity of substance/the matter (物質或材料的數量)",
+      "keywords": [
+        "quantity",
+        "amount",
+        "material",
+        "substance",
+        "數量",
+        "材料",
+        "物質"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Reliability (可靠性)",
+      "keywords": [
+        "reliability",
+        "dependability",
+        "failure",
+        "trust",
+        "可靠性",
+        "故障",
+        "信任"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Measurement accuracy (測量精度)",
+      "keywords": [
+        "measurement",
+        "accuracy",
+        "precision",
+        "error",
+        "測量",
+        "精度",
+        "準確",
+        "誤差"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Manufacturing precision (製造精度)",
+      "keywords": [
+        "manufacturing",
+        "precision",
+        "tolerance",
+        "quality",
+        "製造",
+        "精度",
+        "公差",
+        "品質"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Object-affected harmful factors (物體受到的有害因素)",
+      "keywords": [
+        "harmful",
+        "external",
+        "damage",
+        "environmental",
+        "有害",
+        "外部",
+        "損害",
+        "環境"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Object-generated harmful factors (物體產生的有害因素)",
+      "keywords": [
+        "harmful",
+        "internal",
+        "pollution",
+        "side effect",
+        "有害",
+        "內部",
+        "污染",
+        "副作用"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Ease of manufacture (製造難易度)",
+      "keywords": [
+        "manufacture",
+        "production",
+        "fabrication",
+        "easy",
+        "complex",
+        "製造",
+        "生產",
+        "加工",
+        "容易",
+        "複雜"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Ease of operation (操作難易度)",
+      "keywords": [
+        "operation",
+        "use",
+        "control",
+        "easy",
+        "hard",
+        "操作",
+        "使用",
+        "控制",
+        "容易",
+        "困難"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Ease of repair (維修難易度)",
+      "keywords": [
+        "repair",
+        "maintenance",
+        "fix",
+        "service",
+        "維修",
+        "保養",
+        "修理"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Adaptability or versatility (適應性或多用性)",
+      "keywords": [
+        "adaptability",
+        "versatility",
+        "flexible",
+        "multi-use",
+        "適應性",
+        "多用性",
+        "靈活",
+        "通用"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Complexity of device (裝置的複雜性)",
+      "keywords": [
+        "complexity",
+        "complicated",
+        "parts",
+        "simple",
+        "complex",
+        "複雜性",
+        "結構",
+        "零件",
+        "簡單"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Difficulty of detecting and measuring (檢測與測量的困難程度)",
+      "keywords": [
+        "detecting",
+        "measuring",
+        "monitoring",
+        "difficult",
+        "檢測",
+        "測量",
+        "監控",
+        "困難"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Extent of automation (自動化程度)",
+      "keywords": [
+        "automation",
+        "manual",
+        "human",
+        "robot",
+        "automatic",
+        "自動化",
+        "人工",
+        "機器人",
+        "自動"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Productivity (生產率)",
+      "keywords": [
+        "productivity",
+        "output",
+        "efficiency",
+        "rate",
+        "生產率",
+        "產能",
+        "效率",
+        "速度"
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": 1,
+      "name": "Segmentation (分割)",
+      "name_en": "Segmentation",
+      "name_zh": "分割",
+      "description": "Divide an object into independent parts. Make an object easy to dismantle. Increase the degree of fragmentation or segmentation. (將物體分成獨立的部分；使物體成為可拆卸的；增加物體的分割程度。)",
+      "examples_engineering": [
+        "組合式家具",
+        "模組化電腦硬體",
+        "可拆卸結構",
+        "粉末燃料提高燃燒表面積"
+      ],
+      "examples_software": [
+        "微服務架構 (Microservices)",
+        "模組化設計",
+        "資料庫分庫分表 (Sharding)",
+        "Docker 容器化拆分"
+      ],
+      "examples_business": [
+        "客戶市場細分 (Customer Segmentation)",
+        "敏捷開發 Sprint 拆分",
+        "事業群劃分 (BU)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Taking out (抽取/分離)",
+      "name_en": "Taking out",
+      "name_zh": "抽取/分離",
+      "description": "Separate an interfering part or property from an object, or single out the only necessary part (or property) of an object. (從物體中分離出干擾部分或特性，或僅選出必要的部份或特性。)",
+      "examples_engineering": [
+        "分離式冷氣將嘈雜壓縮機移至室外",
+        "光纖僅傳導光線不傳導熱量",
+        "警報器只播放狗叫聲"
+      ],
+      "examples_software": [
+        "MVC 視圖與商務邏輯分離",
+        "高負載計算下放非同步佇列",
+        "微服務認證中心分離 (OAuth/JWT)"
+      ],
+      "examples_business": [
+        "非核心業務外包 (Outsourcing)",
+        "剝離虧損事業部",
+        "自攜設備辦公 (BYOD)"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Local quality (局部品質)",
+      "name_en": "Local quality",
+      "name_zh": "局部品質",
+      "description": "Change an object's structure from uniform to non-uniform, change an external environment (or external influence) from uniform to non-uniform. Make each part of an object function in conditions most suitable for its operation. (將物體結構或外部環境由均勻改為不均勻。讓物體的每一部分都在最適宜的條件下運作。)",
+      "examples_engineering": [
+        "車刀刃部採用超硬鎢鋼而刀柄採用高韌性鋼",
+        "人體工學鍵盤",
+        "鉛筆末端附加橡皮擦"
+      ],
+      "examples_software": [
+        "針對熱點程式碼 (Hotspots) 進行 JIT 編譯與專屬優化",
+        "CDN 邊緣節點就近快取",
+        "VIP 用戶專屬伺服器集群"
+      ],
+      "examples_business": [
+        "差別定價機制（頭等艙 vs 經濟艙）",
+        "VIP 專屬尊榮客服管道",
+        "重點客戶 (Key Accounts) 專項跟進"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Asymmetry (不對稱)",
+      "name_en": "Asymmetry",
+      "name_zh": "不對稱",
+      "description": "Change the shape of an object from symmetrical to asymmetrical. If an object is asymmetrical, increase its degree of asymmetry. (將物體形狀由對稱改為不對稱。如果不對稱，則增加其不對稱程度。)",
+      "examples_engineering": [
+        "非對稱輪胎胎紋兼顧排水與抓地力",
+        "人體工學滑鼠",
+        "非對稱攪拌葉片防止渦流死角"
+      ],
+      "examples_software": [
+        "非對稱加密演算法 (RSA/ECC)",
+        "讀寫分離資料庫架構 (CQRS)",
+        "非對稱主從架構 (Primary-Replica)"
+      ],
+      "examples_business": [
+        "非對稱競爭戰略（專攻巨頭盲區的利基市場）",
+        "差異化績效激勵機制"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Merging (合併)",
+      "name_en": "Merging",
+      "name_zh": "合併",
+      "description": "Bring closer together (or merge) identical or similar objects, assemble identical or similar parts to perform parallel operations. (將相同或相似的物體合併或靠近。合併相同或相似的部件以進行平行操作。)",
+      "examples_engineering": [
+        "多核心處理器晶片",
+        "瑞士軍刀",
+        "雙層/三層中空隔音玻璃",
+        "流水線並行組裝作業"
+      ],
+      "examples_software": [
+        "API 網關聚合請求 (GraphQL/BFF)",
+        "資料庫批次寫入 (Batch Insert)",
+        "多執行緒平行運算"
+      ],
+      "examples_business": [
+        "策略聯盟與跨界整合",
+        "一站式超級應用平台 (Super-App)",
+        "供應鏈垂直整合"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Universality (多用性)",
+      "name_en": "Universality",
+      "name_zh": "多用性",
+      "description": "Make a part or object perform multiple functions; eliminate the need for other parts. (使一個部件或物體能執行多種功能，從而消除對其他部件的需求。)",
+      "examples_engineering": [
+        "智慧型手機整合電話、相機、GPS",
+        "沙發床",
+        "汽車座椅骨架兼作防滾架"
+      ],
+      "examples_software": [
+        "通用類別與多型 (Polymorphism)",
+        "通用框架與中介軟體",
+        "全功能 CLI 工具集"
+      ],
+      "examples_business": [
+        "T 型複合人才跨職能協同",
+        "全通路複合功能服務門市 (Omni-channel)"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Nesting (套疊)",
+      "name_en": "Nesting",
+      "name_zh": "套疊",
+      "description": "Place one object inside another; place each object, in turn, inside the other. Make one part pass through a cavity in the other. (將一個物體放入另一個物體中。讓一個部件穿過另一個部件的空腔。)",
+      "examples_engineering": [
+        "伸縮天線",
+        "套筒板手套裝",
+        "伸縮量尺",
+        "內視鏡雙重導管"
+      ],
+      "examples_software": [
+        "封裝 (Encapsulation)",
+        "網路協定封裝 (IP in IP / VPN 隧道)",
+        "虛擬機器內的 Docker 容器 (Nested VM)"
+      ],
+      "examples_business": [
+        "母子公司控股結構",
+        "分層授權與責任巢狀架構"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Anti-weight (反重量/配重)",
+      "name_en": "Anti-weight",
+      "name_zh": "反重量/配重",
+      "description": "Compensate for the weight of an object by using lift, or combining it with other objects that provide lift. (利用升力或與其他提供升力的物體結合，來補償物體的重量。)",
+      "examples_engineering": [
+        "熱氣球浮力艙補償吊艙重量",
+        "飛機機翼空氣動力升力",
+        "水下機器人浮力平衡艙"
+      ],
+      "examples_software": [
+        "負載均衡器將流量分散至閒置節點以減輕單點壓力",
+        "背壓機制 (Backpressure) 防止系統崩潰"
+      ],
+      "examples_business": [
+        "交叉補貼戰略（以高毛利產品補貼引流產品）",
+        "發行對沖基金降低投資組合風險"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Preliminary anti-action (預先反作用)",
+      "name_en": "Preliminary anti-action",
+      "name_zh": "預先反作用",
+      "description": "If it will be necessary to do an action with both harmful and useful effects, this action should be replaced with anti-actions to control harmful effects. Create beforehand stresses in an object that will oppose known undesirable working stresses later on. (如果必須進行具有副作用的動作，則預先進行反作用以控制副作用。預先對物體施加應力，以抵抗後來可能出現的工作應力。)",
+      "examples_engineering": [
+        "預力混凝土（預先拉伸鋼筋以抵抗受載後的拉應力）",
+        "高壓容器預應力纏繞鋼絲"
+      ],
+      "examples_software": [
+        "軟體交易內存 (STM) 預設樂觀鎖若衝突則自動回滾",
+        "防禦性編程 (Defensive Programming)"
+      ],
+      "examples_business": [
+        "合約中預設違約金條款",
+        "外匯對沖鎖定匯率風險"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Preliminary action (預先作用)",
+      "name_en": "Preliminary action",
+      "name_zh": "預先作用",
+      "description": "Perform, before it is needed, the required change of an object (either fully or partially). Pre-arrange objects such that they can come into action from the most convenient place and without losing time for their delivery. (預先執行所需的改變。預先排列物體，使其能從最方便的位置開始作用，且不浪費傳送時間。)",
+      "examples_engineering": [
+        "手術前預先消毒手術器具",
+        "易撕包裝預先打孔切痕",
+        "預先裝配與預製建築構件"
+      ],
+      "examples_software": [
+        "資源預載入 (Pre-fetching / Pre-loading)",
+        "靜態頁面預渲染 (SSG / SSR)",
+        "資料庫連接池預熱 (Pool Warm-up)"
+      ],
+      "examples_business": [
+        "會員預付費機制",
+        "群眾募資預售以鎖定訂單量",
+        "JIT 生產模式中物料預先送達工位"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Beforehand cushioning (預先防護)",
+      "name_en": "Beforehand cushioning",
+      "name_zh": "預先防護",
+      "description": "Prepare emergency means beforehand to compensate for the relatively low reliability of an object. (預先準備緊急措施，以補償物體較低的可靠性。)",
+      "examples_engineering": [
+        "汽車安全氣囊",
+        "降落傘備用副傘",
+        "電梯緊急限速防墜煞車夾"
+      ],
+      "examples_software": [
+        "RAID 磁碟陣列備援",
+        "故障轉移 (Failover) 與熔斷機制 (Circuit Breaker)",
+        "藍綠部署與自動回滾"
+      ],
+      "examples_business": [
+        "購買企業中斷營運險",
+        "關鍵崗位設置雙人互備 (Shadowing) 機制"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Equipotentiality (等勢性)",
+      "name_en": "Equipotentiality",
+      "name_zh": "等勢性",
+      "description": "In a potential field, limit position changes (e.g. change operating conditions to eliminate the need to raise or lower objects in a gravity field). (在位能場中，限制位置的改變，例如改變工作條件以消除在重力場中升降物體的需求。)",
+      "examples_engineering": [
+        "運河船閘等高水位過渡系統",
+        "重力輔助輸送帶等高傳送",
+        "懸吊平衡起重機"
+      ],
+      "examples_software": [
+        "微服務間使用零拷貝 (Zero-Copy) 與共享內存技術避免多次上下文切換與序列化消耗"
+      ],
+      "examples_business": [
+        "同級橫向直接溝通機制，免去層層向上請示與下達的流程損耗"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Inversion ('The other way round') (反向作用)",
+      "name_en": "Inversion",
+      "name_zh": "'The other way round'",
+      "description": "Invert the action(s) used to solve the problem (e.g. instead of cooling an object, heat it). Make movable parts (or the external environment) fixed, and fixed parts movable. Turn the object (or process) 'upside down'. (反轉解決問題的動作。使移動部件固定，固定部件移動。將物體或過程上下顛倒。)",
+      "examples_engineering": [
+        "跑步機（人相對不動而地面滾動）",
+        "風洞實驗（固定模型、吹送流體）",
+        "倒置式番茄醬瓶"
+      ],
+      "examples_software": [
+        "依賴反轉原則 (IoC / Dependency Injection)",
+        "反向代理 (Reverse Proxy)",
+        "事件驅動反向通知 (Webhooks)"
+      ],
+      "examples_business": [
+        "逆向物流（二手回收與翻新再銷售）",
+        "眾籌模式（先取得訂單與資金再開工生產）"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Spheroidality - Curvature (曲面化)",
+      "name_en": "Spheroidality - Curvature",
+      "name_zh": "曲面化",
+      "description": "Instead of using rectilinear parts, surfaces, or forms, use curvilinear ones; move from flat surfaces to spherical ones; from parts formed as a cube (parallelepiped) to ball-shaped structures. Use rollers, balls, spirals, domes. (使用曲線部件、表面或形狀代替直線的。從平面轉為球面。使用滾輪、球體、螺旋、圓頂。)",
+      "examples_engineering": [
+        "圓角結構分散應力集中",
+        "滾珠軸承與滾針導軌",
+        "原子筆滾珠筆尖",
+        "螺旋輸送機"
+      ],
+      "examples_software": [
+        "平滑曲線圖表渲染演算法",
+        "輪詢架構改為環形緩衝區 (Ring Buffer) 與圓形佇列"
+      ],
+      "examples_business": [
+        "圓桌開放式辦公與扁平溝通會議",
+        "服務體驗週期循環設計"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Dynamics (動態化)",
+      "name_en": "Dynamics",
+      "name_zh": "動態化",
+      "description": "Allow (or design) the characteristics of an object, external environment, or process to change to be optimal or to find an optimal operating condition. Divide an object into parts capable of movement relative to each other. (讓物體、環境或過程的特性可變，以達到最佳狀態。將物體分為可相對移動的部分。)",
+      "examples_engineering": [
+        "汽車主動式電磁懸吊避震系統",
+        "可變後掠翼飛機",
+        "鉸接式雙節低底盤巴士",
+        "折疊多功能椅"
+      ],
+      "examples_software": [
+        "雲端彈性自動擴展 (Auto-scaling)",
+        "動態路由配置與動態權重調整",
+        "功能開關 (Feature Flags) 即時啟閉"
+      ],
+      "examples_business": [
+        "浮動定價機制（機票與叫車尖峰動態加價）",
+        "動態敏捷項目小組（隨項目即時成軍與解散）"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Partial or excessive actions (不足或過度的作用)",
+      "name_en": "Partial or excessive actions",
+      "name_zh": "不足或過度的作用",
+      "description": "If 100 percent of an object is hard to achieve using a given solution method then, by using 'slightly less' or 'slightly more' of the same method, the problem may be considerably easier to solve. (如果該方法難以達到100%的效果，試著用「少一點」或「多一點」的方法，可能會更容易解決問題。)",
+      "examples_engineering": [
+        "金屬噴漆時稍微過度噴塗再刮除多餘塗層",
+        "浸塗法均勻鍍膜",
+        "電容器過充防衰減設計"
+      ],
+      "examples_software": [
+        "過度配置快取容量以換取極致命中率",
+        "先讀取全量資料再做本機過濾 (Over-fetching with local filtering)"
+      ],
+      "examples_business": [
+        "餐廳點餐提供略微超量的份量以提升顧客滿意度與口碑",
+        "適度寬鬆的庫存安全水位"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Another dimension (維度增加)",
+      "name_en": "Another dimension",
+      "name_zh": "維度增加",
+      "description": "To move an object in two- or three-dimensional space. Use a multi-story arrangement of objects instead of a single-story arrangement. Tilt or re-orient the object, lay it on its side. (將物體移動到二維或三維空間。使用多層排列代替單層。傾斜或重新定向物體。)",
+      "examples_engineering": [
+        "多層立體自動化立體倉儲",
+        "多層 3D 立體堆疊晶片 (3D NAND / Chiplet)",
+        "傾斜式卸料攪拌車"
+      ],
+      "examples_software": [
+        "二維平面資料表轉為三維多維度分析 (OLAP Cube)",
+        "單層架構升級為 3D 空間微服務拓撲可視化"
+      ],
+      "examples_business": [
+        "商業模式從單一產品銷售躍升為「硬體+軟體+服務」三維立體生態矩陣"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Mechanical vibration (機械振動)",
+      "name_en": "Mechanical vibration",
+      "name_zh": "機械振動",
+      "description": "Cause an object to oscillate or vibrate. Increase its frequency (even up to the ultrasonic). Use an object's resonant frequency. (使物體振盪或振動。增加頻率（甚至到超音波）。使用共振頻率。)",
+      "examples_engineering": [
+        "超音波清洗機與超音波手術刀",
+        "震動夯土機與高頻震動篩分機",
+        "共振破岩鑽頭"
+      ],
+      "examples_software": [
+        "抖動重試演算法 (Exponential Backoff with Jitter) 避免驚群效應 (Thundering Herd)"
+      ],
+      "examples_business": [
+        "定期發起黑客松 (Hackathon) 激發組織創新活力，打破既有思維僵局"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Periodic action (週期性作用)",
+      "name_en": "Periodic action",
+      "name_zh": "週期性作用",
+      "description": "Instead of continuous action, use periodic or pulsed actions. If an action is already periodic, change the periodic magnitude or frequency. (使用週期性或脈衝動作代替連續動作。如果動作已是週期性的，改變其幅度或頻率。)",
+      "examples_engineering": [
+        "脈衝寬度調變 (PWM) 精確控制電機轉速",
+        "ABS 汽車防鎖死煞車脈衝系統",
+        "警示閃爍燈"
+      ],
+      "examples_software": [
+        "定時任務排程 (Cron Jobs / Polling)",
+        "脈衝式批量同步資料",
+        "心跳檢測 (Heartbeat Mechanism)"
+      ],
+      "examples_business": [
+        "季末衝刺考核與週期性大促銷節奏 (如雙 11、黑五)",
+        "敏捷固定雙週疊代週期"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Continuity of useful action (有效作用的連續性)",
+      "name_en": "Continuity of useful action",
+      "name_zh": "有效作用的連續性",
+      "description": "Carry on work continuously; make all parts of an object (or system) work at full load, all the time. Eliminate all idle or intermittent actions or work. (持續進行工作；使物體的所有部分隨時滿載工作。消除所有閒置或間歇的動作。)",
+      "examples_engineering": [
+        "雙離合自手排變速箱（換檔無動力中斷）",
+        "印表機往返雙向高速列印",
+        "飛輪儲能連續供電"
+      ],
+      "examples_software": [
+        "雙活資料中心無中斷熱切換",
+        "即時資料流處理 (Kafka / Flink Streaming) 實現資料不落地持續計算"
+      ],
+      "examples_business": [
+        "24 小時不間斷全球客服日不落輪班體系 (Follow-the-Sun Model)"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Skipping (快速通過)",
+      "name_en": "Skipping",
+      "name_zh": "快速通過",
+      "description": "Conduct a process, or certain stages (e.g. destructible, harmful or hazardous operations) at high speed. (高速進行過程或某些階段（如破壞性或有害的操作）。)",
+      "examples_engineering": [
+        "高速切削減少切削熱傳導至工件產生形變",
+        "極速穿過高溫/高輻射危險區域",
+        "急速冷凍保鮮技術"
+      ],
+      "examples_software": [
+        "短路求值演算法 (Short-circuit Evaluation)",
+        "快取穿透時快速失敗 (Fail-fast) 避免資料庫雪崩"
+      ],
+      "examples_business": [
+        "初創產品快速 MVP 上市試錯，跳過冗長市場調查階段以規避被競品卡位風險"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "'Blessing in disguise' or 'Turn Lemons into Lemonade' (變害為利)",
+      "name_en": "'Blessing in disguise' or 'Turn Lemons into Lemonade'",
+      "name_zh": "變害為利",
+      "description": "Use harmful factors (particularly, harmful effects of the environment or surroundings) to achieve a positive effect. (利用有害因素（特別是環境的有害影響）來達到正面效果。)",
+      "examples_engineering": [
+        "利用工廠工業廢熱進行區域供暖或低溫發電",
+        "疫苗接種（利用滅活病毒激發人體免疫抗體）"
+      ],
+      "examples_software": [
+        "將惡意爬蟲或攻擊流量引入蜜罐系統 (Honeypot) 進行威脅情報萃取與安全模型訓練"
+      ],
+      "examples_business": [
+        "將客戶的嚴重投訴轉化為產品質量重大升級與忠誠度回饋的品牌公關轉機"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Feedback (回饋)",
+      "name_en": "Feedback",
+      "name_zh": "回饋",
+      "description": "Introduce feedback (referring, cross-checking) to improve a process or action. If feedback is already used, change its magnitude or influence. (引入回饋以改善過程或動作。如果已有回饋，改變其幅度或影響。)",
+      "examples_engineering": [
+        "恆溫空調溫度傳感器閉環調節",
+        "自動駕駛毫米波雷達與光達即時反饋閉環控制"
+      ],
+      "examples_software": [
+        "全鏈路 APM 性能監控與即時日誌告警 (Prometheus/Grafana)",
+        "前端 Sentry 錯誤即時自動上報"
+      ],
+      "examples_business": [
+        "NPS 顧客淨推薦值即時問卷調查",
+        "敏捷開發每週 Sprint 復盤會議 (Retrospective)"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Intermediary (中介物)",
+      "name_en": "Intermediary",
+      "name_zh": "中介物",
+      "description": "Use an intermediary carrier article or intermediary process. Merge one object temporarily with another (which can be easily removed). (使用中介載體或中介過程。暫時將一個物體與另一個（易於移除的）物體合併。)",
+      "examples_engineering": [
+        "金屬焊接時使用助焊劑",
+        "高溫作業使用耐熱隔熱手套夾取",
+        "真空吸盤中介搬運大面積玻璃"
+      ],
+      "examples_software": [
+        "引入中間件 (Middleware) 解耦前後端",
+        "事件匯流排 (Event Bus) 與訊息佇列 (RabbitMQ/Kafka)"
+      ],
+      "examples_business": [
+        "透過可信賴的第三方託管機構 (Escrow) 降低交易信用風險",
+        "代理商與分銷經銷商網路"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Self-service (自服務)",
+      "name_en": "Self-service",
+      "name_zh": "自服務",
+      "description": "Make an object serve itself by performing auxiliary helpful functions. Use waste resources, energy, or substances. (使物體透過執行輔助功能來服務自己。利用廢棄資源、能量或物質。)",
+      "examples_engineering": [
+        "含油多孔自潤滑軸承",
+        "具備微膠囊自我修復能力的混凝土",
+        "利用汽車廢氣驅動渦輪增壓器"
+      ],
+      "examples_software": [
+        "Kubernetes Pod 故障自癒 (Self-healing)",
+        "資料庫連接自適應重新連接與緩衝重放"
+      ],
+      "examples_business": [
+        "使用者自助開通帳號與知識庫自助解惑 (Self-service Knowledge Base)",
+        "無人超市自助結帳"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Copying (複製)",
+      "name_en": "Copying",
+      "name_zh": "複製",
+      "description": "Instead of an unavailable, expensive, fragile object, use simpler and inexpensive copies. Replace an object, or process with optical copies. (用簡單便宜的複製品代替不可用、昂貴或脆弱的物體。用光學複製品代替物體。)",
+      "examples_engineering": [
+        "高擬真飛行模擬器訓練機師",
+        "數位分身 (Digital Twin) 虛擬調試",
+        "光學投影檢驗取代實體治具"
+      ],
+      "examples_software": [
+        "單元測試使用 Mock 物件與虛擬樁 (Stubs)",
+        "在沙盒測試環境 (Sandbox) 模擬真實生產資料"
+      ],
+      "examples_business": [
+        "標準化 SOP 連鎖加盟模式 (Franchising)",
+        "標竿企業競爭力模型複製與移植"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Cheap short-living objects (廉價替代品)",
+      "name_en": "Cheap short-living objects",
+      "name_zh": "廉價替代品",
+      "description": "Replace an expensive object with a multiple of inexpensive objects, comprising certain qualities (such as service life, for instance). (用多個廉價物體代替一個昂貴物體，雖然犧牲某些品質（如壽命）。)",
+      "examples_engineering": [
+        "一次性無菌醫療注射針筒",
+        "紙杯與拋棄式防護衣",
+        "一次性保險絲"
+      ],
+      "examples_software": [
+        "無伺服器架構 (Serverless Functions) 隨用隨銷毀",
+        "短期快照實例 (Spot Instances) 節省 80% 雲成本"
+      ],
+      "examples_business": [
+        "耗材定價盈利模式（低價出售印表機/膠囊咖啡機，高毛利銷售墨盒/咖啡膠囊）"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Mechanics substitution (機械系統替代)",
+      "name_en": "Mechanics substitution",
+      "name_zh": "機械系統替代",
+      "description": "Replace a mechanical means with a sensory (optical, acoustic, taste or smell) means. Use electric, magnetic and electromagnetic fields to interact with the object. (用感官（光、聲、味、嗅）手段代替機械手段。使用電場、磁場或電磁場。)",
+      "examples_engineering": [
+        "磁懸浮列車取代傳統輪軌摩擦系統",
+        "感應式無線充電取代實體插孔",
+        "紅外線感應水龍頭"
+      ],
+      "examples_software": [
+        "軟體定義網路 (SDN) 替代實體硬體路由器配置",
+        "光學傳輸 (光纖/光互連) 替代傳統銅線匯流排"
+      ],
+      "examples_business": [
+        "數位虛擬合約與區塊鏈智慧合約替代繁瑣紙本審批與人工公證"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Pneumatics and hydraulics (氣壓與液壓)",
+      "name_en": "Pneumatics and hydraulics",
+      "name_zh": "氣壓與液壓",
+      "description": "Use gas and liquid parts of an object instead of solid parts (e.g. inflatable, filled with liquids, air cushion, hydrostatic, hydro-reactive). (使用氣體或液體部件代替固體部件（如充氣、液壓、氣墊）。)",
+      "examples_engineering": [
+        "氣動氣墊減震懸吊鞋",
+        "液壓千斤頂與液壓重型挖掘機",
+        "氣動扭矩板手"
+      ],
+      "examples_software": [
+        "資料流緩衝區 (Buffer Stream) 柔性吸收突發流量高峰 (流量削峰填谷)"
+      ],
+      "examples_business": [
+        "流動性資金池與彈性靈活薪酬福利體系 (Flexible Benefits)"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Flexible shells and thin films (柔性殼與薄膜)",
+      "name_en": "Flexible shells and thin films",
+      "name_zh": "柔性殼與薄膜",
+      "description": "Use flexible shells and thin films instead of three-dimensional structures. Isolate the object from the external environment using flexible shells and thin films. (使用柔性殼和薄膜代替三維結構。用柔性殼和薄膜隔離物體與外部環境。)",
+      "examples_engineering": [
+        "充氣膜結構體育場館",
+        "手機防刮保護貼膜",
+        "農業大棚保溫遮陽薄膜"
+      ],
+      "examples_software": [
+        "API 網關層設置資料過濾薄膜（清洗敏感資料）",
+        "網頁防護安全膜 (WAF / 反爬蟲防護盾)"
+      ],
+      "examples_business": [
+        "組織部門間建立邊界防火牆協議 (Information Barrier / Chinese Wall)"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Porous materials (多孔材料)",
+      "name_en": "Porous materials",
+      "name_zh": "多孔材料",
+      "description": "Make an object porous or add porous elements (inserts, coatings, etc.). If an object is already porous, use the pores to introduce a useful substance or function. (使物體多孔或添加多孔元件。如果物體已多孔，利用孔隙引入有用的物質或功能。)",
+      "examples_engineering": [
+        "蜂窩結構輕量化吸能保險桿",
+        "微孔發泡隔音隔熱材料",
+        "含油多孔合金軸瓦"
+      ],
+      "examples_software": [
+        "稀疏矩陣 (Sparse Matrix) 壓縮儲存演算法",
+        "布隆過濾器 (Bloom Filter) 高效過濾海量不存在資料"
+      ],
+      "examples_business": [
+        "彈性多孔隙的組織結構（允許員工保留 15% 自由時間投入自主創新探索專案）"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Color changes (改變顏色)",
+      "name_en": "Color changes",
+      "name_zh": "改變顏色",
+      "description": "Change the color of an object or its external environment. Change the transparency of an object or its external environment. (改變物體或外部環境的顏色。改變透明度。)",
+      "examples_engineering": [
+        "光致變色太陽眼鏡",
+        "熱敏變色防燙水杯標示",
+        "電控液晶調光隱私玻璃"
+      ],
+      "examples_software": [
+        "語意化語法高亮 (Syntax Highlighting)",
+        "UI 根據告警嚴重等級自動切換紅黃綠狀態顏色與透明度"
+      ],
+      "examples_business": [
+        "品牌識別色彩系統與視覺 VI",
+        "敏捷看板利用不同顏色標籤區分任務優先順序 (Kanban Cards)"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Homogeneity (同質性)",
+      "name_en": "Homogeneity",
+      "name_zh": "同質性",
+      "description": "Make objects interacting with a given object of the same material (or material with identical properties). (讓與給定物體互動的物體由相同材料（或性質相同的材料）製成。)",
+      "examples_engineering": [
+        "同種金屬材料銲接以徹底消除電偶腐蝕與熱膨脹差",
+        "金剛石刀具高速切削金剛石工件"
+      ],
+      "examples_software": [
+        "微服務全端統一採用 TypeScript/Node.js 生態以實現前後端代碼與型別庫高度同質複用"
+      ],
+      "examples_business": [
+        "統一企業內部文化價值觀與溝通語言，大幅降低跨部門協同認知摩擦"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Discarding and recovering (拋棄與再生)",
+      "name_en": "Discarding and recovering",
+      "name_zh": "拋棄與再生",
+      "description": "Make portions of an object that have fulfilled their functions go away (discard by dissolving, evaporating, etc.) or modify these directly during operation. Conversely, restore consumable parts of an object directly in operation. (讓已完成功能的物體部分消失（溶解、蒸發等）或在操作中直接修改。反之，在操作中恢復消耗的部分。)",
+      "examples_engineering": [
+        "多節多級火箭發射後逐級脫離減重",
+        "人體可吸收生物降解手術縫合線",
+        "砂輪自銳性磨損暴露新磨刃"
+      ],
+      "examples_software": [
+        "自動記憶體垃圾回收機制 (Garbage Collection)",
+        "任務完成後自動銷毀臨時容器與快照磁碟"
+      ],
+      "examples_business": [
+        "專利生命週期管理（主動放棄無商業價值專利以節省年費，集中資源於核心專利）"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Parameter changes (參數改變)",
+      "name_en": "Parameter changes",
+      "name_zh": "參數改變",
+      "description": "Change an object's physical state (e.g. to a gas, liquid, or plasma). Change the concentration or consistency. Change the degree of flexibility. Change the temperature. (改變物體的物理狀態。改變濃度或稠度。改變靈活性。改變溫度。)",
+      "examples_engineering": [
+        "液態氮超低溫急速冷凍生物樣本",
+        "超臨界流體二氧化碳精油萃取",
+        "熱熔膠加熱軟化冷卻固化"
+      ],
+      "examples_software": [
+        "動態調整 JVM 堆內存大小與 GC 策略",
+        "資料傳輸動態根據網路頻寬切換 GZIP/Brotli 壓縮等級"
+      ],
+      "examples_business": [
+        "傳統買斷制轉型為訂閱制 SaaS 模式 (改變收入現金流物理形態)",
+        "彈性工時與遠距混合辦公"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Phase transitions (相變)",
+      "name_en": "Phase transitions",
+      "name_zh": "相變",
+      "description": "Use phenomena occurring during phase transitions (e.g. volume changes, loss or absorption of heat, etc.). (利用相變過程中發生的現象（如體積變化、吸放熱等）。)",
+      "examples_engineering": [
+        "熱導管利用相變工質蒸發與冷凝超高導熱散熱",
+        "相變蓄熱調溫服裝材料",
+        "乾冰昇華冷卻不留殘渣"
+      ],
+      "examples_software": [
+        "將冷資料從高成本高速記憶體動態沉澱轉移至低成本冷物件儲存 (S3 Glacier)"
+      ],
+      "examples_business": [
+        "企業在經濟週期低谷期將重資產商業模式動態轉為輕資產平台加盟模式"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Thermal expansion (熱膨脹)",
+      "name_en": "Thermal expansion",
+      "name_zh": "熱膨脹",
+      "description": "Use thermal expansion (or contraction) of materials. If thermal expansion is being used, use multiple materials with different coefficients of thermal expansion. (利用材料的熱膨脹（或收縮）。如果已利用熱膨脹，使用多種不同膨脹係數的材料。)",
+      "examples_engineering": [
+        "雙金屬片熱膨脹係數差製作機械式溫控開關",
+        "熱縮套管加熱後緊密包覆線纜接頭",
+        "熱套裝配工藝"
+      ],
+      "examples_software": [
+        "動態頻寬彈性伸縮與執行緒池根據負載高峰自動擴張/收縮"
+      ],
+      "examples_business": [
+        "彈性薪酬體系（業績暴增時獎金倍增，淡季時保障底薪以維持組織韌性）"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Strong oxidants (強氧化劑)",
+      "name_en": "Strong oxidants",
+      "name_zh": "強氧化劑",
+      "description": "Replace common air with oxygen-enriched air. Replace enriched air with pure oxygen. Expose air or oxygen to ionizing radiation. Use ozonized oxygen. Replace ozonized (or ionized) oxygen with ozone. (用富氧空氣代替普通空氣。用純氧代替富氧空氣。將空氣或氧氣暴露於電離輻射。使用臭氧。)",
+      "examples_engineering": [
+        "臭氧強氧化高效水質殺菌消毒",
+        "純氧助燃超高溫熔煉爐",
+        "高壓氧艙促進術後組織快速癒合"
+      ],
+      "examples_software": [
+        "在壓測階段注入超高壓流量 (Chaos Engineering / 混沌工程) 快速暴露潛在架構脆弱點"
+      ],
+      "examples_business": [
+        "實施高激勵戰狼激勵機制或組織良性內部賽馬競爭以激發團隊極限潛能"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Inert atmosphere (惰性環境)",
+      "name_en": "Inert atmosphere",
+      "name_zh": "惰性環境",
+      "description": "Replace a normal environment with an inert one. Add neutral parts, or inert additives to an object. (用惰性環境代替正常環境。添加中性部件或惰性添加劑。)",
+      "examples_engineering": [
+        "氬氣保護電弧銲接防止高溫金屬氧化",
+        "高純度氮氣充填食品包裝延長保鮮",
+        "真空半導體晶圓鍍膜腔體"
+      ],
+      "examples_software": [
+        "將核心資料庫部署於完全隔離的無外網私有 VPC 子網與專用硬體隔絕環境"
+      ],
+      "examples_business": [
+        "在核心新產品研發階段簽署嚴格保密協議 (NDA) 並在封閉隔離專案室秘密研發"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Composite materials (複合材料)",
+      "name_en": "Composite materials",
+      "name_zh": "複合材料",
+      "description": "Change from uniform to composite (multiple) materials. (從均勻材料改為複合材料。)",
+      "examples_engineering": [
+        "碳纖維增強樹脂複合材料 (CFRP)",
+        "鋼筋混凝土",
+        "金屬基陶瓷複合防彈裝甲板"
+      ],
+      "examples_software": [
+        "混成雲架構 (Hybrid Cloud / Multi-cloud)",
+        "多語言微服務架構 (Polyglot Microservices) 發揮各語言極致長處"
+      ],
+      "examples_business": [
+        "多元化業務組合 (Portfolio) 分散單一市場系統性風險",
+        "跨界產學研創新聯盟"
+      ]
+    }
+  ],
+  "separation_principles": [
+    {
+      "id": 1,
+      "code": "space",
+      "name_zh": "空間分離 (Separation in Space)",
+      "name_en": "Separation in Space",
+      "core_idea": "如果互斥的特性要求可以在不同空間區域分別實現，則將空間劃分為各自滿足 P 與 非 P 的區域。",
+      "guiding_question": "在空間的每一個點上都必須具備該屬性嗎？能否在位置 A 具備 P，在位置 B 具備 非 P？",
+      "recommended_principles": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        17,
+        24,
+        30
+      ],
+      "examples": [
+        "雙焦/多焦點眼鏡：鏡片上半部看遠（平光/近視），下半部看近（老花）。",
+        "空心飛機鉚釘：外表面實心以承受剪力，內部空心減輕自重。",
+        "雙層保溫瓶：內外壁維持結構剛性，中間真空層阻斷熱傳導。",
+        "軟體架構：將高頻讀取（記憶體快取空間）與持久化寫入（磁碟空間）在儲存空間維度分離。"
+      ]
+    },
+    {
+      "id": 2,
+      "code": "time",
+      "name_zh": "時間分離 (Separation in Time)",
+      "name_en": "Separation in Time",
+      "core_idea": "如果互斥的要求出現在不同時間段，則在時間 T1 具備狀態 P，在時間 T2 具備狀態 非 P。",
+      "guiding_question": "在整個生命週期或運行週期的每一秒都必須具備該屬性嗎？能否在階段 A 是 P，在階段 B 變成 非 P？",
+      "recommended_principles": [
+        9,
+        10,
+        15,
+        16,
+        19,
+        20,
+        21,
+        34
+      ],
+      "examples": [
+        "飛機起落架：起降時放下起落架支撐（狀態 P）；飛行巡航時收起減少風阻（狀態 非 P）。",
+        "交通號誌燈：同一路口在時間 A 允許通行（綠燈），在時間 B 禁止通行（紅燈）。",
+        "打樁機重錘：提升時處於自由狀態；下落瞬間產生巨大重力衝擊。",
+        "軟體架構：平日以低資源維持連線，尖峰時刻啟動 Auto-scaling 擴容節點。"
+      ]
+    },
+    {
+      "id": 3,
+      "code": "condition",
+      "name_zh": "條件分離 / 狀態分離 (Separation upon Condition)",
+      "name_en": "Separation upon Condition",
+      "core_idea": "根據不同的外部刺激或環境條件（溫度、壓力、電場、酸鹼度、化學狀態），系統自動在 P 與 非 P 之間智能切換。",
+      "guiding_question": "在所有環境條件下都必須具備相同的屬性嗎？能否依賴溫度、受力、負載等條件動態觸發屬性轉變？",
+      "recommended_principles": [
+        32,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "examples": [
+        "光致變色眼鏡：室內紫外線弱時透明；室外強光下自動轉變為深色墨鏡。",
+        "非牛頓流體防彈衣 (D3O)：平時柔軟舒適便於運動；遭遇高速衝擊時瞬間變硬分散能量。",
+        "熱敏保險絲：正常溫度下為導電體；超過額定高溫時熔斷變為絕緣體。",
+        "軟體架構：流量低時執行即時同步寫入；當負載超過臨界閥值時自動降級切換為非同步批次排程。"
+      ]
+    },
+    {
+      "id": 4,
+      "code": "scale",
+      "name_zh": "系統層級分離 / 整體與部分分離 (Separation between System and Subsystem)",
+      "name_en": "Separation between System & Subsystem",
+      "core_idea": "在微觀層級（子系統/零件）具備屬性 P，但在宏觀層級（超系統/整體）呈現相反的屬性 非 P（或反之）。",
+      "guiding_question": "每一個獨立零件都必須和系統整體具備完全相同的物理屬性嗎？能否微觀具備特性 P，宏觀組合成 非 P？",
+      "recommended_principles": [
+        1,
+        5,
+        6,
+        7,
+        8,
+        13,
+        26,
+        31,
+        33,
+        40
+      ],
+      "examples": [
+        "自行車鏈條：單個鏈節是完全剛硬的鋼件（保證抗拉強度）；但數十個剛硬鏈節組裝成的整體卻具備極高的柔順彎曲性。",
+        "百葉窗：單個葉片完全不透光，但整體排列角度可自由調節整體透光量。",
+        "盲人點字圖書：微觀凸點提供觸覺辨識，宏觀紙張整體保持平整裝訂。",
+        "軟體架構：每個微服務皆為無狀態 (Stateless)，但超系統集群整體維持分散式會話狀態 (Stateful)。"
+      ]
+    }
+  ],
+  "evolution_laws": [
+    {
+      "id": 1,
+      "name_zh": "1. 系統完備性法則",
+      "name_en": "Law of Completeness of Parts",
+      "description": "任何獨立運作的技術系統必須包含動力裝置、傳動裝置、執行裝置與控制裝置四大要素。進化趨勢是人逐步從各裝置中退出（動力電氣化 → 傳動自動化 → 執行機器人化 → 控制 AI 化）。"
+    },
+    {
+      "id": 2,
+      "name_zh": "2. 能量傳遞法則",
+      "name_en": "Law of Energy Conductivity",
+      "description": "能量必須能從動力源高效無阻礙地傳遞至執行工具。進化趨勢：機械傳遞 → 液壓/氣壓 → 電氣傳遞 → 電磁場/光波無接觸傳導。"
+    },
+    {
+      "id": 3,
+      "name_zh": "3. 節奏協調性法則",
+      "name_en": "Law of Harmonization of Rhythms",
+      "description": "系統各部件的工作頻率、振動形態與節奏必須協調。進化趨勢：靜態剛性運作 → 週期性脈衝 → 自適應共振。"
+    },
+    {
+      "id": 4,
+      "name_zh": "4. 提高理想度法則",
+      "name_en": "Law of Increasing Ideality",
+      "description": "系統始終朝著「功能更多、體積更小、重量更輕、耗能更低、成本趨近於零」的極致推進（Ideality = Benefits / (Costs + Harms)）。終極理想解 (IFR) 是實體系統消失，但功能完全保留。"
+    },
+    {
+      "id": 5,
+      "name_zh": "5. 子系統不均衡進化法則",
+      "name_en": "Law of Uneven Development of Subsystems",
+      "description": "內部各子系統發展速度不同，發展最慢的子系統將成為整個系統的瓶頸，識別與突破瓶頸子系統是發明創新的關鍵點。"
+    },
+    {
+      "id": 6,
+      "name_zh": "6. 向超系統進化法則",
+      "name_en": "Law of Transition to Super-system",
+      "description": "當單一系統的 S 曲線到達極限時，會與其他同類或異類系統組合成超系統（如單機電腦 → 區域網路 → 雲端分散式算力網）。"
+    },
+    {
+      "id": 7,
+      "name_zh": "7. 向微觀層次進化法則",
+      "name_en": "Law of Transition to Micro-level",
+      "description": "執行工具作用尺度從宏觀機械部件向分子、原子、電子及場的微觀層次演進（機械切削 → 化學腐蝕 → 奈米光刻 → 離子束）。"
+    },
+    {
+      "id": 8,
+      "name_zh": "8. 動態化與可控性增強法則",
+      "name_en": "Law of Increasing Dynamism and Controllability",
+      "description": "結構從剛性、固定不變，向柔性、多關節、液體/氣體、電磁場、自適應智慧結構演化。"
+    }
+  ],
+  "ariz_stages": [
+    {
+      "stage": 1,
+      "title": "階段一：問題形式化與模型建構 (Problem Modeling)",
+      "steps": [
+        "1.1 選擇迷你問題 (Mini-problem) 並界定系統邊界",
+        "1.2 定義操作區域 (Operating Zone, OZ) 與操作時間 (Operating Time, OT)",
+        "1.3 盤點物質-場資源 (Substance-Field Resources, SFR)"
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "階段二：衝突尖銳化與極限分析 (Sharpening the Conflict)",
+      "steps": [
+        "2.1 將技術矛盾尖銳化至極限狀態（如：速度無限大 vs 重量無限大）",
+        "2.2 構建最終理想解 (Ideal Final Result, IFR-1) 模型",
+        "2.3 提煉出核心物理矛盾 (Physical Contradiction)"
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "階段三：物理矛盾分離與物-場變革 (Resolution by Separation & Su-Field)",
+      "steps": [
+        "3.1 嘗試空間分離、時間分離、條件分離與系統層次分離",
+        "3.2 引入外部物-場資源（重力場、磁場、熱場、化學相變）",
+        "3.3 參照 76 種標準解與 40 條發明原理實例化具體方案"
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "階段四：方案確效與理想度評估 (Validation & Synthesis)",
+      "steps": [
+        "4.1 檢驗方案是否引入了次生有害效應",
+        "4.2 計算最終理想度提升幅度 (Ideality = Useful / (Harmful + Cost))",
+        "4.3 進行專利防禦評估與周邊專利包夾布局"
+      ]
+    }
+  ],
+  "matrix": {
+    "23,32": [
+      15,
+      34,
+      33
+    ],
+    "5,35": [
+      15,
+      30
+    ],
+    "33,30": [
+      2,
+      25,
+      28,
+      39
+    ],
+    "9,27": [
+      11,
+      35,
+      27,
+      28
+    ],
+    "35,19": [
+      19,
+      35,
+      29,
+      13
+    ],
+    "24,37": [
+      35,
+      33
+    ],
+    "24,15": 10,
+    "32,11": [
+      35,
+      19,
+      1,
+      37
+    ],
+    "17,32": [
+      26,
+      27
+    ],
+    "22,39": [
+      28,
+      10,
+      29,
+      35
+    ],
+    "25,35": [
+      35,
+      28
+    ],
+    "13,14": [
+      17,
+      9,
+      15
+    ],
+    "5,28": [
+      26,
+      28,
+      32,
+      3
+    ],
+    "21,13": [
+      35,
+      32,
+      15,
+      31
+    ],
+    "1,18": [
+      19,
+      1,
+      32
+    ],
+    "27,26": [
+      21,
+      28,
+      40,
+      3
+    ],
+    "38,27": [
+      11,
+      27,
+      32
+    ],
+    "32,33": [
+      2,
+      5,
+      13,
+      16
+    ],
+    "28,35": [
+      13,
+      35,
+      2
+    ],
+    "25,12": [
+      4,
+      10,
+      34,
+      17
+    ],
+    "35,13": [
+      35,
+      30,
+      14
+    ],
+    "38,19": [
+      2,
+      32,
+      13
+    ],
+    "14,10": [
+      10,
+      18,
+      3,
+      14
+    ],
+    "15,38": [
+      6,
+      10
+    ],
+    "26,21": 35,
+    "7,17": [
+      34,
+      39,
+      10,
+      18
+    ],
+    "1,36": [
+      26,
+      30,
+      36,
+      34
+    ],
+    "11,5": [
+      10,
+      15,
+      36,
+      28
+    ],
+    "25,15": [
+      20,
+      10,
+      28,
+      18
+    ],
+    "34,13": [
+      2,
+      35
+    ],
+    "37,28": [
+      26,
+      24,
+      32,
+      28
+    ],
+    "4,25": [
+      30,
+      29,
+      14
+    ],
+    "12,32": [
+      1,
+      32,
+      17,
+      28
+    ],
+    "15,14": [
+      27,
+      3,
+      10
+    ],
+    "6,21": [
+      17,
+      32
+    ],
+    "11,32": [
+      1,
+      35,
+      16
+    ],
+    "15,24": 10,
+    "14,18": [
+      35,
+      19
+    ],
+    "12,25": [
+      14,
+      10,
+      34,
+      17
+    ],
+    "32,36": [
+      27,
+      26,
+      1
+    ],
+    "3,17": [
+      10,
+      15,
+      19
+    ],
+    "24,8": [
+      2,
+      22
+    ],
+    "24,25": [
+      24,
+      26,
+      28,
+      32
+    ],
+    "28,7": [
+      32,
+      13,
+      6
+    ],
+    "15,33": [
+      12,
+      27
+    ],
+    "14,1": [
+      1,
+      8,
+      40,
+      15
+    ],
+    "10,23": [
+      8,
+      35,
+      40,
+      5
+    ],
+    "29,9": [
+      10,
+      28,
+      32
+    ],
+    "29,36": [
+      26,
+      2,
+      18
+    ],
+    "33,9": [
+      18,
+      13,
+      34
+    ],
+    "32,18": [
+      28,
+      24,
+      27,
+      1
+    ],
+    "30,21": [
+      19,
+      22,
+      31,
+      2
+    ],
+    "5,3": [
+      14,
+      15,
+      18,
+      4
+    ],
+    "16,39": [
+      20,
+      10,
+      16,
+      38
+    ],
+    "17,5": [
+      3,
+      35,
+      39,
+      18
+    ],
+    "22,13": [
+      14,
+      2,
+      39,
+      6
+    ],
+    "23,11": [
+      3,
+      36,
+      37,
+      10
+    ],
+    "19,13": [
+      19,
+      13,
+      17,
+      24
+    ],
+    "11,9": [
+      6,
+      35,
+      36
+    ],
+    "26,6": [
+      2,
+      18,
+      40,
+      4
+    ],
+    "26,20": [
+      3,
+      35,
+      31
+    ],
+    "10,26": [
+      14,
+      29,
+      18,
+      36
+    ],
+    "21,30": [
+      19,
+      22,
+      31,
+      2
+    ],
+    "8,16": [
+      35,
+      34,
+      38
+    ],
+    "4,8": [
+      35,
+      8,
+      2,
+      14
+    ],
+    "28,22": [
+      26,
+      32,
+      27
+    ],
+    "23,36": [
+      35,
+      10,
+      28,
+      24
+    ],
+    "3,9": [
+      13,
+      4,
+      8
+    ],
+    "19,17": [
+      19,
+      24,
+      3,
+      14
+    ],
+    "39,5": [
+      10,
+      26,
+      34,
+      31
+    ],
+    "35,27": [
+      35,
+      13,
+      8,
+      24
+    ],
+    "26,28": [
+      13,
+      2,
+      28
+    ],
+    "9,5": [
+      29,
+      30,
+      34
+    ],
+    "5,24": [
+      30,
+      26
+    ],
+    "25,32": [
+      35,
+      28,
+      34,
+      4
+    ],
+    "1,14": [
+      28,
+      27,
+      18,
+      40
+    ],
+    "21,17": [
+      2,
+      14,
+      17,
+      25
+    ],
+    "31,16": [
+      21,
+      39,
+      16,
+      22
+    ],
+    "21,23": [
+      28,
+      27,
+      18,
+      38
+    ],
+    "7,28": [
+      25,
+      26,
+      28
+    ],
+    "5,33": [
+      15,
+      17,
+      13,
+      16
+    ],
+    "15,10": [
+      19,
+      2,
+      16
+    ],
+    "6,10": [
+      1,
+      18,
+      35,
+      36
+    ],
+    "26,35": [
+      15,
+      3,
+      29
+    ],
+    "15,34": [
+      29,
+      10,
+      27
+    ],
+    "25,10": [
+      10,
+      37,
+      36,
+      5
+    ],
+    "1,32": [
+      27,
+      28,
+      1,
+      36
+    ],
+    "13,2": [
+      26,
+      39,
+      1,
+      40
+    ],
+    "38,29": [
+      28,
+      26,
+      18,
+      23
+    ],
+    "11,21": [
+      10,
+      35,
+      14
+    ],
+    "22,26": [
+      7,
+      18,
+      25
+    ],
+    "14,29": [
+      3,
+      27
+    ],
+    "37,2": [
+      6,
+      13,
+      28,
+      1
+    ],
+    "22,3": [
+      7,
+      2,
+      6,
+      13
+    ],
+    "6,25": [
+      10,
+      35,
+      4,
+      18
+    ],
+    "11,36": [
+      19,
+      1,
+      35
+    ],
+    "5,7": [
+      7,
+      14,
+      17,
+      4
+    ],
+    "25,6": [
+      10,
+      35,
+      17,
+      4
+    ],
+    "25,18": [
+      1,
+      19,
+      26,
+      17
+    ],
+    "3,13": [
+      1,
+      8,
+      15,
+      34
+    ],
+    "14,15": [
+      27,
+      3,
+      26
+    ],
+    "24,21": [
+      10,
+      19
+    ],
+    "23,20": [
+      28,
+      27,
+      12,
+      31
+    ],
+    "3,27": [
+      10,
+      14,
+      29,
+      40
+    ],
+    "16,4": [
+      1,
+      40,
+      35
+    ],
+    "6,38": 23,
+    "36,15": [
+      10,
+      4,
+      28,
+      15
+    ],
+    "32,6": [
+      16,
+      40
+    ],
+    "32,2": [
+      1,
+      27,
+      36,
+      13
+    ],
+    "22,17": [
+      19,
+      38,
+      7
+    ],
+    "18,10": [
+      26,
+      19,
+      6
+    ],
+    "12,8": [
+      7,
+      2,
+      35
+    ],
+    "8,3": [
+      19,
+      14
+    ],
+    "5,9": [
+      29,
+      30,
+      4,
+      34
+    ],
+    "14,9": [
+      8,
+      13,
+      26,
+      14
+    ],
+    "2,25": [
+      10,
+      20,
+      35,
+      26
+    ],
+    "12,11": [
+      34,
+      15,
+      10,
+      14
+    ],
+    "33,24": [
+      4,
+      10,
+      27,
+      22
+    ],
+    "15,39": [
+      35,
+      17,
+      14,
+      19
+    ],
+    "13,26": [
+      15,
+      32,
+      35
+    ],
+    "39,18": [
+      26,
+      17,
+      19,
+      1
+    ],
+    "29,11": [
+      3,
+      35
+    ],
+    "10,15": [
+      19,
+      2
+    ],
+    "35,4": [
+      1,
+      35,
+      16
+    ],
+    "23,7": [
+      1,
+      29,
+      30,
+      36
+    ],
+    "12,3": [
+      29,
+      34,
+      5,
+      4
+    ],
+    "34,8": 1,
+    "19,7": [
+      35,
+      13,
+      18
+    ],
+    "4,12": [
+      13,
+      14,
+      15,
+      7
+    ],
+    "17,12": [
+      14,
+      22,
+      19,
+      32
+    ],
+    "33,39": [
+      15,
+      1,
+      28
+    ],
+    "24,32": 32,
+    "17,18": [
+      32,
+      30,
+      21,
+      16
+    ],
+    "18,24": [
+      1,
+      6
+    ],
+    "1,24": [
+      10,
+      24,
+      35
+    ],
+    "26,16": [
+      3,
+      35,
+      31
+    ],
+    "9,23": [
+      10,
+      13,
+      28,
+      38
+    ],
+    "25,1": [
+      10,
+      20,
+      37,
+      35
+    ],
+    "4,35": [
+      1,
+      35
+    ],
+    "35,30": [
+      35,
+      11,
+      32,
+      31
+    ],
+    "1,11": [
+      10,
+      36,
+      37,
+      40
+    ],
+    "29,23": [
+      35,
+      31,
+      10,
+      24
+    ],
+    "10,4": [
+      28,
+      10
+    ],
+    "5,37": [
+      2,
+      36,
+      26,
+      18
+    ],
+    "21,19": [
+      16,
+      6,
+      19,
+      37
+    ],
+    "31,18": [
+      19,
+      24,
+      39,
+      32
+    ],
+    "26,31": [
+      3,
+      35,
+      40,
+      39
+    ],
+    "34,32": [
+      1,
+      35,
+      11,
+      10
+    ],
+    "30,5": [
+      22,
+      1,
+      33,
+      28
+    ],
+    "30,14": [
+      18,
+      35,
+      37,
+      1
+    ],
+    "27,33": [
+      27,
+      17,
+      40
+    ],
+    "14,7": [
+      10,
+      15,
+      14,
+      7
+    ],
+    "35,28": [
+      35,
+      5,
+      1,
+      10
+    ],
+    "33,14": [
+      32,
+      40,
+      3,
+      28
+    ],
+    "1,30": [
+      22,
+      21,
+      18,
+      27
+    ],
+    "7,31": [
+      17,
+      2,
+      40,
+      1
+    ],
+    "29,15": [
+      3,
+      27,
+      40
+    ],
+    "28,5": [
+      26,
+      28,
+      32,
+      3
+    ],
+    "36,7": [
+      34,
+      26,
+      6
+    ],
+    "32,37": [
+      6,
+      28,
+      11,
+      1
+    ],
+    "36,13": [
+      2,
+      22,
+      17,
+      19
+    ],
+    "7,22": [
+      7,
+      15,
+      13,
+      16
+    ],
+    "22,28": 32,
+    "18,5": [
+      19,
+      32,
+      26
+    ],
+    "23,8": [
+      3,
+      39,
+      18,
+      31
+    ],
+    "9,19": [
+      8,
+      15,
+      35,
+      38
+    ],
+    "39,20": 1,
+    "22,9": [
+      16,
+      35,
+      38
+    ],
+    "24,2": [
+      10,
+      35,
+      5
+    ],
+    "11,38": [
+      35,
+      24
+    ],
+    "3,23": [
+      4,
+      29,
+      23,
+      10
+    ],
+    "14,12": [
+      10,
+      30,
+      35,
+      40
+    ],
+    "1,38": [
+      26,
+      19
+    ],
+    "10,34": [
+      15,
+      1,
+      11
+    ],
+    "36,14": [
+      2,
+      13,
+      28
+    ],
+    "31,13": [
+      35,
+      40,
+      27,
+      39
+    ],
+    "4,27": [
+      15,
+      29,
+      28
+    ],
+    "30,28": [
+      28,
+      33,
+      23,
+      26
+    ],
+    "37,33": [
+      2,
+      5
+    ],
+    "33,1": [
+      25,
+      2,
+      13,
+      15
+    ],
+    "39,10": [
+      28,
+      15,
+      10,
+      36
+    ],
+    "2,17": [
+      28,
+      19,
+      32,
+      22
+    ],
+    "15,26": [
+      3,
+      35,
+      10,
+      40
+    ],
+    "16,33": 1,
+    "32,8": 35,
+    "3,19": [
+      8,
+      35,
+      24
+    ],
+    "12,15": [
+      14,
+      26,
+      9,
+      25
+    ],
+    "21,2": [
+      19,
+      26,
+      17,
+      27
+    ],
+    "28,38": [
+      28,
+      2,
+      10,
+      34
+    ],
+    "16,37": [
+      25,
+      34,
+      6,
+      35
+    ],
+    "17,1": [
+      36,
+      22,
+      6,
+      38
+    ],
+    "17,39": [
+      15,
+      28,
+      35
+    ],
+    "32,16": [
+      35,
+      16
+    ],
+    "5,1": [
+      2,
+      17,
+      29,
+      4
+    ],
+    "5,23": [
+      10,
+      35,
+      2,
+      39
+    ],
+    "17,7": [
+      34,
+      39,
+      40,
+      18
+    ],
+    "4,16": [
+      1,
+      10,
+      35
+    ],
+    "28,36": [
+      27,
+      35,
+      10,
+      34
+    ],
+    "33,18": [
+      13,
+      17,
+      1,
+      24
+    ],
+    "1,15": [
+      5,
+      34,
+      31,
+      35
+    ],
+    "19,11": [
+      23,
+      14,
+      25
+    ],
+    "21,38": [
+      28,
+      2,
+      17
+    ],
+    "31,39": [
+      22,
+      35,
+      18,
+      39
+    ],
+    "26,12": [
+      35,
+      14
+    ],
+    "33,22": [
+      2,
+      19,
+      13
+    ],
+    "22,34": [
+      2,
+      19
+    ],
+    "27,14": [
+      11,
+      28
+    ],
+    "36,39": [
+      12,
+      17,
+      28
+    ],
+    "37,21": [
+      18,
+      1,
+      16,
+      10
+    ],
+    "17,23": [
+      21,
+      36,
+      29,
+      31
+    ],
+    "36,23": [
+      35,
+      10,
+      28,
+      29
+    ],
+    "36,3": [
+      1,
+      19,
+      26,
+      24
+    ],
+    "35,16": [
+      2,
+      16
+    ],
+    "35,25": [
+      35,
+      28
+    ],
+    "5,39": [
+      10,
+      26,
+      34,
+      2
+    ],
+    "39,6": [
+      10,
+      35,
+      17,
+      7
+    ],
+    "31,21": [
+      2,
+      35,
+      18
+    ],
+    "39,21": [
+      35,
+      20,
+      10
+    ],
+    "37,3": [
+      16,
+      17,
+      26,
+      24
+    ],
+    "38,14": [
+      25,
+      13
+    ],
+    "31,36": [
+      19,
+      1,
+      31
+    ],
+    "11,19": [
+      14,
+      24,
+      10,
+      37
+    ],
+    "4,33": [
+      2,
+      25
+    ],
+    "3,30": [
+      1,
+      15,
+      17,
+      24
+    ],
+    "7,26": [
+      29,
+      30,
+      7
+    ],
+    "32,30": [
+      24,
+      2
+    ],
+    "13,6": 39,
+    "38,1": [
+      28,
+      26,
+      18,
+      35
+    ],
+    "30,25": [
+      35,
+      18,
+      34
+    ],
+    "16,27": [
+      34,
+      27,
+      6,
+      40
+    ],
+    "25,22": [
+      10,
+      5,
+      18,
+      32
+    ],
+    "18,3": [
+      19,
+      32,
+      16
+    ],
+    "39,33": [
+      1,
+      28,
+      7,
+      10
+    ],
+    "2,34": [
+      2,
+      27,
+      28,
+      11
+    ],
+    "9,17": [
+      28,
+      30,
+      36,
+      2
+    ],
+    "22,7": [
+      7,
+      18,
+      23
+    ],
+    "36,37": [
+      15,
+      10,
+      37,
+      28
+    ],
+    "11,23": [
+      10,
+      36,
+      3,
+      37
+    ],
+    "3,38": [
+      17,
+      24,
+      26,
+      16
+    ],
+    "12,34": [
+      2,
+      13,
+      1
+    ],
+    "22,1": [
+      15,
+      6,
+      19,
+      28
+    ],
+    "24,16": 10,
+    "2,13": [
+      26,
+      39,
+      1,
+      40
+    ],
+    "39,38": [
+      5,
+      12,
+      35,
+      26
+    ],
+    "4,29": [
+      2,
+      32,
+      10
+    ],
+    "38,32": [
+      1,
+      26,
+      13
+    ],
+    "9,13": [
+      28,
+      33,
+      1,
+      18
+    ],
+    "11,3": [
+      35,
+      10,
+      36
+    ],
+    "18,20": [
+      32,
+      35,
+      1,
+      15
+    ],
+    "38,22": [
+      23,
+      28
+    ],
+    "12,29": [
+      32,
+      30,
+      40
+    ],
+    "27,3": [
+      15,
+      9,
+      14,
+      4
+    ],
+    "9,30": [
+      1,
+      28,
+      35,
+      23
+    ],
+    "31,1": [
+      19,
+      22,
+      15,
+      39
+    ],
+    "37,1": [
+      27,
+      26,
+      28,
+      13
+    ],
+    "23,22": [
+      35,
+      27,
+      2,
+      31
+    ],
+    "27,34": [
+      1,
+      11
+    ],
+    "27,5": [
+      17,
+      10,
+      14,
+      16
+    ],
+    "29,38": [
+      26,
+      28,
+      18,
+      23
+    ],
+    "17,37": [
+      3,
+      27,
+      35,
+      31
+    ],
+    "18,22": [
+      13,
+      16,
+      1,
+      6
+    ],
+    "13,11": [
+      2,
+      35,
+      40
+    ],
+    "31,20": [
+      19,
+      22,
+      18
+    ],
+    "16,35": 2,
+    "17,9": [
+      2,
+      28,
+      36,
+      30
+    ],
+    "24,6": [
+      30,
+      16
+    ],
+    "13,4": 37,
+    "12,13": [
+      33,
+      1,
+      18,
+      4
+    ],
+    "33,26": [
+      12,
+      35
+    ],
+    "9,29": [
+      10,
+      28,
+      32,
+      25
+    ],
+    "38,26": [
+      35,
+      13
+    ],
+    "5,18": [
+      15,
+      32,
+      19,
+      13
+    ],
+    "39,12": [
+      14,
+      10,
+      34,
+      40
+    ],
+    "34,28": [
+      10,
+      2,
+      13
+    ],
+    "34,18": [
+      15,
+      1,
+      13
+    ],
+    "31,11": [
+      2,
+      33,
+      27,
+      18
+    ],
+    "35,21": [
+      19,
+      1,
+      29
+    ],
+    "10,33": [
+      1,
+      28,
+      3,
+      25
+    ],
+    "39,2": [
+      28,
+      27,
+      15,
+      3
+    ],
+    "24,4": 26,
+    "21,32": [
+      26,
+      10,
+      34
+    ],
+    "7,39": [
+      10,
+      6,
+      2,
+      34
+    ],
+    "29,5": [
+      28,
+      33,
+      29,
+      32
+    ],
+    "4,37": 26,
+    "12,22": 14,
+    "21,25": [
+      35,
+      20,
+      10,
+      6
+    ],
+    "10,11": [
+      18,
+      21,
+      11
+    ],
+    "17,36": [
+      2,
+      17,
+      16
+    ],
+    "24,3": [
+      1,
+      26
+    ],
+    "29,22": [
+      13,
+      32,
+      2
+    ],
+    "13,5": [
+      2,
+      11,
+      13
+    ],
+    "8,32": 35,
+    "28,1": [
+      32,
+      35,
+      26,
+      28
+    ],
+    "6,2": [
+      30,
+      2,
+      14,
+      18
+    ],
+    "30,16": [
+      17,
+      1,
+      40,
+      33
+    ],
+    "14,38": 15,
+    "31,12": [
+      35,
+      1
+    ],
+    "19,10": [
+      16,
+      26,
+      21,
+      2
+    ],
+    "38,11": [
+      13,
+      35
+    ],
+    "39,30": [
+      22,
+      35,
+      13,
+      24
+    ],
+    "6,16": [
+      2,
+      10,
+      19,
+      30
+    ],
+    "11,27": [
+      10,
+      13,
+      19,
+      35
+    ],
+    "27,23": [
+      10,
+      35,
+      29,
+      39
+    ],
+    "29,26": [
+      32,
+      30
+    ],
+    "11,13": [
+      35,
+      33,
+      2,
+      40
+    ],
+    "34,3": [
+      1,
+      28,
+      10,
+      25
+    ],
+    "15,5": [
+      3,
+      17,
+      19
+    ],
+    "14,25": [
+      29,
+      3,
+      28,
+      10
+    ],
+    "30,35": [
+      35,
+      11,
+      22,
+      31
+    ],
+    "38,15": [
+      6,
+      9
+    ],
+    "6,29": [
+      2,
+      29,
+      18,
+      36
+    ],
+    "37,16": [
+      25,
+      34,
+      6,
+      35
+    ],
+    "3,21": [
+      1,
+      35
+    ],
+    "23,31": [
+      10,
+      1,
+      34,
+      29
+    ],
+    "10,36": [
+      26,
+      35,
+      10,
+      18
+    ],
+    "13,32": [
+      35,
+      19
+    ],
+    "18,31": [
+      35,
+      19,
+      32,
+      39
+    ],
+    "28,32": [
+      6,
+      35,
+      25,
+      18
+    ],
+    "16,8": [
+      35,
+      34,
+      38
+    ],
+    "8,23": [
+      10,
+      39,
+      35,
+      34
+    ],
+    "33,17": [
+      26,
+      27,
+      13
+    ],
+    "24,39": [
+      13,
+      23,
+      15
+    ],
+    "1,9": [
+      2,
+      8,
+      15,
+      38
+    ],
+    "21,6": [
+      17,
+      32,
+      13,
+      38
+    ],
+    "9,36": [
+      10,
+      28,
+      4,
+      34
+    ],
+    "13,15": [
+      13,
+      27,
+      10,
+      35
+    ],
+    "16,31": 22,
+    "33,7": [
+      1,
+      16,
+      35,
+      15
+    ],
+    "26,38": [
+      8,
+      35
+    ],
+    "12,17": [
+      22,
+      14,
+      19,
+      32
+    ],
+    "37,10": [
+      30,
+      28,
+      40,
+      19
+    ],
+    "18,35": [
+      15,
+      1,
+      19
+    ],
+    "37,9": [
+      3,
+      4,
+      16,
+      35
+    ],
+    "23,19": [
+      35,
+      18,
+      24,
+      5
+    ],
+    "25,36": [
+      6,
+      29
+    ],
+    "20,2": [
+      19,
+      9,
+      6,
+      27
+    ],
+    "30,2": [
+      2,
+      22,
+      13,
+      24
+    ],
+    "36,22": [
+      10,
+      35,
+      13,
+      2
+    ],
+    "33,28": [
+      25,
+      13,
+      2,
+      34
+    ],
+    "9,32": [
+      35,
+      13,
+      8,
+      1
+    ],
+    "4,14": [
+      15,
+      14,
+      28,
+      26
+    ],
+    "34,26": [
+      2,
+      28,
+      10,
+      25
+    ],
+    "32,17": [
+      27,
+      26,
+      18
+    ],
+    "37,4": 26,
+    "22,21": [
+      3,
+      38
+    ],
+    "27,29": [
+      11,
+      32,
+      1
+    ],
+    "1,22": [
+      6,
+      2,
+      34,
+      19
+    ],
+    "31,37": [
+      2,
+      21,
+      27,
+      1
+    ],
+    "32,4": [
+      15,
+      17,
+      27
+    ],
+    "34,11": 13,
+    "19,21": [
+      6,
+      19,
+      37,
+      18
+    ],
+    "29,34": [
+      25,
+      10
+    ],
+    "22,36": [
+      7,
+      23
+    ],
+    "17,14": [
+      10,
+      30,
+      22,
+      40
+    ],
+    "5,12": [
+      5,
+      34,
+      29,
+      4
+    ],
+    "29,17": [
+      19,
+      26
+    ],
+    "22,30": [
+      21,
+      22,
+      35,
+      2
+    ],
+    "8,26": [
+      35,
+      3
+    ],
+    "37,23": [
+      1,
+      18,
+      10,
+      24
+    ],
+    "4,39": [
+      30,
+      14,
+      7,
+      26
+    ],
+    "20,13": [
+      27,
+      4,
+      29,
+      18
+    ],
+    "10,8": [
+      2,
+      36,
+      18,
+      37
+    ],
+    "36,38": [
+      15,
+      1,
+      24
+    ],
+    "29,39": [
+      10,
+      18,
+      32,
+      39
+    ],
+    "20,27": [
+      10,
+      36,
+      23
+    ],
+    "24,26": [
+      24,
+      28,
+      35
+    ],
+    "7,33": [
+      15,
+      13,
+      30,
+      12
+    ],
+    "2,30": [
+      2,
+      19,
+      22,
+      37
+    ],
+    "37,32": [
+      5,
+      28,
+      11,
+      29
+    ],
+    "11,17": [
+      35,
+      39,
+      19,
+      2
+    ],
+    "37,14": [
+      27,
+      3,
+      15,
+      28
+    ],
+    "33,15": [
+      29,
+      3,
+      8,
+      25
+    ],
+    "33,11": [
+      2,
+      32,
+      12
+    ],
+    "7,24": [
+      2,
+      22
+    ],
+    "3,32": [
+      1,
+      29,
+      17
+    ],
+    "14,21": [
+      10,
+      26,
+      35,
+      28
+    ],
+    "23,30": [
+      33,
+      22,
+      30,
+      40
+    ],
+    "7,14": [
+      9,
+      14,
+      15,
+      7
+    ],
+    "36,27": [
+      13,
+      35,
+      1
+    ],
+    "16,25": [
+      28,
+      20,
+      10,
+      16
+    ],
+    "37,12": [
+      27,
+      13,
+      1,
+      39
+    ],
+    "18,1": [
+      19,
+      1,
+      32
+    ],
+    "23,26": [
+      6,
+      3,
+      10,
+      24
+    ],
+    "9,15": [
+      3,
+      19,
+      35,
+      5
+    ],
+    "13,36": [
+      2,
+      35,
+      22,
+      26
+    ],
+    "22,5": [
+      15,
+      26,
+      17,
+      30
+    ],
+    "19,18": [
+      2,
+      15,
+      19
+    ],
+    "26,19": [
+      34,
+      29,
+      16,
+      18
+    ],
+    "30,4": [
+      1,
+      18
+    ],
+    "18,14": [
+      35,
+      19
+    ],
+    "11,7": [
+      6,
+      35,
+      10
+    ],
+    "8,13": [
+      34,
+      28,
+      35,
+      40
+    ],
+    "36,8": [
+      1,
+      16
+    ],
+    "5,30": [
+      22,
+      33,
+      28,
+      1
+    ],
+    "23,18": [
+      1,
+      6,
+      13
+    ],
+    "16,2": [
+      6,
+      27,
+      19,
+      16
+    ],
+    "2,14": [
+      28,
+      2,
+      10,
+      27
+    ],
+    "9,11": [
+      6,
+      18,
+      38,
+      40
+    ],
+    "35,37": 1,
+    "17,28": [
+      32,
+      19,
+      24
+    ],
+    "8,30": [
+      34,
+      39,
+      19,
+      27
+    ],
+    "10,3": [
+      17,
+      19,
+      9,
+      36
+    ],
+    "27,1": [
+      3,
+      8,
+      10,
+      40
+    ],
+    "3,15": 19,
+    "37,17": [
+      3,
+      27,
+      35,
+      16
+    ],
+    "12,19": [
+      2,
+      6,
+      34,
+      14
+    ],
+    "2,22": [
+      18,
+      19,
+      28,
+      15
+    ],
+    "10,32": [
+      15,
+      37,
+      18,
+      1
+    ],
+    "38,35": [
+      27,
+      4,
+      1,
+      35
+    ],
+    "14,3": [
+      1,
+      15,
+      8,
+      35
+    ],
+    "24,5": [
+      30,
+      26
+    ],
+    "17,35": [
+      2,
+      18,
+      27
+    ],
+    "34,22": [
+      15,
+      1,
+      32,
+      19
+    ],
+    "23,38": [
+      35,
+      10,
+      18
+    ],
+    "22,25": [
+      10,
+      18,
+      32,
+      7
+    ],
+    "14,5": [
+      3,
+      34,
+      40,
+      29
+    ],
+    "1,19": [
+      35,
+      12,
+      34,
+      31
+    ],
+    "28,13": [
+      32,
+      35,
+      13
+    ],
+    "25,29": [
+      24,
+      26,
+      28,
+      18
+    ],
+    "7,23": [
+      36,
+      39,
+      34,
+      10
+    ],
+    "25,17": [
+      35,
+      29,
+      21,
+      18
+    ],
+    "28,2": [
+      28,
+      35,
+      25,
+      26
+    ],
+    "39,27": [
+      1,
+      35,
+      10,
+      38
+    ],
+    "22,38": 2,
+    "36,34": [
+      1,
+      13
+    ],
+    "15,30": [
+      22,
+      15,
+      33,
+      28
+    ],
+    "6,39": [
+      10,
+      15,
+      17,
+      7
+    ],
+    "20,23": [
+      28,
+      27,
+      18,
+      31
+    ],
+    "4,22": [
+      6,
+      28
+    ],
+    "33,21": [
+      35,
+      34,
+      2,
+      10
+    ],
+    "1,28": [
+      28,
+      27,
+      35,
+      26
+    ],
+    "7,37": [
+      29,
+      26,
+      4
+    ],
+    "12,9": [
+      35,
+      15,
+      34,
+      18
+    ],
+    "25,23": [
+      35,
+      18,
+      10,
+      39
+    ],
+    "27,31": [
+      35,
+      2,
+      40,
+      26
+    ],
+    "12,10": [
+      35,
+      10,
+      37,
+      40
+    ],
+    "35,32": [
+      1,
+      13,
+      31
+    ],
+    "21,15": [
+      19,
+      35,
+      10,
+      38
+    ],
+    "15,36": [
+      10,
+      4,
+      29,
+      15
+    ],
+    "16,21": 16,
+    "39,11": [
+      10,
+      37,
+      14
+    ],
+    "30,18": [
+      1,
+      19,
+      32,
+      13
+    ],
+    "33,8": [
+      4,
+      18,
+      39,
+      31
+    ],
+    "18,25": [
+      19,
+      1,
+      26,
+      17
+    ],
+    "38,13": [
+      18,
+      1
+    ],
+    "6,33": [
+      16,
+      4
+    ],
+    "33,16": [
+      1,
+      16,
+      25
+    ],
+    "28,30": [
+      28,
+      24,
+      22,
+      26
+    ],
+    "15,1": [
+      19,
+      5,
+      34,
+      31
+    ],
+    "22,8": 7,
+    "36,10": [
+      26,
+      16
+    ],
+    "28,9": [
+      28,
+      13,
+      32,
+      24
+    ],
+    "10,1": [
+      8,
+      1,
+      37,
+      18
+    ],
+    "29,14": [
+      3,
+      27
+    ],
+    "39,15": [
+      35,
+      10,
+      2,
+      18
+    ],
+    "3,34": [
+      1,
+      28,
+      10
+    ],
+    "18,9": [
+      10,
+      13,
+      19
+    ],
+    "12,38": [
+      15,
+      1,
+      32
+    ],
+    "10,17": [
+      35,
+      10,
+      21
+    ],
+    "7,12": [
+      1,
+      15,
+      29,
+      4
+    ],
+    "22,31": [
+      21,
+      35,
+      2,
+      22
+    ],
+    "25,37": [
+      18,
+      28,
+      32,
+      10
+    ],
+    "6,27": [
+      32,
+      35,
+      40,
+      4
+    ],
+    "11,34": 2,
+    "35,2": [
+      19,
+      15,
+      29,
+      16
+    ],
+    "34,36": [
+      35,
+      1,
+      13,
+      11
+    ],
+    "23,33": [
+      32,
+      28,
+      2,
+      24
+    ],
+    "19,31": [
+      2,
+      35,
+      6
+    ],
+    "10,38": [
+      2,
+      35
+    ],
+    "3,11": [
+      1,
+      8,
+      35
+    ],
+    "17,26": [
+      3,
+      17,
+      30,
+      39
+    ],
+    "26,23": [
+      6,
+      3,
+      10,
+      24
+    ],
+    "18,33": [
+      28,
+      26,
+      19
+    ],
+    "32,14": [
+      1,
+      3,
+      10,
+      32
+    ],
+    "8,34": 1,
+    "36,9": [
+      34,
+      10,
+      28
+    ],
+    "17,31": [
+      22,
+      35,
+      2,
+      24
+    ],
+    "37,15": [
+      19,
+      29,
+      39,
+      25
+    ],
+    "9,38": [
+      10,
+      18
+    ],
+    "13,17": [
+      35,
+      1,
+      32
+    ],
+    "19,35": [
+      15,
+      17,
+      13,
+      16
+    ],
+    "24,38": 35,
+    "38,9": [
+      28,
+      10
+    ],
+    "6,30": [
+      27,
+      2,
+      39,
+      35
+    ],
+    "18,37": [
+      32,
+      15
+    ],
+    "37,7": [
+      29,
+      1,
+      4,
+      16
+    ],
+    "8,31": [
+      30,
+      18,
+      35,
+      4
+    ],
+    "39,26": [
+      35,
+      38
+    ],
+    "27,22": [
+      10,
+      11,
+      35
+    ],
+    "25,27": [
+      10,
+      30,
+      4
+    ],
+    "1,37": [
+      28,
+      29,
+      26,
+      32
+    ],
+    "31,22": [
+      21,
+      35,
+      2,
+      22
+    ],
+    "24,27": [
+      10,
+      28,
+      23
+    ],
+    "22,23": [
+      35,
+      27,
+      2,
+      37
+    ],
+    "34,14": [
+      11,
+      1,
+      2,
+      9
+    ],
+    "21,34": [
+      35,
+      2,
+      10,
+      34
+    ],
+    "19,23": [
+      35,
+      24,
+      18,
+      5
+    ],
+    "39,32": [
+      35,
+      28,
+      2,
+      24
+    ],
+    "3,28": [
+      28,
+      32,
+      4
+    ],
+    "14,19": [
+      19,
+      35,
+      10
+    ],
+    "31,7": [
+      17,
+      2,
+      40
+    ],
+    "21,3": [
+      1,
+      10,
+      35,
+      37
+    ],
+    "28,39": [
+      10,
+      34,
+      28,
+      32
+    ],
+    "38,30": [
+      2,
+      33
+    ],
+    "29,8": [
+      25,
+      10,
+      35
+    ],
+    "12,1": [
+      8,
+      10,
+      29,
+      40
+    ],
+    "23,10": [
+      14,
+      15,
+      18,
+      40
+    ],
+    "32,19": [
+      28,
+      26,
+      27,
+      1
+    ],
+    "3,18": 32,
+    "17,6": [
+      35,
+      38
+    ],
+    "38,23": [
+      35,
+      10,
+      18,
+      5
+    ],
+    "14,34": [
+      27,
+      11,
+      3
+    ],
+    "11,15": [
+      19,
+      3,
+      27
+    ],
+    "19,12": [
+      12,
+      2,
+      29
+    ],
+    "10,19": [
+      19,
+      17,
+      10
+    ],
+    "14,23": [
+      35,
+      28,
+      31,
+      40
+    ],
+    "28,3": [
+      28,
+      26,
+      5,
+      16
+    ],
+    "10,27": [
+      3,
+      35,
+      13,
+      21
+    ],
+    "13,23": [
+      2,
+      14,
+      30,
+      40
+    ],
+    "36,21": [
+      20,
+      19,
+      30,
+      34
+    ],
+    "27,11": [
+      10,
+      24,
+      35,
+      19
+    ],
+    "32,3": [
+      1,
+      29,
+      13,
+      17
+    ],
+    "15,9": [
+      3,
+      35,
+      5
+    ],
+    "18,7": [
+      2,
+      13,
+      10
+    ],
+    "23,37": [
+      35,
+      18,
+      10,
+      13
+    ],
+    "2,38": [
+      2,
+      26,
+      35
+    ],
+    "37,35": [
+      1,
+      15
+    ],
+    "13,34": [
+      2,
+      35,
+      10,
+      16
+    ],
+    "17,22": [
+      21,
+      17,
+      35,
+      38
+    ],
+    "4,30": [
+      1,
+      18
+    ],
+    "8,11": [
+      24,
+      35
+    ],
+    "36,6": [
+      6,
+      36
+    ],
+    "27,30": [
+      27,
+      35,
+      2,
+      40
+    ],
+    "23,6": [
+      10,
+      18,
+      39,
+      31
+    ],
+    "38,36": [
+      15,
+      24,
+      10
+    ],
+    "25,5": [
+      26,
+      4,
+      5,
+      16
+    ],
+    "21,22": [
+      10,
+      35,
+      38
+    ],
+    "13,19": [
+      13,
+      19
+    ],
+    "34,38": [
+      34,
+      35,
+      7,
+      13
+    ],
+    "24,1": [
+      10,
+      24,
+      35
+    ],
+    "26,34": [
+      2,
+      32,
+      10,
+      25
+    ],
+    "36,35": [
+      29,
+      15,
+      28,
+      37
+    ],
+    "18,39": [
+      2,
+      25,
+      16
+    ],
+    "27,38": [
+      11,
+      13,
+      27
+    ],
+    "1,33": [
+      35,
+      3,
+      2,
+      24
+    ],
+    "31,26": [
+      3,
+      24,
+      39,
+      1
+    ],
+    "32,22": [
+      19,
+      35
+    ],
+    "32,15": [
+      27,
+      1,
+      4
+    ],
+    "22,27": [
+      11,
+      10,
+      35
+    ],
+    "14,28": [
+      3,
+      27,
+      16
+    ],
+    "5,21": [
+      19,
+      10,
+      32,
+      18
+    ],
+    "4,18": [
+      3,
+      25
+    ],
+    "35,5": [
+      35,
+      30,
+      29,
+      7
+    ],
+    "4,28": [
+      32,
+      28,
+      3
+    ],
+    "25,19": [
+      35,
+      38,
+      19,
+      18
+    ],
+    "11,2": [
+      13,
+      29,
+      10,
+      18
+    ],
+    "23,25": [
+      15,
+      18,
+      35,
+      10
+    ],
+    "3,26": [
+      29,
+      35
+    ],
+    "14,17": [
+      30,
+      10,
+      40
+    ],
+    "39,24": [
+      13,
+      15,
+      23
+    ],
+    "19,5": [
+      15,
+      19,
+      25
+    ],
+    "6,32": [
+      40,
+      16
+    ],
+    "6,37": [
+      2,
+      35,
+      30,
+      18
+    ],
+    "36,31": [
+      19,
+      1
+    ],
+    "35,14": [
+      35,
+      3,
+      32,
+      6
+    ],
+    "7,35": [
+      15,
+      29
+    ],
+    "29,2": [
+      28,
+      35,
+      27,
+      9
+    ],
+    "24,33": [
+      27,
+      22
+    ],
+    "37,25": [
+      18,
+      28,
+      32,
+      9
+    ],
+    "37,27": [
+      27,
+      40,
+      28,
+      8
+    ],
+    "16,34": 1,
+    "17,8": [
+      35,
+      6,
+      4
+    ],
+    "33,13": [
+      32,
+      35,
+      30
+    ],
+    "30,10": [
+      13,
+      35,
+      39,
+      18
+    ],
+    "9,26": [
+      10,
+      19,
+      29,
+      38
+    ],
+    "39,37": [
+      35,
+      18,
+      27,
+      2
+    ],
+    "29,12": [
+      32,
+      30,
+      40
+    ],
+    "11,28": [
+      6,
+      28,
+      25
+    ],
+    "26,22": [
+      7,
+      18,
+      25
+    ],
+    "7,18": [
+      2,
+      13,
+      10
+    ],
+    "29,6": [
+      2,
+      29,
+      18,
+      36
+    ],
+    "7,11": [
+      6,
+      35,
+      36,
+      37
+    ],
+    "39,16": [
+      20,
+      10,
+      16,
+      38
+    ],
+    "23,39": [
+      28,
+      35,
+      10,
+      23
+    ],
+    "2,36": [
+      1,
+      10,
+      26,
+      39
+    ],
+    "9,22": [
+      14,
+      20,
+      19,
+      35
+    ],
+    "36,12": [
+      29,
+      13,
+      28,
+      15
+    ],
+    "28,27": [
+      5,
+      11,
+      1,
+      23
+    ],
+    "39,17": [
+      35,
+      21,
+      28,
+      10
+    ],
+    "32,34": [
+      35,
+      1,
+      11,
+      9
+    ],
+    "26,15": [
+      3,
+      35,
+      10,
+      40
+    ],
+    "12,36": [
+      16,
+      29,
+      1,
+      28
+    ],
+    "22,33": [
+      35,
+      32,
+      1
+    ],
+    "25,30": [
+      35,
+      18,
+      34
+    ],
+    "10,30": [
+      1,
+      35,
+      40,
+      18
+    ],
+    "21,26": [
+      4,
+      34,
+      19
+    ],
+    "18,32": [
+      19,
+      35,
+      28,
+      26
+    ],
+    "10,5": [
+      19,
+      10,
+      15
+    ],
+    "19,33": [
+      19,
+      35
+    ],
+    "37,26": [
+      3,
+      27,
+      29,
+      18
+    ],
+    "1,3": [
+      15,
+      8,
+      29,
+      34
+    ],
+    "34,33": [
+      1,
+      12,
+      26,
+      15
+    ],
+    "31,2": [
+      35,
+      22,
+      1,
+      39
+    ],
+    "37,11": [
+      35,
+      36,
+      37,
+      32
+    ],
+    "8,36": [
+      1,
+      31
+    ],
+    "38,4": 23,
+    "1,5": [
+      29,
+      17,
+      38,
+      34
+    ],
+    "25,38": [
+      24,
+      28,
+      35,
+      30
+    ],
+    "30,6": [
+      27,
+      2,
+      39,
+      35
+    ],
+    "19,37": [
+      35,
+      38
+    ],
+    "27,7": [
+      3,
+      10,
+      14,
+      24
+    ],
+    "36,32": [
+      27,
+      26,
+      1,
+      13
+    ],
+    "7,21": [
+      35,
+      6,
+      13,
+      18
+    ],
+    "38,24": [
+      35,
+      33
+    ],
+    "30,22": [
+      21,
+      22,
+      35,
+      2
+    ],
+    "20,32": [
+      1,
+      4
+    ],
+    "3,22": [
+      7,
+      2,
+      35,
+      39
+    ],
+    "14,13": [
+      13,
+      17,
+      35
+    ],
+    "27,39": [
+      1,
+      35,
+      29,
+      38
+    ],
+    "1,39": [
+      35,
+      3,
+      24,
+      37
+    ],
+    "28,23": [
+      10,
+      16,
+      31,
+      28
+    ],
+    "11,8": [
+      35,
+      24
+    ],
+    "31,14": [
+      15,
+      35,
+      22,
+      2
+    ],
+    "23,2": [
+      35,
+      6,
+      22,
+      32
+    ],
+    "7,9": [
+      29,
+      4,
+      38,
+      34
+    ],
+    "12,31": [
+      35,
+      1
+    ],
+    "19,3": [
+      12,
+      28
+    ],
+    "15,19": [
+      28,
+      6,
+      35,
+      18
+    ],
+    "35,23": [
+      15,
+      10,
+      2,
+      13
+    ],
+    "29,31": [
+      4,
+      17,
+      34,
+      26
+    ],
+    "21,7": [
+      35,
+      6,
+      38
+    ],
+    "15,27": [
+      11,
+      2,
+      13
+    ],
+    "27,25": [
+      10,
+      30,
+      4
+    ],
+    "37,34": [
+      12,
+      26
+    ],
+    "38,3": [
+      14,
+      13,
+      17,
+      28
+    ],
+    "31,9": [
+      35,
+      28,
+      3,
+      23
+    ],
+    "12,5": [
+      5,
+      34,
+      4,
+      10
+    ],
+    "27,20": [
+      36,
+      23
+    ],
+    "28,37": [
+      26,
+      24,
+      32,
+      28
+    ],
+    "22,10": [
+      36,
+      38
+    ],
+    "33,19": [
+      1,
+      13,
+      24
+    ],
+    "17,2": [
+      22,
+      35,
+      32
+    ],
+    "27,17": [
+      3,
+      35,
+      10
+    ],
+    "17,38": [
+      26,
+      2,
+      19,
+      16
+    ],
+    "6,31": [
+      22,
+      1,
+      40
+    ],
+    "38,10": [
+      2,
+      35
+    ],
+    "9,31": [
+      2,
+      24,
+      35,
+      21
+    ],
+    "34,30": [
+      35,
+      10,
+      2,
+      16
+    ],
+    "31,6": [
+      22,
+      1,
+      40
+    ],
+    "14,36": [
+      2,
+      13,
+      25,
+      28
+    ],
+    "34,27": [
+      11,
+      10,
+      1,
+      16
+    ],
+    "2,32": [
+      28,
+      1,
+      9
+    ],
+    "18,29": [
+      3,
+      32
+    ],
+    "1,31": [
+      22,
+      35,
+      31,
+      39
+    ],
+    "6,14": 40,
+    "11,25": [
+      37,
+      36,
+      4
+    ],
+    "25,4": [
+      30,
+      24,
+      14,
+      5
+    ],
+    "26,5": [
+      15,
+      14,
+      29
+    ],
+    "5,10": [
+      19,
+      30,
+      35,
+      2
+    ],
+    "33,23": [
+      28,
+      32,
+      2,
+      24
+    ],
+    "10,29": [
+      28,
+      29,
+      37,
+      36
+    ],
+    "13,21": [
+      32,
+      35,
+      27,
+      31
+    ],
+    "17,15": [
+      19,
+      13,
+      39
+    ],
+    "29,18": [
+      3,
+      32
+    ],
+    "34,29": [
+      25,
+      10
+    ],
+    "15,7": [
+      10,
+      2,
+      19,
+      30
+    ],
+    "28,21": [
+      3,
+      6,
+      32
+    ],
+    "23,17": [
+      21,
+      36,
+      39,
+      31
+    ],
+    "16,17": [
+      19,
+      18,
+      36,
+      40
+    ],
+    "37,22": [
+      35,
+      3,
+      15,
+      19
+    ],
+    "1,10": [
+      8,
+      10,
+      18,
+      37
+    ],
+    "34,2": [
+      2,
+      27,
+      35,
+      11
+    ],
+    "19,14": [
+      5,
+      19,
+      9,
+      35
+    ],
+    "35,11": [
+      35,
+      16
+    ],
+    "37,18": [
+      2,
+      24,
+      26
+    ],
+    "25,8": [
+      35,
+      16,
+      32,
+      18
+    ],
+    "36,4": 26,
+    "35,10": [
+      15,
+      17,
+      20
+    ],
+    "32,10": [
+      35,
+      12
+    ],
+    "8,21": [
+      30,
+      6
+    ],
+    "1,26": [
+      3,
+      26,
+      18,
+      31
+    ],
+    "4,32": [
+      15,
+      17,
+      27
+    ],
+    "21,27": [
+      19,
+      24,
+      26,
+      31
+    ],
+    "7,25": [
+      2,
+      6,
+      34,
+      10
+    ],
+    "30,8": [
+      34,
+      39,
+      19,
+      27
+    ],
+    "19,39": [
+      12,
+      28,
+      35
+    ],
+    "13,7": [
+      28,
+      10,
+      19,
+      39
+    ],
+    "26,36": [
+      3,
+      13,
+      27,
+      10
+    ],
+    "34,35": [
+      7,
+      1,
+      4,
+      16
+    ],
+    "25,21": [
+      35,
+      20,
+      10,
+      6
+    ],
+    "27,35": [
+      13,
+      35,
+      8,
+      24
+    ],
+    "30,24": [
+      22,
+      10,
+      2
+    ],
+    "31,24": [
+      10,
+      21,
+      29
+    ],
+    "21,36": [
+      20,
+      19,
+      30,
+      34
+    ],
+    "3,39": [
+      14,
+      4,
+      28,
+      29
+    ],
+    "34,12": [
+      1,
+      13,
+      2,
+      4
+    ],
+    "11,6": [
+      10,
+      15,
+      36,
+      37
+    ],
+    "33,32": [
+      2,
+      5,
+      12
+    ],
+    "15,17": [
+      19,
+      35,
+      39
+    ],
+    "6,22": [
+      17,
+      7,
+      30
+    ],
+    "11,31": [
+      2,
+      33,
+      27,
+      18
+    ],
+    "3,24": [
+      1,
+      24
+    ],
+    "7,1": [
+      2,
+      26,
+      29,
+      40
+    ],
+    "12,28": [
+      28,
+      32,
+      1
+    ],
+    "32,5": [
+      13,
+      1,
+      26,
+      12
+    ],
+    "3,14": [
+      8,
+      35,
+      29,
+      34
+    ],
+    "6,35": [
+      15,
+      16
+    ],
+    "39,22": [
+      28,
+      10,
+      29,
+      35
+    ],
+    "36,29": [
+      26,
+      24,
+      32
+    ],
+    "22,14": 26,
+    "14,32": [
+      11,
+      3,
+      10,
+      32
+    ],
+    "29,19": [
+      32,
+      2
+    ],
+    "14,6": [
+      9,
+      40,
+      28
+    ],
+    "2,29": [
+      10,
+      1,
+      35,
+      17
+    ],
+    "9,28": [
+      28,
+      32,
+      1,
+      24
+    ],
+    "13,25": [
+      35,
+      27
+    ],
+    "23,12": [
+      29,
+      35,
+      3,
+      5
+    ],
+    "5,19": [
+      19,
+      32
+    ],
+    "35,18": [
+      6,
+      22,
+      26,
+      1
+    ],
+    "34,9": [
+      34,
+      9
+    ],
+    "16,13": [
+      39,
+      3,
+      35,
+      23
+    ],
+    "18,12": [
+      32,
+      30
+    ],
+    "2,18": [
+      19,
+      32,
+      35
+    ],
+    "23,15": [
+      28,
+      27,
+      3,
+      18
+    ],
+    "38,7": [
+      35,
+      13,
+      16
+    ],
+    "28,14": [
+      28,
+      6,
+      32
+    ],
+    "27,12": [
+      35,
+      1,
+      16,
+      11
+    ],
+    "23,5": [
+      35,
+      2,
+      10,
+      31
+    ],
+    "13,38": [
+      1,
+      8,
+      35
+    ],
+    "1,29": [
+      28,
+      35,
+      26,
+      18
+    ],
+    "24,30": [
+      22,
+      10,
+      1
+    ],
+    "25,2": [
+      10,
+      20,
+      26,
+      5
+    ],
+    "28,11": [
+      6,
+      28,
+      32
+    ],
+    "34,7": [
+      25,
+      2,
+      35,
+      11
+    ],
+    "4,36": [
+      1,
+      26
+    ],
+    "37,39": [
+      35,
+      18
+    ],
+    "21,24": [
+      10,
+      19
+    ],
+    "15,21": [
+      19,
+      10,
+      35,
+      38
+    ],
+    "23,28": [
+      16,
+      34,
+      31,
+      28
+    ],
+    "27,19": [
+      21,
+      11,
+      27,
+      19
+    ],
+    "21,14": [
+      26,
+      10,
+      28
+    ],
+    "31,15": [
+      15,
+      22,
+      33,
+      31
+    ],
+    "26,32": [
+      29,
+      1,
+      35,
+      27
+    ],
+    "1,7": [
+      29,
+      2,
+      40,
+      28
+    ],
+    "20,18": [
+      19,
+      2,
+      35,
+      32
+    ],
+    "30,19": [
+      1,
+      24,
+      6,
+      27
+    ],
+    "23,1": [
+      35,
+      6,
+      23,
+      40
+    ],
+    "11,10": [
+      36,
+      35,
+      21
+    ],
+    "24,9": [
+      26,
+      32
+    ],
+    "5,27": [
+      29,
+      9
+    ],
+    "11,12": [
+      35,
+      4,
+      15,
+      10
+    ],
+    "39,31": [
+      35,
+      22,
+      18,
+      39
+    ],
+    "37,30": [
+      22,
+      19,
+      29,
+      28
+    ],
+    "36,18": [
+      24,
+      17,
+      13
+    ],
+    "30,1": [
+      22,
+      21,
+      27,
+      39
+    ],
+    "35,38": [
+      27,
+      34,
+      35
+    ],
+    "3,37": [
+      35,
+      1,
+      26,
+      24
+    ],
+    "9,10": [
+      13,
+      28,
+      15,
+      19
+    ],
+    "34,6": [
+      16,
+      25
+    ],
+    "15,13": [
+      13,
+      3,
+      35
+    ],
+    "6,26": [
+      2,
+      18,
+      40,
+      4
+    ],
+    "11,35": 35,
+    "14,11": [
+      10,
+      3,
+      18,
+      40
+    ],
+    "39,36": [
+      12,
+      17,
+      28,
+      24
+    ],
+    "10,39": [
+      3,
+      28,
+      35,
+      37
+    ],
+    "13,31": [
+      35,
+      40,
+      27,
+      39
+    ],
+    "24,22": [
+      19,
+      10
+    ],
+    "35,7": [
+      15,
+      35,
+      29
+    ],
+    "28,31": [
+      3,
+      33,
+      39,
+      10
+    ],
+    "20,30": [
+      10,
+      2,
+      22,
+      37
+    ],
+    "19,1": [
+      12,
+      18,
+      28,
+      31
+    ],
+    "35,33": [
+      15,
+      34,
+      1,
+      16
+    ],
+    "32,20": [
+      1,
+      4
+    ],
+    "2,8": [
+      5,
+      35,
+      14,
+      2
+    ],
+    "21,9": [
+      15,
+      35,
+      2
+    ],
+    "9,37": [
+      3,
+      34,
+      27,
+      16
+    ],
+    "36,19": [
+      27,
+      2,
+      29,
+      28
+    ],
+    "12,7": [
+      14,
+      4,
+      15,
+      22
+    ],
+    "18,36": [
+      6,
+      32,
+      13
+    ],
+    "8,4": [
+      35,
+      8,
+      2,
+      14
+    ],
+    "23,16": [
+      27,
+      16,
+      18,
+      38
+    ],
+    "6,4": [
+      26,
+      7,
+      9,
+      39
+    ],
+    "9,34": [
+      34,
+      2,
+      28,
+      27
+    ],
+    "2,27": [
+      10,
+      28,
+      8,
+      3
+    ],
+    "9,33": [
+      32,
+      28,
+      13,
+      12
+    ],
+    "10,22": [
+      14,
+      15
+    ],
+    "16,23": [
+      27,
+      16,
+      18,
+      38
+    ],
+    "38,17": [
+      26,
+      2,
+      19
+    ],
+    "26,1": [
+      35,
+      6,
+      18,
+      31
+    ],
+    "34,25": [
+      32,
+      1,
+      10,
+      25
+    ],
+    "26,11": [
+      10,
+      36,
+      14,
+      3
+    ],
+    "28,25": [
+      24,
+      34,
+      28,
+      32
+    ],
+    "27,28": [
+      32,
+      3,
+      11,
+      23
+    ],
+    "21,37": [
+      19,
+      35,
+      16
+    ],
+    "15,3": [
+      2,
+      19,
+      9
+    ],
+    "19,22": [
+      12,
+      22,
+      15,
+      24
+    ],
+    "5,13": [
+      11,
+      2,
+      13,
+      39
+    ],
+    "27,15": [
+      2,
+      35,
+      3,
+      25
+    ],
+    "8,27": [
+      2,
+      35,
+      16
+    ],
+    "27,36": [
+      13,
+      35,
+      1
+    ],
+    "37,20": [
+      19,
+      35,
+      16
+    ],
+    "1,12": [
+      10,
+      14,
+      35,
+      40
+    ],
+    "10,9": [
+      13,
+      28,
+      15,
+      12
+    ],
+    "19,26": [
+      34,
+      23,
+      16,
+      18
+    ],
+    "20,26": [
+      3,
+      35,
+      31
+    ],
+    "33,10": [
+      28,
+      13,
+      35
+    ],
+    "15,28": 3,
+    "33,27": [
+      17,
+      27,
+      8,
+      40
+    ],
+    "34,16": 1,
+    "36,25": [
+      6,
+      29
+    ],
+    "21,10": [
+      26,
+      2,
+      36,
+      35
+    ],
+    "31,29": [
+      4,
+      17,
+      34,
+      26
+    ],
+    "32,26": [
+      35,
+      23,
+      1,
+      24
+    ],
+    "35,34": [
+      1,
+      16,
+      7,
+      4
+    ],
+    "39,13": [
+      35,
+      3,
+      22,
+      39
+    ],
+    "25,34": [
+      32,
+      1,
+      10
+    ],
+    "3,33": [
+      15,
+      29,
+      35,
+      4
+    ],
+    "33,3": [
+      1,
+      17,
+      13,
+      12
+    ],
+    "5,29": [
+      2,
+      32
+    ],
+    "21,12": [
+      29,
+      14,
+      2,
+      40
+    ],
+    "7,15": [
+      6,
+      35,
+      4
+    ],
+    "16,24": 10,
+    "38,28": [
+      28,
+      26,
+      10,
+      34
+    ],
+    "34,1": [
+      2,
+      27,
+      35,
+      11
+    ],
+    "2,39": [
+      1,
+      28,
+      15,
+      35
+    ],
+    "25,11": [
+      37,
+      36,
+      4
+    ],
+    "38,18": [
+      8,
+      32,
+      19
+    ],
+    "22,37": [
+      35,
+      3,
+      15,
+      23
+    ],
+    "34,4": [
+      3,
+      18,
+      31
+    ],
+    "30,37": [
+      22,
+      19,
+      29,
+      40
+    ],
+    "2,33": [
+      6,
+      13,
+      1,
+      32
+    ],
+    "1,35": [
+      29,
+      5,
+      15,
+      8
+    ],
+    "18,15": [
+      2,
+      19,
+      6
+    ],
+    "11,4": [
+      35,
+      1,
+      14,
+      16
+    ],
+    "8,12": [
+      7,
+      2,
+      35
+    ],
+    "32,38": [
+      8,
+      28,
+      1
+    ],
+    "35,9": [
+      35,
+      10,
+      14
+    ],
+    "4,24": [
+      24,
+      26,
+      0
+    ],
+    "30,23": [
+      33,
+      22,
+      19,
+      40
+    ],
+    "17,29": 24,
+    "11,33": 11,
+    "16,30": [
+      17,
+      1,
+      40,
+      33
+    ],
+    "7,3": [
+      1,
+      7,
+      4,
+      35
+    ],
+    "12,26": [
+      36,
+      22
+    ],
+    "19,9": [
+      8,
+      35,
+      35
+    ],
+    "31,5": [
+      17,
+      2,
+      18,
+      39
+    ],
+    "12,39": [
+      17,
+      26,
+      34,
+      10
+    ],
+    "29,13": [
+      30,
+      18
+    ],
+    "21,1": [
+      8,
+      36,
+      38,
+      31
+    ],
+    "18,38": [
+      2,
+      26,
+      10
+    ],
+    "34,10": [
+      1,
+      11,
+      10
+    ],
+    "14,2": [
+      40,
+      26,
+      27,
+      1
+    ],
+    "37,36": [
+      15,
+      10,
+      37,
+      28
+    ],
+    "13,1": [
+      21,
+      35,
+      2,
+      39
+    ],
+    "17,34": [
+      4,
+      10,
+      16
+    ],
+    "34,21": [
+      15,
+      10,
+      32,
+      2
+    ],
+    "13,12": [
+      22,
+      1,
+      18,
+      4
+    ],
+    "16,38": 1,
+    "17,4": [
+      15,
+      19,
+      9
+    ],
+    "28,12": [
+      6,
+      28,
+      32
+    ],
+    "25,28": [
+      24,
+      34,
+      28,
+      32
+    ],
+    "17,13": [
+      1,
+      35,
+      32
+    ],
+    "5,17": [
+      2,
+      15,
+      16
+    ],
+    "27,2": [
+      3,
+      10,
+      8,
+      28
+    ],
+    "37,6": [
+      2,
+      39,
+      30,
+      16
+    ],
+    "26,9": [
+      35,
+      29,
+      34,
+      28
+    ],
+    "23,35": [
+      15,
+      10,
+      2
+    ],
+    "33,34": [
+      12,
+      26,
+      1,
+      32
+    ],
+    "4,23": [
+      10,
+      28,
+      24,
+      35
+    ],
+    "21,31": [
+      2,
+      35,
+      18
+    ],
+    "7,34": 10,
+    "35,26": [
+      3,
+      35,
+      15
+    ],
+    "31,28": [
+      3,
+      33,
+      26
+    ],
+    "19,28": [
+      3,
+      1,
+      32
+    ],
+    "19,27": [
+      19,
+      21,
+      11,
+      27
+    ],
+    "26,27": [
+      18,
+      3,
+      28,
+      40
+    ],
+    "39,4": [
+      30,
+      7,
+      14,
+      26
+    ],
+    "2,23": [
+      5,
+      8,
+      13,
+      30
+    ],
+    "21,16": 16,
+    "31,17": [
+      22,
+      35,
+      2,
+      24
+    ],
+    "39,35": [
+      1,
+      35,
+      28,
+      37
+    ],
+    "14,20": 35,
+    "7,29": [
+      25,
+      28,
+      2,
+      16
+    ],
+    "39,14": [
+      29,
+      28,
+      10,
+      18
+    ],
+    "10,13": [
+      35,
+      10,
+      21
+    ],
+    "5,32": [
+      13,
+      1,
+      26,
+      24
+    ],
+    "32,12": [
+      1,
+      28,
+      13,
+      27
+    ],
+    "4,6": [
+      17,
+      7,
+      10,
+      40
+    ],
+    "27,9": [
+      21,
+      35,
+      11,
+      28
+    ],
+    "2,37": [
+      25,
+      28,
+      17,
+      15
+    ],
+    "8,10": [
+      2,
+      18,
+      37
+    ],
+    "6,11": [
+      10,
+      15,
+      36,
+      37
+    ],
+    "26,30": [
+      35,
+      33,
+      29,
+      31
+    ],
+    "3,35": [
+      14,
+      15,
+      1,
+      16
+    ],
+    "14,26": [
+      29,
+      10,
+      27
+    ],
+    "2,10": [
+      8,
+      10,
+      19,
+      35
+    ],
+    "15,11": [
+      19,
+      3,
+      27
+    ],
+    "29,3": [
+      10,
+      28,
+      29,
+      37
+    ],
+    "22,2": [
+      19,
+      6,
+      18,
+      9
+    ],
+    "6,24": [
+      30,
+      16
+    ],
+    "11,37": [
+      2,
+      36,
+      37
+    ],
+    "35,3": [
+      35,
+      1,
+      29,
+      2
+    ],
+    "39,8": [
+      35,
+      37,
+      10,
+      2
+    ],
+    "25,7": [
+      2,
+      5,
+      34,
+      10
+    ],
+    "38,2": [
+      28,
+      26,
+      35,
+      10
+    ],
+    "3,12": [
+      1,
+      8,
+      10,
+      29
+    ],
+    "18,30": [
+      15,
+      19
+    ],
+    "25,33": [
+      4,
+      28,
+      10,
+      34
+    ],
+    "8,37": [
+      2,
+      17,
+      26
+    ],
+    "5,34": [
+      15,
+      13,
+      10,
+      1
+    ],
+    "28,16": [
+      10,
+      26,
+      24
+    ],
+    "7,13": [
+      28,
+      10,
+      1,
+      39
+    ],
+    "13,16": [
+      39,
+      3,
+      35,
+      23
+    ],
+    "23,21": [
+      28,
+      27,
+      18,
+      38
+    ],
+    "19,34": [
+      1,
+      15,
+      17,
+      28
+    ],
+    "27,8": [
+      2,
+      35,
+      24
+    ],
+    "22,18": [
+      1,
+      13,
+      32,
+      15
+    ],
+    "18,21": 32,
+    "8,2": [
+      35,
+      10,
+      19,
+      14
+    ],
+    "23,14": [
+      35,
+      28,
+      31,
+      40
+    ],
+    "27,37": [
+      27,
+      40,
+      28
+    ],
+    "7,5": [
+      1,
+      7,
+      4,
+      17
+    ],
+    "9,24": [
+      13,
+      26
+    ],
+    "13,29": 18,
+    "26,33": [
+      35,
+      29,
+      25,
+      10
+    ],
+    "25,24": [
+      24,
+      26,
+      28,
+      32
+    ],
+    "15,29": [
+      3,
+      27,
+      16,
+      40
+    ],
+    "8,25": [
+      35,
+      16
+    ],
+    "34,15": [
+      11,
+      29,
+      28,
+      27
+    ],
+    "21,35": [
+      19,
+      17,
+      34
+    ],
+    "4,13": [
+      39,
+      37,
+      35
+    ],
+    "20,39": [
+      1,
+      6
+    ],
+    "30,38": [
+      33,
+      3,
+      34
+    ],
+    "17,19": [
+      19,
+      15,
+      3,
+      17
+    ],
+    "5,11": [
+      10,
+      15,
+      36,
+      28
+    ],
+    "1,25": [
+      10,
+      35,
+      20,
+      28
+    ],
+    "26,2": [
+      27,
+      26,
+      18,
+      35
+    ],
+    "8,29": [
+      35,
+      10,
+      25
+    ],
+    "7,30": [
+      22,
+      21,
+      27,
+      35
+    ],
+    "37,5": [
+      2,
+      13,
+      18,
+      17
+    ],
+    "21,28": [
+      32,
+      15,
+      2
+    ],
+    "10,7": [
+      15,
+      9,
+      12,
+      37
+    ],
+    "5,36": [
+      14,
+      1,
+      13
+    ],
+    "21,18": [
+      16,
+      6,
+      19
+    ],
+    "31,19": [
+      2,
+      35,
+      6
+    ],
+    "20,14": 35,
+    "30,15": [
+      22,
+      15,
+      33,
+      28
+    ],
+    "14,35": [
+      15,
+      3,
+      32
+    ],
+    "35,12": [
+      15,
+      37,
+      1,
+      8
+    ],
+    "11,14": [
+      9,
+      18,
+      3,
+      40
+    ],
+    "23,3": [
+      14,
+      29,
+      10,
+      39
+    ],
+    "36,2": [
+      2,
+      26,
+      35,
+      39
+    ],
+    "3,31": [
+      17,
+      15
+    ],
+    "14,22": 35,
+    "28,4": [
+      32,
+      28,
+      3,
+      16
+    ],
+    "10,28": [
+      35,
+      10,
+      23,
+      24
+    ],
+    "36,28": [
+      2,
+      26,
+      10,
+      34
+    ],
+    "31,23": [
+      10,
+      1,
+      34
+    ],
+    "8,14": [
+      9,
+      14,
+      17,
+      15
+    ],
+    "30,20": [
+      10,
+      2,
+      22,
+      37
+    ],
+    "9,18": [
+      10,
+      13,
+      19
+    ],
+    "17,3": [
+      15,
+      19,
+      9
+    ],
+    "3,29": [
+      10,
+      28,
+      29,
+      37
+    ],
+    "19,15": [
+      28,
+      35,
+      6,
+      18
+    ],
+    "11,39": [
+      10,
+      14,
+      35,
+      37
+    ],
+    "3,10": [
+      17,
+      10,
+      4
+    ],
+    "10,35": [
+      15,
+      17,
+      18,
+      20
+    ],
+    "34,5": [
+      15,
+      13,
+      32
+    ],
+    "9,3": [
+      13,
+      14,
+      8
+    ],
+    "5,14": [
+      3,
+      15,
+      40,
+      14
+    ],
+    "38,5": [
+      17,
+      14,
+      13
+    ],
+    "12,33": [
+      32,
+      15,
+      26
+    ],
+    "17,30": [
+      22,
+      33,
+      35,
+      2
+    ],
+    "28,26": [
+      2,
+      6,
+      32
+    ],
+    "27,16": [
+      34,
+      27,
+      6,
+      40
+    ],
+    "29,33": [
+      1,
+      32,
+      35,
+      23
+    ],
+    "21,5": [
+      19,
+      38
+    ],
+    "3,36": [
+      1,
+      19,
+      26,
+      24
+    ],
+    "13,18": [
+      32,
+      3,
+      27,
+      16
+    ],
+    "16,32": [
+      35,
+      10
+    ],
+    "1,13": [
+      1,
+      35,
+      19,
+      39
+    ],
+    "14,31": [
+      15,
+      35,
+      22,
+      2
+    ],
+    "26,37": [
+      3,
+      27,
+      29,
+      18
+    ],
+    "12,14": [
+      30,
+      14,
+      10,
+      40
+    ],
+    "2,21": [
+      15,
+      19,
+      18,
+      22
+    ],
+    "15,32": [
+      27,
+      1,
+      4
+    ],
+    "37,24": [
+      35,
+      33,
+      27,
+      22
+    ],
+    "15,25": [
+      20,
+      10,
+      28,
+      18
+    ],
+    "37,38": [
+      34,
+      21
+    ],
+    "31,27": [
+      24,
+      2,
+      40,
+      39
+    ],
+    "30,3": [
+      17,
+      1,
+      39,
+      4
+    ],
+    "36,33": [
+      27,
+      9,
+      26,
+      24
+    ],
+    "39,19": [
+      35,
+      10,
+      38,
+      19
+    ],
+    "29,25": [
+      32,
+      26,
+      28,
+      18
+    ],
+    "4,17": [
+      3,
+      35,
+      38,
+      18
+    ],
+    "33,36": [
+      32,
+      26,
+      12,
+      17
+    ],
+    "5,15": [
+      6,
+      3
+    ],
+    "1,21": [
+      12,
+      36,
+      18,
+      31
+    ],
+    "7,19": 35,
+    "26,13": [
+      15,
+      2,
+      17,
+      40
+    ],
+    "20,37": [
+      19,
+      35,
+      16,
+      25
+    ],
+    "3,25": [
+      15,
+      2,
+      29
+    ],
+    "30,12": [
+      22,
+      1,
+      3,
+      35
+    ],
+    "10,31": [
+      13,
+      3,
+      36,
+      24
+    ],
+    "2,20": [
+      18,
+      19,
+      28,
+      1
+    ],
+    "6,36": [
+      1,
+      18,
+      36
+    ],
+    "30,11": [
+      22,
+      2,
+      37
+    ],
+    "5,38": [
+      14,
+      30,
+      28,
+      23
+    ],
+    "29,4": [
+      2,
+      32,
+      10
+    ],
+    "13,8": [
+      34,
+      28,
+      35,
+      40
+    ],
+    "39,7": [
+      2,
+      6,
+      34,
+      10
+    ],
+    "38,39": [
+      5,
+      12,
+      35,
+      26
+    ],
+    "20,10": [
+      36,
+      37
+    ],
+    "2,28": [
+      18,
+      26,
+      28
+    ],
+    "23,9": [
+      10,
+      13,
+      28,
+      38
+    ],
+    "31,8": [
+      30,
+      18,
+      35,
+      4
+    ],
+    "34,39": [
+      1,
+      32,
+      10
+    ],
+    "35,6": [
+      15,
+      16
+    ],
+    "7,27": [
+      14,
+      1,
+      40,
+      11
+    ],
+    "11,29": [
+      3,
+      35
+    ],
+    "18,26": [
+      1,
+      19
+    ],
+    "27,24": [
+      10,
+      28
+    ],
+    "10,25": [
+      10,
+      37,
+      36
+    ],
+    "28,15": [
+      28,
+      6,
+      32
+    ],
+    "27,10": [
+      8,
+      28,
+      10,
+      3
+    ],
+    "2,35": [
+      19,
+      15,
+      29
+    ],
+    "13,3": [
+      13,
+      15,
+      1,
+      28
+    ],
+    "13,39": [
+      23,
+      35,
+      40,
+      3
+    ],
+    "22,6": [
+      17,
+      7,
+      30,
+      18
+    ],
+    "6,13": [
+      2,
+      38
+    ],
+    "11,22": [
+      2,
+      36,
+      25
+    ],
+    "32,35": [
+      2,
+      13,
+      15
+    ],
+    "26,14": [
+      14,
+      35,
+      34,
+      10
+    ],
+    "12,37": [
+      15,
+      13,
+      39
+    ],
+    "25,3": [
+      15,
+      2,
+      29
+    ],
+    "18,19": [
+      32,
+      1,
+      19
+    ],
+    "13,35": [
+      35,
+      30,
+      34,
+      2
+    ],
+    "28,10": [
+      32,
+      2
+    ],
+    "27,18": [
+      11,
+      32,
+      13
+    ],
+    "37,19": [
+      35,
+      38
+    ],
+    "19,30": [
+      1,
+      35,
+      6,
+      27
+    ],
+    "19,32": [
+      28,
+      26,
+      30
+    ],
+    "9,12": [
+      35,
+      15,
+      18,
+      34
+    ],
+    "17,25": [
+      35,
+      28,
+      21,
+      18
+    ],
+    "2,12": [
+      13,
+      10,
+      29,
+      14
+    ],
+    "32,28": [
+      1,
+      35,
+      12,
+      18
+    ],
+    "35,39": [
+      35,
+      28,
+      6,
+      37
+    ],
+    "30,36": [
+      22,
+      19,
+      29,
+      40
+    ],
+    "8,39": [
+      35,
+      37,
+      10,
+      2
+    ],
+    "32,7": [
+      13,
+      29,
+      1,
+      40
+    ],
+    "33,38": [
+      1,
+      34,
+      12,
+      3
+    ],
+    "2,4": [
+      10,
+      1,
+      29,
+      35
+    ],
+    "30,7": [
+      22,
+      23,
+      37,
+      35
+    ],
+    "19,36": [
+      2,
+      29,
+      27,
+      28
+    ],
+    "10,21": [
+      19,
+      35,
+      18,
+      37
+    ],
+    "21,33": [
+      26,
+      35,
+      10
+    ],
+    "18,23": [
+      13,
+      1
+    ],
+    "26,3": [
+      29,
+      14,
+      35,
+      18
+    ],
+    "14,8": [
+      9,
+      14,
+      17,
+      15
+    ],
+    "30,33": [
+      2,
+      25,
+      28,
+      39
+    ],
+    "33,25": [
+      4,
+      28,
+      10,
+      34
+    ],
+    "12,30": [
+      22,
+      1,
+      2,
+      35
+    ],
+    "30,32": [
+      24,
+      35,
+      2
+    ],
+    "17,10": [
+      35,
+      10,
+      3,
+      21
+    ],
+    "25,14": [
+      29,
+      3,
+      28,
+      18
+    ],
+    "35,15": [
+      13,
+      1,
+      35
+    ],
+    "34,17": [
+      4,
+      10
+    ],
+    "36,5": [
+      14,
+      1,
+      13,
+      16
+    ],
+    "15,18": [
+      2,
+      19,
+      4,
+      35
+    ],
+    "4,11": [
+      1,
+      14,
+      35
+    ],
+    "25,13": [
+      35,
+      3,
+      22,
+      5
+    ],
+    "26,17": [
+      3,
+      17,
+      39
+    ],
+    "1,27": [
+      1,
+      3,
+      11,
+      27
+    ],
+    "7,38": [
+      35,
+      34,
+      16,
+      24
+    ],
+    "39,28": [
+      1,
+      10,
+      34,
+      28
+    ],
+    "12,4": [
+      13,
+      14,
+      10,
+      7
+    ],
+    "37,31": [
+      2,
+      21
+    ],
+    "32,21": [
+      27,
+      1,
+      12,
+      24
+    ],
+    "4,34": 3,
+    "12,23": [
+      35,
+      29,
+      3,
+      5
+    ],
+    "31,3": [
+      17,
+      15,
+      16,
+      22
+    ],
+    "10,12": [
+      10,
+      35,
+      40,
+      34
+    ],
+    "30,27": [
+      27,
+      24,
+      2,
+      40
+    ],
+    "12,2": [
+      15,
+      10,
+      26,
+      3
+    ],
+    "2,26": [
+      19,
+      6,
+      18,
+      26
+    ],
+    "15,35": [
+      1,
+      35,
+      13
+    ],
+    "30,17": [
+      22,
+      33,
+      35,
+      2
+    ],
+    "14,37": [
+      27,
+      3,
+      15,
+      40
+    ],
+    "13,20": [
+      27,
+      4,
+      29,
+      18
+    ],
+    "2,31": [
+      35,
+      22,
+      1,
+      39
+    ],
+    "18,28": [
+      11,
+      15,
+      32
+    ],
+    "33,5": [
+      1,
+      17,
+      13,
+      16
+    ],
+    "6,17": [
+      35,
+      39,
+      38
+    ],
+    "11,26": [
+      10,
+      14,
+      36
+    ],
+    "32,13": [
+      11,
+      13,
+      1
+    ],
+    "29,27": [
+      11,
+      32,
+      1
+    ],
+    "28,6": [
+      26,
+      28,
+      32,
+      3
+    ],
+    "33,6": [
+      18,
+      16,
+      15,
+      39
+    ],
+    "23,4": [
+      10,
+      28,
+      24
+    ],
+    "16,28": [
+      10,
+      26,
+      24
+    ],
+    "30,39": [
+      22,
+      35,
+      13,
+      24
+    ],
+    "36,17": [
+      2,
+      17,
+      13
+    ],
+    "36,26": [
+      13,
+      3,
+      27,
+      10
+    ],
+    "1,23": [
+      5,
+      35,
+      3,
+      31
+    ],
+    "3,5": [
+      15,
+      17,
+      4
+    ],
+    "17,21": [
+      2,
+      14,
+      17,
+      25
+    ],
+    "6,28": [
+      26,
+      28,
+      32,
+      3
+    ],
+    "36,1": [
+      26,
+      30,
+      34,
+      36
+    ],
+    "32,1": [
+      28,
+      29,
+      15,
+      16
+    ],
+    "30,34": [
+      35,
+      10,
+      2
+    ],
+    "19,25": [
+      35,
+      38,
+      19,
+      18
+    ],
+    "10,37": [
+      36,
+      37,
+      10,
+      19
+    ],
+    "13,33": [
+      32,
+      35,
+      30
+    ],
+    "35,36": [
+      15,
+      29,
+      37,
+      28
+    ],
+    "9,1": [
+      2,
+      28,
+      13,
+      38
+    ],
+    "4,10": [
+      28,
+      10
+    ],
+    "28,33": [
+      1,
+      13,
+      17,
+      34
+    ],
+    "23,27": [
+      10,
+      29,
+      39,
+      35
+    ],
+    "32,25": [
+      35,
+      28,
+      34,
+      4
+    ],
+    "33,12": [
+      15,
+      34,
+      29,
+      28
+    ],
+    "2,16": [
+      2,
+      27,
+      19,
+      6
+    ],
+    "9,35": [
+      15,
+      10,
+      26
+    ],
+    "30,9": [
+      21,
+      22,
+      35,
+      28
+    ],
+    "19,38": [
+      32,
+      2
+    ],
+    "21,11": [
+      22,
+      10,
+      35
+    ],
+    "24,31": [
+      10,
+      21,
+      22
+    ],
+    "26,39": [
+      13,
+      29,
+      3,
+      27
+    ],
+    "18,34": [
+      15,
+      17,
+      13,
+      16
+    ],
+    "37,8": [
+      2,
+      18,
+      26,
+      31
+    ],
+    "33,2": [
+      6,
+      13,
+      1,
+      25
+    ],
+    "26,24": [
+      24,
+      28,
+      35
+    ],
+    "31,25": [
+      1,
+      22
+    ],
+    "30,29": [
+      26,
+      28,
+      10,
+      18
+    ],
+    "29,7": [
+      32,
+      23,
+      2
+    ],
+    "5,22": [
+      15,
+      17,
+      30,
+      26
+    ],
+    "1,34": [
+      2,
+      27,
+      28,
+      11
+    ],
+    "13,9": [
+      33,
+      15,
+      28,
+      18
+    ],
+    "11,30": [
+      22,
+      2,
+      37
+    ],
+    "24,18": 19,
+    "21,39": [
+      28,
+      35,
+      34
+    ],
+    "31,38": 2,
+    "11,1": [
+      10,
+      36,
+      37,
+      40
+    ],
+    "6,23": [
+      10,
+      14,
+      18,
+      39
+    ],
+    "25,31": [
+      35,
+      22,
+      18,
+      39
+    ],
+    "8,17": [
+      35,
+      6,
+      4
+    ],
+    "28,17": [
+      6,
+      19,
+      28,
+      24
+    ],
+    "12,27": [
+      10,
+      40,
+      16
+    ],
+    "38,33": [
+      1,
+      12,
+      34,
+      3
+    ],
+    "6,34": 16,
+    "15,31": [
+      21,
+      39,
+      16,
+      22
+    ],
+    "30,13": [
+      35,
+      24,
+      30,
+      18
+    ],
+    "14,33": [
+      32,
+      40,
+      25,
+      2
+    ],
+    "26,7": [
+      15,
+      20,
+      29
+    ],
+    "7,32": [
+      29,
+      1,
+      40
+    ],
+    "38,37": [
+      34,
+      27,
+      25
+    ],
+    "26,29": [
+      33,
+      30
+    ],
+    "17,33": [
+      26,
+      27
+    ],
+    "23,13": [
+      2,
+      14,
+      30,
+      40
+    ],
+    "26,10": [
+      35,
+      14,
+      3
+    ],
+    "10,14": [
+      35,
+      10,
+      14,
+      27
+    ],
+    "39,34": [
+      1,
+      32,
+      10,
+      25
+    ],
+    "32,9": [
+      35,
+      13,
+      8,
+      1
+    ],
+    "18,13": [
+      32,
+      3,
+      27
+    ],
+    "39,1": [
+      35,
+      26,
+      24,
+      37
+    ],
+    "16,26": [
+      3,
+      35,
+      31
+    ],
+    "37,13": [
+      11,
+      22,
+      39,
+      30
+    ],
+    "18,2": [
+      2,
+      35,
+      32
+    ],
+    "23,34": [
+      2,
+      35,
+      34,
+      27
+    ],
+    "33,35": [
+      15,
+      34,
+      1,
+      16
+    ],
+    "9,14": [
+      8,
+      3,
+      26,
+      14
+    ],
+    "13,37": [
+      35,
+      22,
+      39,
+      23
+    ],
+    "22,4": [
+      6,
+      38,
+      7
+    ],
+    "39,23": [
+      28,
+      10,
+      35,
+      23
+    ],
+    "28,18": [
+      6,
+      1,
+      32
+    ],
+    "38,21": [
+      28,
+      2,
+      27
+    ],
+    "12,35": [
+      1,
+      15,
+      29
+    ],
+    "18,17": [
+      32,
+      35,
+      19
+    ],
+    "30,26": [
+      35,
+      33,
+      29,
+      31
+    ],
+    "9,7": [
+      7,
+      29,
+      34
+    ],
+    "15,23": [
+      28,
+      27,
+      3,
+      18
+    ],
+    "23,29": [
+      35,
+      10,
+      24,
+      31
+    ],
+    "27,6": [
+      32,
+      35,
+      40,
+      4
+    ],
+    "17,27": [
+      19,
+      35,
+      3,
+      10
+    ],
+    "1,17": [
+      6,
+      29,
+      4,
+      38
+    ],
+    "10,2": [
+      18,
+      13,
+      1,
+      28
+    ],
+    "39,29": [
+      18,
+      10,
+      32,
+      1
+    ],
+    "5,31": [
+      17,
+      2,
+      18,
+      39
+    ],
+    "14,30": [
+      18,
+      35,
+      37,
+      1
+    ],
+    "36,11": [
+      19,
+      1,
+      35
+    ],
+    "25,20": 1,
+    "12,18": [
+      13,
+      15,
+      32
+    ],
+    "38,25": [
+      24,
+      28,
+      35,
+      30
+    ],
+    "27,21": [
+      21,
+      11,
+      26,
+      31
+    ],
+    "7,10": [
+      15,
+      35,
+      36,
+      37
+    ],
+    "5,26": [
+      29,
+      30,
+      6,
+      13
+    ],
+    "27,4": [
+      15,
+      29,
+      28,
+      11
+    ],
+    "38,31": 2,
+    "34,23": [
+      2,
+      35,
+      34,
+      27
+    ],
+    "36,30": [
+      22,
+      19,
+      29,
+      40
+    ],
+    "38,34": [
+      1,
+      35,
+      13
+    ],
+    "22,24": [
+      19,
+      10
+    ],
+    "14,27": [
+      11,
+      3
+    ],
+    "13,30": [
+      35,
+      24,
+      30,
+      18
+    ],
+    "15,12": [
+      14,
+      26,
+      28,
+      25
+    ],
+    "5,25": [
+      26,
+      4
+    ],
+    "20,31": [
+      19,
+      22,
+      18
+    ],
+    "17,11": [
+      35,
+      39,
+      19,
+      2
+    ],
+    "25,16": [
+      28,
+      20,
+      10,
+      16
+    ],
+    "35,17": [
+      27,
+      2,
+      3,
+      35
+    ],
+    "35,22": [
+      18,
+      15,
+      1
+    ],
+    "34,19": [
+      15,
+      1,
+      28,
+      16
+    ],
+    "29,30": [
+      26,
+      28,
+      10,
+      36
+    ],
+    "29,10": [
+      28,
+      19,
+      34,
+      36
+    ],
+    "21,8": [
+      30,
+      6,
+      25
+    ],
+    "4,21": [
+      12,
+      8
+    ],
+    "14,4": [
+      15,
+      14,
+      28,
+      26
+    ],
+    "7,36": [
+      26,
+      1
+    ],
+    "29,1": [
+      28,
+      32,
+      13,
+      18
+    ],
+    "32,23": [
+      15,
+      34,
+      33
+    ],
+    "28,34": [
+      1,
+      32,
+      13,
+      11
+    ],
+    "12,21": [
+      4,
+      6,
+      2
+    ],
+    "13,10": [
+      10,
+      35,
+      21,
+      16
+    ],
+    "25,26": [
+      35,
+      38,
+      18,
+      16
+    ],
+    "2,11": [
+      13,
+      29,
+      10,
+      18
+    ],
+    "29,21": [
+      32,
+      2
+    ],
+    "2,24": [
+      10,
+      15,
+      35
+    ],
+    "15,37": [
+      19,
+      29,
+      39,
+      35
+    ],
+    "13,28": 13,
+    "39,3": [
+      18,
+      4,
+      28,
+      38
+    ],
+    "14,39": [
+      29,
+      35,
+      10,
+      14
+    ],
+    "31,10": [
+      35,
+      28,
+      1,
+      40
+    ],
+    "38,12": [
+      15,
+      32,
+      1,
+      13
+    ],
+    "10,20": [
+      1,
+      16,
+      36,
+      37
+    ],
+    "32,24": [
+      32,
+      24,
+      18,
+      16
+    ],
+    "28,19": [
+      3,
+      6,
+      32
+    ],
+    "9,21": [
+      19,
+      35,
+      38,
+      2
+    ],
+    "3,1": [
+      8,
+      15,
+      29,
+      34
+    ],
+    "17,16": [
+      19,
+      18,
+      36,
+      40
+    ],
+    "13,22": [
+      14,
+      2,
+      39,
+      6
+    ],
+    "4,2": [
+      35,
+      28,
+      40,
+      29
+    ],
+    "32,39": [
+      35,
+      1,
+      10,
+      28
+    ],
+    "33,29": [
+      1,
+      32,
+      35,
+      23
+    ],
+    "3,7": [
+      7,
+      17,
+      4,
+      35
+    ],
+    "2,6": [
+      35,
+      30,
+      13,
+      2
+    ],
+    "26,25": [
+      35,
+      38,
+      18,
+      16
+    ],
+    "21,29": [
+      32,
+      2
+    ],
+    "35,1": [
+      1,
+      6,
+      15,
+      8
+    ],
+    "10,6": [
+      1,
+      18,
+      36,
+      37
+    ]
+  }
+}

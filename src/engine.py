@@ -14,7 +14,7 @@ class TRIZEngine:
     def _load_data(self):
         # Load Parameters
         try:
-            with open(os.path.join(self.data_dir, "parameters.json"), "r", encoding="utf-8") as f:
+            with open(os.path.join(self.data_dir, "parameters.json"), "r", encoding="utf-8-sig") as f:
                 params_data = json.load(f)
                 for p in params_data:
                     self.parameters[p["id"]] = EngineeringParameter(**p)
@@ -23,7 +23,7 @@ class TRIZEngine:
 
         # Load Principles
         try:
-            with open(os.path.join(self.data_dir, "principles.json"), "r", encoding="utf-8") as f:
+            with open(os.path.join(self.data_dir, "principles.json"), "r", encoding="utf-8-sig") as f:
                 princ_data = json.load(f)
                 for p in princ_data:
                     self.principles[p["id"]] = InventivePrinciple(**p)
@@ -32,7 +32,7 @@ class TRIZEngine:
 
         # Load Matrix
         try:
-            with open(os.path.join(self.data_dir, "matrix.json"), "r", encoding="utf-8") as f:
+            with open(os.path.join(self.data_dir, "matrix.json"), "r", encoding="utf-8-sig") as f:
                 self.matrix = json.load(f)
         except Exception as e:
             print(f"Error loading matrix: {e}")

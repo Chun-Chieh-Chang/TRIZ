@@ -1,79 +1,35 @@
-# AI-Assisted TRIZ Engineering Problem Solver - Technical Requirement Document
+# AI-Assisted TRIZ Engineering & Multi-Domain Solver - Technical Requirement Document (TRD)
 
-**Version**: 1.0  
-**Date**: 2025-12-28  
-**Architecture**: Python Backend with strict typing
+**Version**: 2.0.0  
+**Date**: 2026-08-14  
+**Architecture**: Hybrid Static SPA (GitHub Pages) + Optional FastAPI Backend + Google Gemini AI Cloud Engine
 
 ---
 
 ## 1. System Overview
-The "Blue Box" TRIZ Engine is a software component designed to guide engineers through resolving technical contradictions using the classical TRIZ framework (ARIZ logic). It abstracts the complexity of the Altshuller Matrix and Inventive Principles into a streamlined workflow.
+The "TRIZ Solver PRO" is a multi-dimensional inventive contradiction resolution engine. It synthesizes classical Altshuller TRIZ logic (Contradiction Matrix, 40 Principles, Separation Principles, ARIZ-85C) and modern cross-domain adaptations (Software, IT Cloud, Business Management) with Google Gemini AI semantic understanding.
 
-## 2. Data Model & Knowledge Base
+## 2. Knowledge Architecture & Data Model
 
-### 2.1 Engineering Parameters (39 Attributes)
-Standard parameters describing physical systems.
-*   **Format**: JSON
-*   **Fields**: `id` (int), `name` (str), `description` (str), `keywords` (list[str])
+### 2.1 Master Knowledge Base (`data/triz_master_db.json`)
+* **39 Engineering Parameters**: Standardized physical & functional attributes.
+* **40 Inventive Principles**: Structured with classic engineering, software architecture, and business management practical cases.
+* **4 Physical Separation Principles**: Space, Time, Condition, System Scale with heuristic guiding questions.
+* **39x39 Contradiction Matrix**: Classical mapping + Heuristic top-4 universal fallback.
+* **8 Laws of Technological Evolution**: Evolution patterns & trends.
+* **ARIZ-85C Algorithm**: 4 core stages of inventive problem solving.
 
-### 2.2 Inventive Principles (40 Principles)
-The solutions provided by TRIZ.
-*   **Format**: JSON
-*   **Fields**: `id` (int), `name` (str), `description` (str), `examples` (list[str])
+### 2.2 Dual Engine (Hybrid Architecture)
+1. **Gemini AI Engine (`js/ai_service.js`)**:
+   * Uses Google Gemini 2.5/1.5 Flash API for deep semantic decomposition of non-engineering & commercial contradictions.
+   * Generates tailored, actionable 3-step solutions for the user's specific context.
+   * Pure client-side security: API Key stored solely in browser `localStorage`.
+2. **Local Master Engine (`js/engine.js`)**:
+   * Pure JavaScript implementation capable of 100% offline execution.
+   * Fallback routing, matrix lookups, multi-domain search, and Ideality calculation.
 
-### 2.3 Contradiction Matrix
-Mapping between Improving vs. Worsening parameters.
-*   **Structure**: Sparse Matrix or Hash Map.
-*   **Key**: `(improving_id, worsening_id)`
-*   **Value**: `list[principle_ids]`
-
-## 3. Core Algorithms
-
-### 3.1 Problem Normalization (Text-to-Parameter)
-*   **Input**: Natural language string (e.g., "The object is too heavy").
-*   **Logic**: 
-    1.  Keyword matching / Semantic similarity.
-    2.  Map to one of the 39 Parameters.
-*   **Output**: `ParameterID` or `AmbiguousError`.
-
-### 3.2 Matrix Lookup Engine
-*   **Input**: `improving_id` (int), `worsening_id` (int).
-*   **Logic**:
-    1.  Check for Physical Contradiction (improving == worsening). If true, return Separation Principles.
-    2.  Lookup standard matrix.
-    3.  If empty cell, return Heuristic Top 4 principles (#35, #10, #1, #28).
-*   **Output**: List of `InventivePrinciple` objects.
-
-### 3.3 Ideality Calculator
-*   **Formula**: `Ideality = Benefits / (Costs + Harms)`
-*   **Inputs**: User-rated effectiveness of benefits vs cost/harm impact.
-
-## 4. Workflow State Machine
-
-1.  **Stage 1: System Definition**
-    *   Goal: Define System Name, Primary Function.
-    *   Data: 9-Windows Context (Past/Present/Future x Sub/System/Super).
-
-2.  **Stage 2: Contradiction Definition**
-    *   Goal: Identify "What gets better?" vs "What gets worse?".
-    *   Action: Normalize inputs to Parameters (1-39).
-
-3.  **Stage 3: Solver Execution**
-    *   Action: Matrix Lookup.
-    *   Result: List of Principles.
-
-4.  **Stage 4: Solution Instantiation**
-    *   Action: User maps Principles to concrete ideas.
-    *   Action: Calculate Ideality of new solution.
-
-## 5. API / Interface Specification
-
-### Class: `TRIZSolverEngine`
-*   `load_knowledge_base(path: str)`: Load JSON data.
-*   `normalize_input(text: str) -> Parameter`: Guess parameter from text.
-*   `solve_contradiction(imp: int, wor: int) -> SolutionReport`: Get principles.
-*   `calculate_ideality(benefits: list, costs: list) -> float`: Score solution.
+## 3. UI/UX & Design System
+* Implements **SkillsBuilder Glass Order** (`backdrop-filter: blur(16px)`) and **Color Master Palette** (Slate-900 `#0F172A`, Slate-800 `#1E293B`, Royal Blue `#3B82F6`, Emerald `#10B981`).
+* Full responsive support with mobile bottom navigation bar and desktop sidebar.
 
 ---
-**Implementation Note**:
-This document serves as the basis for the `src` directory implementation.

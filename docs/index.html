@@ -4,185 +4,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Assisted TRIZ Solver</title>
+    <title>TRIZ Solver - 萃智多維矛盾求解與發明創新全能工作台</title>
     <meta name="description"
-        content="AI-powered TRIZ contradiction solver - Transform engineering problems into innovative solutions using Altshuller's matrix.">
-    <link rel="stylesheet" href="css/style.css?v=1.1">
+        content="AI-Assisted TRIZ Innovation Suite - 整合 40 發明原理、39 矛盾矩陣、物理矛盾四大分離、跨領域案例、ARIZ-85C 演算法與九屏幕法。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <div class="app-container">
-        <!-- Sidebar / Header -->
-        <header class="sidebar">
-            <div class="logo-area">
-                <h1>TRIZ <span class="highlight">SOLVER</span></h1>
-                <p>Advanced Engineering Solution Engine</p>
-            </div>
-            <div class="progress-steps">
-                <div class="step active" id="step1-indicator">1. Context</div>
-                <div class="step" id="step2-indicator">2. Contradiction</div>
-                <div class="step" id="step3-indicator">3. Solution</div>
+        <!-- Main Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-badge">PRO</div>
+                <div class="brand-title">TRIZ <span class="highlight">SOLVER</span></div>
+                <p class="brand-subtitle">萃智多維矛盾求解與發明創新工作台</p>
             </div>
 
-            <button class="btn-help" onclick="openHelpModal()">
-                <span>?</span> How to Use & Algorithm
-            </button>
+            <!-- Workspace Navigation -->
+            <nav class="nav-menu">
+                <div class="nav-group-title">核心求解工具</div>
+                <button class="nav-item active" data-target="workspace-diagnosis" id="nav-diagnosis">
+                    <span class="nav-icon">🧭</span>
+                    <span class="nav-text">智慧診斷路由</span>
+                    <span class="nav-tag">AI</span>
+                </button>
+                <button class="nav-item" data-target="workspace-technical" id="nav-technical">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">技術矛盾矩陣 (39)</span>
+                </button>
+                <button class="nav-item" data-target="workspace-physical" id="nav-physical">
+                    <span class="nav-icon">⚖️</span>
+                    <span class="nav-text">物理矛盾四大分離</span>
+                </button>
 
-            <div class="console-log" id="ai-console">
-                <div class="console-title">AI ENGINE LOGS</div>
-                <div class="console-content" id="log-content">
-                    <span class="log-line">> System Initialized...</span>
-                    <span class="log-line">> Waiting for input...</span>
+                <div class="nav-group-title" style="margin-top: 1rem;">知識庫與高階演算法</div>
+                <button class="nav-item" data-target="workspace-principles" id="nav-principles">
+                    <span class="nav-icon">🌐</span>
+                    <span class="nav-text">40 原理跨領域庫</span>
+                </button>
+                <button class="nav-item" data-target="workspace-advanced" id="nav-advanced">
+                    <span class="nav-icon">🚀</span>
+                    <span class="nav-text">ARIZ 與九屏幕法</span>
+                </button>
+            </nav>
+
+            <!-- Bottom Console / Status -->
+            <div class="sidebar-footer">
+                <button class="btn-ai-config" onclick="openAISettingsModal()">
+                    <div class="ai-status-indicator">
+                        <span class="ai-dot" id="sidebar-ai-dot"></span>
+                        <span id="sidebar-ai-status-text">Gemini AI (離線)</span>
+                    </div>
+                    <span class="ai-gear-badge">⚙️ 設定</span>
+                </button>
+
+                <button class="btn-help" onclick="openHelpModal()">
+                    <span>💡</span> TRIZ 方法論與操作指引
+                </button>
+
+                <div class="console-box" id="ai-console">
+                    <div class="console-header">
+                        <div class="status-dot"></div>
+                        <span>TRIZ 核心引擎日誌</span>
+                    </div>
+                    <div class="console-body" id="log-content">
+                        <span class="log-line">> 系統載入中...</span>
+                    </div>
                 </div>
             </div>
-        </header>
+        </aside>
 
-        <!-- Main Content -->
-        <main class="content-area">
+        <!-- Main Content Area -->
+        <main class="main-content">
 
-            <!-- Step 1: System Definition -->
-            <section id="step-1" class="wizard-step active">
-                <div class="card">
-                    <h2>Define Your Engineering System (定義系統)</h2>
-                    <p class="subtitle">To get the best results, please describe the specific component you are working
-                        on.</p>
+            <!-- WORKSPACE 1: 智慧診斷路由 (Smart Diagnosis) -->
+            <section id="workspace-diagnosis" class="workspace active">
+                <div class="workspace-header">
+                    <h2>🧭 智慧衝突診斷與方法路由 (Smart Diagnosis Router)</h2>
+                    <p>請用自然語言描述您遭遇的難題、設計兩難或技術瓶頸，系統將依據 TRIZ 心智模型進行語意分析並推薦最適工具鏈。</p>
+                </div>
 
-                    <div class="input-group">
-                        <label>System Name (系統名稱)</label>
-                        <input type="text" id="sys-name" placeholder="E.g. Hydraulic Control Valve, Robot Arm Joint">
+                <div class="card glass-card">
+                    <label class="section-title">輸入問題情境或矛盾兩難 (Natural Language Problem)</label>
+                    <div class="diagnosis-input-wrapper">
+                        <textarea id="diag-input" class="modern-textarea" rows="3"
+                            placeholder="例如：「希望提高伺服器資料處理速度，但記憶體與散熱成本劇增」或「想向客戶提供 24h 專屬人工客服但預算有限」..."></textarea>
+                        <div class="diagnosis-btn-group">
+                            <button class="btn-primary btn-glow" id="btn-run-diagnosis" onclick="handleRunDiagnosis()">
+                                <span>✨</span> 智慧診斷與 AI 形式化
+                            </button>
+                            <button class="btn-secondary" id="btn-open-ai-modal-inline" onclick="openAISettingsModal()">
+                                <span>🔑</span> 設定 API Key 啟用深度推理
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="question-guide">
-                        <p><strong>💡 Why is this important?</strong><br>Identifying the exact system boundary helps AI
-                            filter out irrelevant principles.</p>
+                    <div class="quick-examples">
+                        <span class="quick-label">快速體驗範例：</span>
+                        <button class="pill-btn" onclick="setDiagnosisExample('既要剛硬抗拉，又要柔順可自由彎曲 (自行車鏈條難題)')">🚲 物理矛盾 (既硬又軟)</button>
+                        <button class="pill-btn" onclick="setDiagnosisExample('希望系統移動速度更快，但是引擎運轉溫度急遽升高')">🏎️ 技術矛盾 (速度 vs 溫度)</button>
+                        <button class="pill-btn" onclick="setDiagnosisExample('希望提高微服務在高並發下的處理吞吐量，但各服務連線超時且資料庫負載過大')">💻 軟體架構衝突 (吞吐量 vs 資源)</button>
+                        <button class="pill-btn" onclick="setDiagnosisExample('產品結構組件過多導致製造成本高昂且維修不易')">✂️ 系統過剩 (Trimming 需求)</button>
                     </div>
 
-                    <button class="btn-primary" onclick="validateAndNext(1)">Next Step &rarr;</button>
+                    <!-- Diagnosis Result Display -->
+                    <div id="diag-result-card" class="diagnosis-result-box" style="display:none;">
+                        <div class="diag-header">
+                            <span class="diag-badge" id="diag-type-badge">技術矛盾</span>
+                            <span class="diag-confidence" id="diag-confidence-text">匹配信心度: 92%</span>
+                        </div>
+                        <h3 id="diag-title" class="diag-heading">技術矛盾 (Technical Contradiction)</h3>
+                        <p id="diag-desc" class="diag-summary"></p>
+
+                        <div class="diag-recommendation">
+                            <strong>🎯 推薦解題路徑：</strong>
+                            <span id="diag-path-text">39 參數矛盾矩陣查表 + 跨領域 40 發明原理對應解</span>
+                        </div>
+
+                        <div class="diag-action-bar">
+                            <button class="btn-primary" id="btn-jump-to-solver" onclick="routeToSuggestedTool()">
+                                前往推薦工具立即求解 &rarr;
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Step 2: Contradiction -->
-            <section id="step-2" class="wizard-step">
-                <div class="card">
-                    <h2>Define Contradiction (定義矛盾)</h2>
-                    <p class="subtitle">Describe the conflict in natural language. AI will map it to TRIZ parameters.
-                    </p>
 
-                    <!-- Improving -->
-                    <div class="ai-input-box">
-                        <label>What do you want to IMPROVE? (改善參數)</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="input-improving" placeholder="e.g. I want to make it move faster">
-                            <button class="btn-icon" onclick="analyzeInput('improving')">🔍</button>
+            <!-- WORKSPACE 2: 技術矛盾矩陣 (Technical Contradiction) -->
+            <section id="workspace-technical" class="workspace">
+                <div class="workspace-header">
+                    <h2>⚙️ 技術矛盾 39 參數矩陣工作台 (Technical Contradiction)</h2>
+                    <p>標準 TRIZ 衝突：當改進系統某個參數時，導致另一個參數惡化。透過 Altshuller 矛盾矩陣檢索歷史最佳發明原理。</p>
+                </div>
+
+                <div class="grid-2col">
+                    <!-- Left: Configuration -->
+                    <div class="card glass-card">
+                        <h3>1. 定義系統與矛盾對 (Define Conflict)</h3>
+                        
+                        <div class="form-group">
+                            <label>工程系統 / 產品名稱</label>
+                            <input type="text" id="tech-sys-name" class="modern-input" placeholder="例如：水下探勘載具、散熱熱導管、資料庫查詢引擎">
                         </div>
-                        <div class="ai-suggestion" id="suggestion-improving" style="display:none">
-                            <span>Detected: </span>
-                            <strong id="res-improving-name">Speed</strong>
-                            <span class="badge" id="res-improving-id">ID: 9</span>
+
+                        <!-- Improving Param -->
+                        <div class="form-group">
+                            <label class="label-with-badge">
+                                <span>🟢 欲改善的參數 (What gets BETTER?)</span>
+                            </label>
+                            <div class="input-with-action">
+                                <input type="text" id="input-improving-text" class="modern-input" placeholder="輸入關鍵字 (如: 速度, 強度, 功耗)...">
+                                <button class="btn-icon" onclick="autoDetectParam('improving')" title="智能辨識參數">🔍</button>
+                            </div>
+                            <select id="select-improving" class="modern-select" onchange="syncParamSelect('improving')">
+                                <option value="">-- 或直接由 39 參數清單挑選 --</option>
+                            </select>
                         </div>
+
+                        <!-- Worsening Param -->
+                        <div class="form-group">
+                            <label class="label-with-badge">
+                                <span>🔴 會惡化的參數 (What gets WORSE?)</span>
+                            </label>
+                            <div class="input-with-action">
+                                <input type="text" id="input-worsening-text" class="modern-input" placeholder="輸入關鍵字 (如: 重量, 溫度, 複雜度)...">
+                                <button class="btn-icon" onclick="autoDetectParam('worsening')" title="智能辨識參數">🔍</button>
+                            </div>
+                            <select id="select-worsening" class="modern-select" onchange="syncParamSelect('worsening')">
+                                <option value="">-- 或直接由 39 參數清單挑選 --</option>
+                            </select>
+                        </div>
+
+                        <button class="btn-primary btn-block btn-glow" onclick="executeTechnicalSolve()" id="btn-tech-solve">
+                            ⚡ 矩陣查表求解 (Matrix Lookup)
+                        </button>
                     </div>
 
-                    <!-- Worsening -->
-                    <div class="ai-input-box">
-                        <label>What gets WORSE? (惡化參數)</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="input-worsening" placeholder="e.g. But it gets too hot">
-                            <button class="btn-icon" onclick="analyzeInput('worsening')">🔍</button>
+                    <!-- Right: Solution Report -->
+                    <div class="card glass-card result-panel">
+                        <div class="result-header">
+                            <h3>2. 矩陣求解報告 (Solution Report)</h3>
+                            <span class="badge badge-accent" id="tech-strategy-tag">等待輸入...</span>
                         </div>
-                        <div class="ai-suggestion" id="suggestion-worsening" style="display:none">
-                            <span>Detected: </span>
-                            <strong id="res-worsening-name">Temperature</strong>
-                            <span class="badge" id="res-worsening-id">ID: 17</span>
-                        </div>
-                    </div>
 
-                    <div class="actions">
-                        <button class="btn-secondary" onclick="goToStep(1)">&larr; Back</button>
-                        <button class="btn-primary" onclick="solveContradiction()" id="btn-solve" disabled>Generate
-                            Solution &rarr;</button>
+                        <div id="tech-solution-container">
+                            <div class="empty-placeholder">
+                                <div class="placeholder-icon">📊</div>
+                                <p>請於左側設定改善與惡化參數，點擊「矩陣查表求解」以生成推薦原理與跨領域案例。</p>
+                            </div>
+                        </div>
+
+                        <!-- Ideality Calculator Drawer -->
+                        <div class="ideality-box" id="ideality-box" style="display:none; margin-top: 1.5rem;">
+                            <div class="ideality-header">
+                                <h4>💡 理想度評估器 (Ideality Calculator)</h4>
+                                <span class="formula">Ideality = 有用功能 / (成本 + 危害)</span>
+                            </div>
+                            <div class="ideality-controls">
+                                <label>有用功能價值提升 (Benefits: 1~10): <b id="val-benefit">8</b></label>
+                                <input type="range" id="range-benefit" min="1" max="10" value="8" oninput="calcIdeality()">
+                                <label>成本與引入負面影響 (Cost/Harm: 1~10): <b id="val-cost">2</b></label>
+                                <input type="range" id="range-cost" min="1" max="10" value="2" oninput="calcIdeality()">
+                                <div class="ideality-score">預期方案理想度評分：<span id="ideality-score-val" class="highlight-score">4.00</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Step 3: Results -->
-            <section id="step-3" class="wizard-step">
-                <div class="card result-card">
-                    <div class="result-header">
-                        <h2>Solution Matrix</h2>
-                        <span class="strategy-tag" id="strategy-display">Standard Solution</span>
+
+            <!-- WORKSPACE 3: 物理矛盾四大分離 (Physical Contradiction) -->
+            <section id="workspace-physical" class="workspace">
+                <div class="workspace-header">
+                    <h2>⚖️ 物理矛盾四大分離工作坊 (Physical Contradiction Workshop)</h2>
+                    <p>當系統對同一參數提出互斥要求（既要 P，又要 非 P）。利用四大分離原理（空間、時間、條件、系統層級）打破妥協局限。</p>
+                </div>
+
+                <div class="card glass-card">
+                    <div class="pc-input-area">
+                        <label class="section-title">定義互斥物理要求 (Define Contradictory Demands)</label>
+                        <div class="grid-2col" style="gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group">
+                                <label>要求具備屬性 P (State P)</label>
+                                <input type="text" id="pc-state-p" class="modern-input" placeholder="例如：零件必須極度剛硬（承受重載抗拉）">
+                            </div>
+                            <div class="form-group">
+                                <label>同時要求具備屬性 非 P (State Non-P)</label>
+                                <input type="text" id="pc-state-non-p" class="modern-input" placeholder="例如：零件必須具備高柔順度（能夠自由轉動彎曲）">
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="executePhysicalSolve()">
+                            🔮 展開四大分離維度求解方案
+                        </button>
                     </div>
 
-                    <div class="principles-grid" id="principles-container">
-                        <!-- Principles will be injected here -->
-                    </div>
-
-                    <div class="ideality-section">
-                        <h3>About TRIZ</h3>
-                        <p style="color: #aaa; line-height: 1.6;">
-                            TRIZ (Theory of Inventive Problem Solving) was developed by Genrich Altshuller
-                            through analyzing over 200,000 patents. The contradiction matrix helps engineers
-                            find proven innovative principles to resolve technical conflicts.
-                        </p>
-                    </div>
-
-                    <div class="actions">
-                        <button class="btn-secondary" onclick="restart()">Start Over</button>
+                    <!-- Separation Principles Grid -->
+                    <div class="separations-grid" id="separations-container">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
             </section>
+
+
+            <!-- WORKSPACE 4: 40 原理跨領域庫 (40 Principles Explorer) -->
+            <section id="workspace-principles" class="workspace">
+                <div class="workspace-header">
+                    <h2>🌐 40 發明原理跨領域知識庫 (Cross-Domain 40 Principles)</h2>
+                    <p>全覽 Altshuller 40 發明原理，並包含當代軟體架構、雲端系統、商業模式與專利實戰延伸應用。</p>
+                </div>
+
+                <div class="card glass-card">
+                    <div class="filter-toolbar">
+                        <div class="search-box">
+                            <input type="text" id="principle-search-input" class="modern-input"
+                                placeholder="檢索發明原理 (如: 1, 分割, 快取, 軟體, 成本, 預先, 模組化)..."
+                                oninput="handlePrincipleSearch()">
+                        </div>
+                        <div class="domain-filters">
+                            <button class="filter-chip active" data-domain="all" onclick="setDomainFilter('all')">🌟 全領域</button>
+                            <button class="filter-chip" data-domain="engineering" onclick="setDomainFilter('engineering')">⚙️ 經典工程</button>
+                            <button class="filter-chip" data-domain="software" onclick="setDomainFilter('software')">💻 軟體與 IT 架構</button>
+                            <button class="filter-chip" data-domain="business" onclick="setDomainFilter('business')">📈 商業與管理</button>
+                        </div>
+                    </div>
+
+                    <div class="principles-cards-container" id="principles-all-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- WORKSPACE 5: ARIZ 與九屏幕法 (Advanced Tools) -->
+            <section id="workspace-advanced" class="workspace">
+                <div class="workspace-header">
+                    <h2>🚀 高階創新演算法 (ARIZ-85C & 9-Windows Explorer)</h2>
+                    <p>當矛盾矩陣與分離原理仍無法突破時，運用 ARIZ-85C 演算法進行極限衝突形式化，或以九屏幕法探勘時空資源。</p>
+                </div>
+
+                <!-- Tabs: ARIZ vs Nine-Windows vs Evolution Laws -->
+                <div class="sub-nav-tabs">
+                    <button class="sub-tab active" onclick="switchSubTab('nine-windows')">🪟 九屏幕法 (Nine-Windows)</button>
+                    <button class="sub-tab" onclick="switchSubTab('ariz-flow')">🧭 ARIZ-85C 演算法步驟</button>
+                    <button class="sub-tab" onclick="switchSubTab('evolution-laws')">📈 技術系統 8 大進化法則</button>
+                </div>
+
+                <!-- Sub-tab 1: Nine Windows -->
+                <div id="subtab-nine-windows" class="subtab-content active">
+                    <div class="card glass-card">
+                        <div class="nine-windows-header">
+                            <h3>九屏幕法時空資源探勘矩陣 (System / Time Exploration)</h3>
+                            <p>從時間（過去/現在/未來）與系統層級（超系統/系統/子系統）全方位尋找未被利用的免費資源。</p>
+                        </div>
+
+                        <div class="nine-windows-grid">
+                            <div class="nw-cell nw-corner">層級 \ 時間</div>
+                            <div class="nw-cell nw-header">過去 (Past)</div>
+                            <div class="nw-cell nw-header">現在 (Present)</div>
+                            <div class="nw-cell nw-header">未來 (Future)</div>
+
+                            <div class="nw-cell nw-side">超系統<br>(Super-system)</div>
+                            <div class="nw-cell"><textarea id="nw-super-past" placeholder="過去的外部環境、周邊設備與基礎建設..."></textarea></div>
+                            <div class="nw-cell"><textarea id="nw-super-present" placeholder="當前的外部環境、網路生態、使用者習慣..."></textarea></div>
+                            <div class="nw-cell"><textarea id="nw-super-future" placeholder="未來的產業生態、法規演進、超系統趨勢..."></textarea></div>
+
+                            <div class="nw-cell nw-side">當前系統<br>(System)</div>
+                            <div class="nw-cell"><textarea id="nw-sys-past" placeholder="上一代產品設計、歷史架構..."></textarea></div>
+                            <div class="nw-cell active-system"><textarea id="nw-sys-present" placeholder="【核心系統】當前遭遇矛盾的產品/系統..."></textarea></div>
+                            <div class="nw-cell"><textarea id="nw-sys-future" placeholder="下一代理想化系統、最終理想解 (IFR)..."></textarea></div>
+
+                            <div class="nw-cell nw-side">子系統<br>(Sub-system)</div>
+                            <div class="nw-cell"><textarea id="nw-sub-past" placeholder="過去採用的零件材料、舊製程..."></textarea></div>
+                            <div class="nw-cell"><textarea id="nw-sub-present" placeholder="當前內部組件、微觀場、程式碼函式..."></textarea></div>
+                            <div class="nw-cell"><textarea id="nw-sub-future" placeholder="未來的新型微觀奈米材料、場效應、AI 模型..."></textarea></div>
+                        </div>
+
+                        <div class="actions-right" style="margin-top: 1rem;">
+                            <button class="btn-secondary" onclick="exportNineWindows()">📋 複製九屏幕分析筆記</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-tab 2: ARIZ-85C Flow -->
+                <div id="subtab-ariz-flow" class="subtab-content">
+                    <div class="card glass-card">
+                        <h3>ARIZ-85C 發明問題解決演算法四大核心階段</h3>
+                        <p class="subtitle">ARIZ (Algorithm for Inventive Problem Solving) 是處理高難度無解問題的極致演算法。</p>
+                        <div class="ariz-stages-container" id="ariz-stages-container">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-tab 3: Evolution Laws -->
+                <div id="subtab-evolution-laws" class="subtab-content">
+                    <div class="card glass-card">
+                        <h3>技術系統 8 大客觀進化法則 (8 Laws of Technological Evolution)</h3>
+                        <div class="evolution-laws-grid" id="evolution-laws-container">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </main>
-
-        <footer style="text-align: center; padding: 20px; color: #666; font-size: 0.9em; margin-top: auto;">
-            Developed by Wesley Chang @2026
-        </footer>
     </div>
 
-    <!-- Help Modal -->
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-nav">
+        <button class="mobile-nav-item active" data-target="workspace-diagnosis">
+            <span class="m-icon">🧭</span>
+            <span>診斷</span>
+        </button>
+        <button class="mobile-nav-item" data-target="workspace-technical">
+            <span class="m-icon">⚙️</span>
+            <span>技術矛盾</span>
+        </button>
+        <button class="mobile-nav-item" data-target="workspace-physical">
+            <span class="m-icon">⚖️</span>
+            <span>物理矛盾</span>
+        </button>
+        <button class="mobile-nav-item" data-target="workspace-principles">
+            <span class="m-icon">🌐</span>
+            <span>40 原理</span>
+        </button>
+        <button class="mobile-nav-item" data-target="workspace-advanced">
+            <span class="m-icon">🚀</span>
+            <span>高階演算法</span>
+        </button>
+    </nav>
+
+    <!-- Modal: Help & TRIZ Guide -->
     <div class="modal-overlay" id="help-modal">
-        <div class="modal-container">
+        <div class="modal-container glass-card">
             <div class="modal-header">
-                <h3>Usage & Algorithm Principle</h3>
+                <h3>💡 TRIZ 體系全景與求解工作流指引</h3>
                 <button class="modal-close" onclick="closeHelpModal()">&times;</button>
             </div>
             <div class="modal-body">
-                <h4>How to Use</h4>
-                <ol>
-                    <li><strong>Define System:</strong> Enter the name of the engineering component you want to improve.
-                    </li>
-                    <li><strong>Define Contradiction:</strong>
-                        <ul>
-                            <li>Describe what you want to <em>IMPROVE</em> (e.g., "Speed", "Strength").</li>
-                            <li>Describe what gets <em>WORSE</em> as a result (e.g., "Weight", "Cost").</li>
-                            <li>The AI will automatically map these to one of the 39 standard TRIZ parameters.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Generate Solution:</strong> Click "Generate Solution" to see the Inventive Principles
-                        recommended by the matrix.</li>
-                </ol>
+                <h4>如何選擇最適合的 TRIZ 工具？</h4>
+                <div class="flow-guide-box">
+                    <p><strong>1. 【技術矛盾】</strong>：若問題表現為「改善某個指標 A 時，導致另一個指標 B 惡化」，請前往 <strong>技術矛盾矩陣工作台</strong>。</p>
+                    <p><strong>2. 【物理矛盾】</strong>：若問題表現為「對同一個部件/參數同時提出相反要求（既要 P，又要 非 P）」，請前往 <strong>物理矛盾分離工作坊</strong>。</p>
+                    <p><strong>3. 【系統成本過高或零件繁雜】</strong>：運用 <strong>功能分析與 Trimming</strong>，參考 40 發明原理中的抽取、多功能與自助原理。</p>
+                    <p><strong>4. 【高難度極限突破】</strong>：使用 <strong>ARIZ-85C</strong> 演算法與 <strong>九屏幕法</strong> 探勘時空潛在資源。</p>
+                </div>
 
-                <h4>Algorithm Principle</h4>
-                <p>
-                    This tool is based on the <strong>Theory of Inventive Problem Solving (TRIZ)</strong> developed by
-                    Genrich Altshuller.
-                </p>
-                <p>
-                    The core engine uses the classic <strong>Contradiction Matrix</strong>, a 39x39 grid that maps
-                    technical conflicts.
-                    When you improve one parameter (e.g., <em>Speed</em>) and another worsens (e.g.,
-                    <em>Repairability</em>), the matrix provides specific <strong>Inventive Principles</strong> (from a
-                    set of 40) that historically solved this specific type of conflict in patent literature.
-                </p>
-                <p>
-                    Instead of compromising, TRIZ encourages finding a solution that satisfies both requirements.
-                </p>
+                <h4>TRIZ 40 發明原理跨領域對照概念</h4>
+                <p>本系統將經典俄系工程 40 原理延伸至軟體工程（微服務、快取、非同步、容器化）與現代商業管理（訂閱制、敏捷拆分、生態聚合），使任何行業的矛盾問題皆能獲得啟發。</p>
             </div>
         </div>
     </div>
 
-    <!-- Load engine first, then main -->
+    <!-- Modal: AI Settings -->
+    <div class="modal-overlay" id="ai-settings-modal">
+        <div class="modal-container glass-card">
+            <div class="modal-header">
+                <h3>✨ Google Gemini AI 雲端引擎設定</h3>
+                <button class="modal-close" onclick="closeAISettingsModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="subtitle" style="margin-bottom: 1rem; color: #94A3B8; font-size: 0.88rem;">
+                    輸入您的 Google Gemini API Key 以啟用非工程/商業複雜語意解構與量身客製化解法生成。
+                </p>
+
+                <div class="form-group">
+                    <label>Gemini API Key</label>
+                    <div class="input-with-action">
+                        <input type="password" id="ai-api-key-input" class="modern-input"
+                            placeholder="貼上您的 Gemini API Key (AIzaSy...)" autocomplete="off">
+                        <button class="btn-icon" onclick="toggleApiKeyVisibility()" title="顯示/隱藏金鑰">👁️</button>
+                    </div>
+                    <small style="color: #64748B; font-size: 0.78rem;">
+                        尚未取得金鑰？可至 <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: #60A5FA;">Google AI Studio</a> 免費申請。
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>模型選擇 (Model)</label>
+                    <select id="ai-model-select" class="modern-select">
+                        <option value="gemini-2.5-flash">Gemini 2.5 Flash (最推薦・速度極快且語意精準)</option>
+                        <option value="gemini-1.5-flash">Gemini 1.5 Flash (輕量快速)</option>
+                        <option value="gemini-1.5-pro">Gemini 1.5 Pro (深度長思考)</option>
+                    </select>
+                </div>
+
+                <div class="ai-privacy-note">
+                    <strong>🔒 隱私與安全性保證：</strong>
+                    您的 API Key 僅儲存於當前瀏覽器本機的 <code>localStorage</code>，所有請求皆由瀏覽器直接對 Google 官方端點發起，絕不上傳或經過任何第三方伺服器。
+                </div>
+
+                <div class="modal-actions" style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 1.5rem;">
+                    <button class="btn-secondary" onclick="testAIConnection()" id="btn-test-ai">
+                        ⚡ 測試連線
+                    </button>
+                    <button class="btn-secondary" onclick="clearAIConfig()" style="color: #F87171;">
+                        🗑️ 清除金鑰
+                    </button>
+                    <button class="btn-primary" onclick="saveAISettings()">
+                        💾 儲存並啟用
+                    </button>
+                </div>
+
+                <div id="ai-test-status" style="margin-top: 10px; font-size: 0.85rem; display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/ai_service.js"></script>
     <script src="js/engine.js"></script>
     <script src="js/main.js"></script>
 </body>
