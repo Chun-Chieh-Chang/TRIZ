@@ -1,30 +1,18 @@
 # TRIZ 專案開發與架構演進日誌 (DEV_LOG.md)
 
-## 2026-08-15: 清理異常與重複的 GitHub Workflows (MECE CI/CD 優化)
+## 2026-08-15: 升級 AI 模型矩陣：支援 Agnes 專用模型、Gemini 2.5/2.0 全系列與自訂端點
 
 ### 1. 執行目標 (Goal)
-- **問題回報**：遠端 GitHub 倉庫在每次推送時同時觸發了兩個 Actions（`Deploy GitHub Pages` 與 `Jules Invoke`），其中歷史遺留的 `Jules Invoke` 產生執行異常報紅。
+- **問題回報**：參照 `8D-Creator` 導入之 AI 引擎模型清單不完整，缺少 `agnes` 專用模型與 2.5/2.0 最新推理模型。
 - **執行範疇**：
-  1. 徹底刪除無效的 `.github/workflows/jules.yml`。
-  2. 僅保留唯一的 `.github/workflows/deploy-pages.yml`（GitHub Pages 官方部署工作流）。
-  3. 將防禦規則萃取至 `AGENTS.md` 實施自演化管理。
+  1. 升級 `js/ai_service.js`：支援 `gemini-2.5-flash`、`gemini-2.5-pro`、`gemini-2.0-flash`、`gemini-2.0-flash-thinking-exp`、`gemini-2.0-pro-exp`、`agnes` 以及自訂模型 ID (`custom`) 與自訂 API Base URL。
+  2. 更新 `index.html` 與 `js/main.js`：提供完整下拉選項、自訂模型輸入框與動態切換支援。
+  3. 將完整靜態資源鏡像同步至 `docs/` 與 `static/`。
+  4. 記錄 RCA/CAPA 並將預防規則萃取至 `AGENTS.md`。
 
 ### 2. 問題分析 (RCA) 與預防措施 (CAPA)
 * **根因分析 (RCA)**：
-  - 專案最初包含歷史舊樣板 `.github/workflows/jules.yml`，在新增 `deploy-pages.yml` 後未依 MECE 原則將舊檔清理，導致 push 事件同時觸發兩個工作流，且舊腳本因缺乏依賴而失敗。
+  - 初始實作 AI 模組時，僅提供了基礎選項，未納入參照專案生態中的 `agnes` 專屬模型與 Gemini 2.0/2.5 完整思考推理模型，亦缺乏開放式自訂模型 ID 欄位。
 * **矯正與預防措施 (CAPA)**：
-  - **立即矯正**：刪除 `.github/workflows/jules.yml`，確保僅由 `deploy-pages.yml` 負責 Pages 部署。
-  - **自我演化**：將「CI/CD 目錄前置清查與單一職責規範」寫入專案 `AGENTS.md`，未來建立 CI 腳本前強制先執行衝突清理。
-
----
-
-## 2026-08-14: 全專案整體程式碼與檔案優化重構 + 遠端倉庫推送與 GitHub Pages 建置
-
-### 1. 執行目標 (Goal)
-- **觸發指令**：執行專案的整體程式碼與檔案優化作業，並推送到 `https://github.com/Chun-Chieh-Chang/TRIZ` 建立 GitHub Pages。
-- **執行範疇**：
-  1. **MECE 全面盤點與清理**：清理死碼、重複暫存檔，將大型參考 PDF (`books/`) 納入 `.gitignore` 以符合 GitHub 規範。
-  2. **多端資源 100% 同步**：將根目錄 SPA 核心（HTML, CSS, JS, Master DB, SW）同步至 `docs/` (GitHub Pages)、`static/` (FastAPI) 與 `src/data/`。
-  3. **文件全量同步**：更新 `README.md`、`TRIZ_TRD.md`、`guides/Technical_Specs.md` 至 v2.0.0。
-  4. **GitHub Actions 自動化部署**：建立 `.github/workflows/deploy-pages.yml` 自動觸發 GitHub Pages 部署。
-  5. **成功推送遠端**：推送至 `https://github.com/Chun-Chieh-Chang/TRIZ.git` (分支: `main`)。
+  - **立即矯正**：將 `agnes` 與 Gemini 2.5/2.0 全系列旗艦模型作為一等公民支援，並加入「自訂模型名稱 (Custom Model ID)」與「自訂 Base URL」輸入功能，無論使用官方或微調端點皆能彈性配置。
+  - **自我演化**：將「現代模型基準線規範」寫入 `AGENTS.md`。

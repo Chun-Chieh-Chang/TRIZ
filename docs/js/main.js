@@ -640,20 +640,33 @@ function openAISettingsModal() {
     if (!modal) return;
 
     // Pre-fill existing config
-    const config = appState.engine?.aiService?.getConfig() || { apiKey: '', model: 'gemini-2.5-flash' };
+    const config = appState.engine?.aiService?.getConfig() || { apiKey: '', model: 'gemini-2.5-flash', customModel: '', baseUrl: '' };
     const keyInput = document.getElementById('ai-api-key-input');
     const modelSelect = document.getElementById('ai-model-select');
+    const customModelInput = document.getElementById('ai-custom-model-input');
+    const baseUrlInput = document.getElementById('ai-base-url-input');
     const statusBox = document.getElementById('ai-test-status');
 
-    if (keyInput) keyInput.value = config.apiKey;
-    if (modelSelect) modelSelect.value = config.model;
+    if (keyInput) keyInput.value = config.apiKey || '';
+    if (modelSelect) modelSelect.value = config.model || 'gemini-2.5-flash';
+    if (customModelInput) customModelInput.value = config.customModel || '';
+    if (baseUrlInput) baseUrlInput.value = config.baseUrl || 'https://generativelanguage.googleapis.com';
     if (statusBox) statusBox.style.display = 'none';
 
+    toggleCustomModelInput();
     modal.classList.add('active');
 }
 
 function closeAISettingsModal() {
     document.getElementById('ai-settings-modal')?.classList.remove('active');
+}
+
+function toggleCustomModelInput() {
+    const modelSelect = document.getElementById('ai-model-select');
+    const customGroup = document.getElementById('custom-model-group');
+    if (modelSelect && customGroup) {
+        customGroup.style.display = (modelSelect.value === 'custom') ? 'block' : 'none';
+    }
 }
 
 function toggleApiKeyVisibility() {
@@ -667,15 +680,16 @@ function updateAIStatusUI() {
     const dot = document.getElementById('sidebar-ai-dot');
     const text = document.getElementById('sidebar-ai-status-text');
     const isReady = appState.engine?.isAIReady();
+    const effectiveModel = appState.engine?.aiService?.getEffectiveModel() || 'Gemini';
 
     if (dot && text) {
         if (isReady) {
             dot.className = 'ai-dot active';
-            text.innerText = 'Gemini AI (啟用中)';
+            text.innerText = `AI 啟用中 (${effectiveModel})`;
             text.style.color = '#34D399';
         } else {
             dot.className = 'ai-dot';
-            text.innerText = 'Gemini AI (本機模式)';
+            text.innerText = 'AI 引擎 (本機模式)';
             text.style.color = '#94A3B8';
         }
     }
@@ -684,11 +698,15 @@ function updateAIStatusUI() {
 async function testAIConnection() {
     const keyInput = document.getElementById('ai-api-key-input');
     const modelSelect = document.getElementById('ai-model-select');
+    const customModelInput = document.getElementById('ai-custom-model-input');
+    const baseUrlInput = document.getElementById('ai-base-url-input');
     const statusBox = document.getElementById('ai-test-status');
     const btnTest = document.getElementById('btn-test-ai');
 
     const key = keyInput ? keyInput.value.trim() : '';
     const model = modelSelect ? modelSelect.value : 'gemini-2.5-flash';
+    const customModel = customModelInput ? customModelInput.value.trim() : '';
+    const baseUrl = baseUrlInput ? baseUrlInput.value.trim() : '';
 
     if (!key) {
         alert('請先輸入 API Key 再進行連線測試。');
@@ -698,26 +716,27 @@ async function testAIConnection() {
     if (statusBox) {
         statusBox.style.display = 'block';
         statusBox.style.color = '#60A5FA';
-        statusBox.innerText = '⏳ 正在測試 Gemini API 連線...';
+        statusBox.innerText = '⏳ 正在測試 AI 模型 API 連線...';
     }
     if (btnTest) btnTest.disabled = true;
 
     // Temporarily save to test
-    appState.engine.aiService.saveConfig(key, model);
+    appState.engine.aiService.saveConfig(key, model, customModel, baseUrl);
 
     try {
         await appState.engine.aiService.testConnection();
+        const effectiveModel = appState.engine.aiService.getEffectiveModel();
         if (statusBox) {
             statusBox.style.color = '#34D399';
-            statusBox.innerText = '✓ 連線測試成功！Gemini 模型回應正常。';
+            statusBox.innerText = `✓ 連線測試成功！模型 [${effectiveModel}] 回應正常。`;
         }
-        log('✓ Gemini AI 連線測試成功。');
+        log(`✓ AI 模型 [${effectiveModel}] 連線測試成功。`);
     } catch (e) {
         if (statusBox) {
             statusBox.style.color = '#F87171';
             statusBox.innerText = `✗ 連線失敗: ${e.message}`;
         }
-        log(`✗ Gemini AI 連線失敗: ${e.message}`);
+        log(`✗ AI 連線失敗: ${e.message}`);
     } finally {
         if (btnTest) btnTest.disabled = false;
     }
@@ -726,29 +745,34 @@ async function testAIConnection() {
 function saveAISettings() {
     const keyInput = document.getElementById('ai-api-key-input');
     const modelSelect = document.getElementById('ai-model-select');
+    const customModelInput = document.getElementById('ai-custom-model-input');
+    const baseUrlInput = document.getElementById('ai-base-url-input');
 
     const key = keyInput ? keyInput.value.trim() : '';
     const model = modelSelect ? modelSelect.value : 'gemini-2.5-flash';
+    const customModel = customModelInput ? customModelInput.value.trim() : '';
+    const baseUrl = baseUrlInput ? baseUrlInput.value.trim() : '';
 
-    appState.engine.aiService.saveConfig(key, model);
+    appState.engine.aiService.saveConfig(key, model, customModel, baseUrl);
     updateAIStatusUI();
     closeAISettingsModal();
 
+    const effectiveModel = appState.engine.aiService.getEffectiveModel();
     if (key) {
-        log(`✓ Gemini AI 配置已儲存 (模型: ${model})`);
-        alert('Gemini AI 雲端引擎已成功設定並啟用！');
+        log(`✓ AI 配置已儲存 (模型: ${effectiveModel})`);
+        alert(`AI 雲端引擎已成功設定並啟用 (模型: ${effectiveModel})！`);
     } else {
-        log('Gemini API Key 已清空，切換回本機模式。');
+        log('AI API Key 已清空，切換回本機模式。');
     }
 }
 
 function clearAIConfig() {
-    if (confirm('確定要清除儲存的 Gemini API Key 嗎？')) {
+    if (confirm('確定要清除儲存的 AI API Key 嗎？')) {
         appState.engine.aiService.clearConfig();
         const keyInput = document.getElementById('ai-api-key-input');
         if (keyInput) keyInput.value = '';
         updateAIStatusUI();
-        log('Gemini API Key 已清除。');
+        log('AI API Key 已清除。');
         alert('API Key 已清除，系統已回到本機啟發式模式。');
     }
 }

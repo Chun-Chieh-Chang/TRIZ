@@ -429,11 +429,27 @@
 
                 <div class="form-group">
                     <label>模型選擇 (Model)</label>
-                    <select id="ai-model-select" class="modern-select">
-                        <option value="gemini-2.5-flash">Gemini 2.5 Flash (最推薦・速度極快且語意精準)</option>
-                        <option value="gemini-1.5-flash">Gemini 1.5 Flash (輕量快速)</option>
-                        <option value="gemini-1.5-pro">Gemini 1.5 Pro (深度長思考)</option>
+                    <select id="ai-model-select" class="modern-select" onchange="toggleCustomModelInput()">
+                        <option value="gemini-2.5-flash">Gemini 2.5 Flash (最推薦・最新極速旗艦)</option>
+                        <option value="gemini-2.5-pro">Gemini 2.5 Pro (最新高階深思推理)</option>
+                        <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+                        <option value="gemini-2.0-flash-thinking-exp">Gemini 2.0 Flash Thinking (深度思考)</option>
+                        <option value="gemini-2.0-pro-exp">Gemini 2.0 Pro Experimental</option>
+                        <option value="agnes">Agnes 專用發明問題求解模型 (Agnes)</option>
+                        <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+                        <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+                        <option value="custom">自訂模型名稱 (Custom Model ID)...</option>
                     </select>
+                </div>
+
+                <div class="form-group" id="custom-model-group" style="display: none;">
+                    <label>自訂模型名稱 (Custom Model ID)</label>
+                    <input type="text" id="ai-custom-model-input" class="modern-input" placeholder="例如：agnes, custom-triz-model">
+                </div>
+
+                <div class="form-group">
+                    <label>API 端點 Base URL (可選，預設 Google 官方)</label>
+                    <input type="text" id="ai-base-url-input" class="modern-input" placeholder="https://generativelanguage.googleapis.com">
                 </div>
 
                 <div class="ai-privacy-note">
