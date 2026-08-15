@@ -3,11 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <title>TRIZ Solver - 萃智多維矛盾求解與發明創新全能工作台</title>
     <meta name="description"
         content="AI-Assisted TRIZ Innovation Suite - 整合 40 發明原理、39 矛盾矩陣、物理矛盾四大分離、跨領域案例、ARIZ-85C 演算法與九屏幕法。">
+    
+    <!-- PWA & Mobile Web App Meta -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TRIZ Solver">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+    
     <link rel="stylesheet" href="css/style.css?v=2.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +79,10 @@
                     <span>📖</span> 使用手冊 SOP 與原理概述
                 </button>
 
+                <button id="btn-pwa-install" class="btn-help" style="display: none; background: rgba(59, 130, 246, 0.12); border-color: rgba(59, 130, 246, 0.3); color: #93C5FD;" onclick="installPWA()">
+                    <span>📥</span> 安裝 App 至手機/桌面
+                </button>
+
                 <div class="console-box" id="ai-console">
                     <div class="console-header">
                         <div class="status-dot"></div>
@@ -82,6 +97,21 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
+            <!-- Mobile Top Header (Visible on mobile/PWA) -->
+            <header class="mobile-top-header">
+                <div class="mobile-brand">
+                    <span class="brand-badge">PRO</span>
+                    <span class="m-brand-title">TRIZ <span class="highlight">SOLVER</span></span>
+                </div>
+                <div class="mobile-top-actions">
+                    <button class="m-action-btn" onclick="openAISettingsModal()" title="AI 雲端引擎設定">
+                        <span>⚙️</span> AI 設定
+                    </button>
+                    <button class="m-action-btn" onclick="openHelpModal()" title="使用手冊 SOP 與原理概述">
+                        <span>📖</span> SOP 指南
+                    </button>
+                </div>
+            </header>
 
             <!-- WORKSPACE 1: 智慧診斷路由 (Smart Diagnosis) -->
             <section id="workspace-diagnosis" class="workspace active">

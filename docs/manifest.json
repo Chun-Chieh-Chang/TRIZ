@@ -1,0 +1,43 @@
+{
+  "name": "TRIZ Solver - 萃智多維矛盾求解與發明創新全能工作台",
+  "short_name": "TRIZ Solver",
+  "description": "AI-Assisted TRIZ Innovation Suite - 整合 40 發明原理、39 矛盾矩陣、物理矛盾四大分離、跨領域案例、ARIZ-85C 演算法與九屏幕法。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "orientation": "any",
+  "lang": "zh-TW",
+  "categories": [
+    "productivity",
+    "utilities",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

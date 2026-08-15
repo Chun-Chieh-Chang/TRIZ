@@ -806,3 +806,50 @@ function clearAIConfig() {
         alert('API Key 已清除，系統已回到本機啟發式模式。');
     }
 }
+
+/* ==========================================================================
+   PWA SERVICE WORKER & INSTALL PROMPT
+   ========================================================================== */
+
+let deferredPWAPrompt = null;
+
+// Register Service Worker for offline capability
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then((registration) => {
+                log('✓ PWA 離線快取引擎 (ServiceWorker) 已就緒');
+            })
+            .catch((err) => {
+                console.warn('[PWA] Service Worker registration failed:', err);
+            });
+    });
+}
+
+// Handle PWA Install Prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPWAPrompt = e;
+    const installBtn = document.getElementById('btn-pwa-install');
+    if (installBtn) {
+        installBtn.style.display = 'flex';
+    }
+    log('📱 偵測到支援 PWA 安裝，可點擊「安裝 App 至手機/桌面」建立獨立 App 圖示。');
+});
+
+function installPWA() {
+    if (deferredPWAPrompt) {
+        deferredPWAPrompt.prompt();
+        deferredPWAPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                log('✓ 感謝安裝 TRIZ Solver PWA！已加入主螢幕/桌面。');
+            }
+            deferredPWAPrompt = null;
+            const installBtn = document.getElementById('btn-pwa-install');
+            if (installBtn) installBtn.style.display = 'none';
+        });
+    } else {
+        alert('若要將本應用安裝至手機主畫面：\n1. iOS (Safari)：點擊分享按鈕 ➔ 選擇「加入主畫面」\n2. Android (Chrome)：點擊選單 ➔ 選擇「安裝應用程式」或「新增至主螢幕」');
+    }
+}
+
