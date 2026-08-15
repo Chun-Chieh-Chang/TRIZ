@@ -45,7 +45,9 @@
 ## 🚀 快速啟動 (Quick Start)
 
 ### 模式 A：純前端網頁版 (推薦)
-直接以瀏覽器開啟 `index.html`，或部署至 GitHub Pages 即開即用。
+> **🌐 線上版本 (Online Demo)**
+> 本專案已透過 GitHub Actions 自動部署至 GitHub Pages：
+> [前往 TRIZ Solver 線上工作台](https://chun-chieh-chang.github.io/TRIZ/)
 
 ### 模式 B：本地 Python 服務 (FastAPI)
 ```bash
