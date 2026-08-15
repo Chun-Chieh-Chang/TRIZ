@@ -1824,3 +1824,108 @@ body {
         padding-top: calc(12px + env(safe-area-inset-top, 0px));
     }
 }
+
+/* ==========================================================================
+   AUTHOR INFO & COPYRIGHT NOTICES
+   ========================================================================== */
+.sidebar-copyright {
+    padding: 6px 4px 0 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.sidebar-copyright p {
+    margin: 0;
+}
+
+.sidebar-copyright strong {
+    color: #E2E8F0;
+    font-weight: 600;
+}
+
+.sidebar-copyright a {
+    color: var(--accent-sky);
+    text-decoration: none;
+}
+
+.sidebar-copyright a:hover {
+    text-decoration: underline;
+}
+
+.sidebar-copyright .legal-notice {
+    font-size: 0.65rem;
+    color: #64748B;
+    margin-top: 2px;
+}
+
+.app-global-footer {
+    margin-top: 36px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.app-global-footer p {
+    margin: 0;
+}
+
+.app-global-footer strong {
+    color: #F1F5F9;
+}
+
+.app-global-footer a {
+    color: var(--accent-sky);
+    text-decoration: none;
+}
+
+.app-global-footer a:hover {
+    text-decoration: underline;
+}
+
+.app-global-footer .sub-copy {
+    font-size: 0.72rem;
+    color: #64748B;
+    margin-top: 4px;
+}
+
+.manual-author-footer {
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.author-badge-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8));
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.author-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-icon {
+    font-size: 1.4rem;
+}
+
+.copyright-text {
+    font-size: 0.78rem;
+    color: #94A3B8;
+    line-height: 1.55;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
