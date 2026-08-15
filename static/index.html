@@ -65,7 +65,7 @@
                 </button>
 
                 <button class="btn-help" onclick="openHelpModal()">
-                    <span>💡</span> TRIZ 方法論與操作指引
+                    <span>📖</span> 使用手冊 SOP 與原理概述
                 </button>
 
                 <div class="console-box" id="ai-console">
@@ -381,24 +381,191 @@
         </button>
     </nav>
 
-    <!-- Modal: Help & TRIZ Guide -->
+    <!-- Modal: Help & User Manual SOP -->
     <div class="modal-overlay" id="help-modal">
-        <div class="modal-container glass-card">
+        <div class="modal-container glass-card modal-large">
             <div class="modal-header">
-                <h3>💡 TRIZ 體系全景與求解工作流指引</h3>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.3rem;">📖</span>
+                    <div>
+                        <h3 style="font-size: 1.15rem; margin: 0;">TRIZ 矛盾求解全能工作台 — 操作手冊 SOP 與原理概述</h3>
+                        <p style="font-size: 0.78rem; color: #94A3B8; margin-top: 2px;">Standard Operating Procedure & Methodology Guide</p>
+                    </div>
+                </div>
                 <button class="modal-close" onclick="closeHelpModal()">&times;</button>
             </div>
-            <div class="modal-body">
-                <h4>如何選擇最適合的 TRIZ 工具？</h4>
-                <div class="flow-guide-box">
-                    <p><strong>1. 【技術矛盾】</strong>：若問題表現為「改善某個指標 A 時，導致另一個指標 B 惡化」，請前往 <strong>技術矛盾矩陣工作台</strong>。</p>
-                    <p><strong>2. 【物理矛盾】</strong>：若問題表現為「對同一個部件/參數同時提出相反要求（既要 P，又要 非 P）」，請前往 <strong>物理矛盾分離工作坊</strong>。</p>
-                    <p><strong>3. 【系統成本過高或零件繁雜】</strong>：運用 <strong>功能分析與 Trimming</strong>，參考 40 發明原理中的抽取、多功能與自助原理。</p>
-                    <p><strong>4. 【高難度極限突破】</strong>：使用 <strong>ARIZ-85C</strong> 演算法與 <strong>九屏幕法</strong> 探勘時空潛在資源。</p>
+            
+            <!-- Manual Subtabs -->
+            <div class="manual-tabs">
+                <button class="manual-tab active" onclick="switchManualTab('sop')">🚀 5 步標準求解 SOP</button>
+                <button class="manual-tab" onclick="switchManualTab('theory')">🧠 TRIZ 核心原理概述</button>
+                <button class="manual-tab" onclick="switchManualTab('ai')">🤖 AI 雙引擎協同指南</button>
+                <button class="manual-tab" onclick="switchManualTab('quickref')">🛠️ 五大工作台速查</button>
+            </div>
+
+            <div class="modal-body manual-modal-body">
+                <!-- TAB 1: 5 步標準求解 SOP -->
+                <div class="manual-content active" id="manual-tab-sop">
+                    <div class="sop-banner">
+                        <strong>🎯 核心理念：</strong> 不做折中妥協，精確識別核心衝突，透過發明原理與分離技術徹底消除矛盾。
+                    </div>
+
+                    <div class="sop-step-list">
+                        <div class="sop-step-card">
+                            <div class="sop-step-num">Step 1</div>
+                            <div class="sop-step-body">
+                                <h4>問題形式化與情境定義 (Formulate Problem)</h4>
+                                <p>使用自然語言具體定義遭遇的難題或挑戰。明確拆解出：</p>
+                                <ul>
+                                    <li><strong>改善目標 (What gets better)</strong>：期望提升的指標（如速度、容量、產能、便利性、客戶滿意度）。</li>
+                                    <li><strong>惡化代價 (What gets worse)</strong>：伴隨出現的負面代價（如成本、功耗、複雜度、發熱、人力負擔）。</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sop-step-card">
+                            <div class="sop-step-num">Step 2</div>
+                            <div class="sop-step-body">
+                                <h4>矛盾類型精準判定 (Identify Conflict Type)</h4>
+                                <ul>
+                                    <li><strong>技術矛盾 (Technical Contradiction)</strong>：提升系統某項性能 A，導致另一項性能 B 惡化（A vs B 衝突）。</li>
+                                    <li><strong>物理矛盾 (Physical Contradiction)</strong>：同一物件/參數在不同條件下需同時滿足相反要求（既要 P，又要 非 P）。</li>
+                                    <li><strong>系統贅生 (Trimming)</strong>：系統功能重複、成本過高，需要修剪非必要元件。</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sop-step-card">
+                            <div class="sop-step-num">Step 3</div>
+                            <div class="sop-step-body">
+                                <h4>定位最適工具鏈 (Tool Routing & Analysis)</h4>
+                                <ul>
+                                    <li><strong>技術矛盾</strong> ➔ 前往【39 技術矛盾矩陣】，選取改善與惡化參數，查表取得推薦原理。</li>
+                                    <li><strong>物理矛盾</strong> ➔ 前往【物理矛盾分離工作坊】，應用空間、時間、條件或系統分離破局。</li>
+                                    <li><strong>極限複雜問題</strong> ➔ 前往【ARIZ & 九屏幕法】，依序演練 4 大階段並探勘潛在時空資源。</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sop-step-card">
+                            <div class="sop-step-num">Step 4</div>
+                            <div class="sop-step-body">
+                                <h4>跨領域原理對照與落地方案轉譯 (Cross-Domain Solution)</h4>
+                                <p>在【40 原理全景庫】中對照建議原理在<strong>經典工程、軟體/IT 架構、商業模式與管理</strong>中的實踐案例，激發針對自身問題的具體方案。</p>
+                            </div>
+                        </div>
+
+                        <div class="sop-step-card">
+                            <div class="sop-step-num">Step 5</div>
+                            <div class="sop-step-body">
+                                <h4>理想度 (IFR) 評估與實施推進 (Evaluate Ideality & Action)</h4>
+                                <p>使用理想度評估計算器：<code>理想度 I = 總有用效益 / (總獲取成本 + 總有害副作用)</code>。篩選出以最小代價達成最大價值的最佳落地創新方案。</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <h4>TRIZ 40 發明原理跨領域對照概念</h4>
-                <p>本系統將經典俄系工程 40 原理延伸至軟體工程（微服務、快取、非同步、容器化）與現代商業管理（訂閱制、敏捷拆分、生態聚合），使任何行業的矛盾問題皆能獲得啟發。</p>
+                <!-- TAB 2: TRIZ 核心原理概述 -->
+                <div class="manual-content" id="manual-tab-theory">
+                    <div class="theory-section">
+                        <h4>1. TRIZ 理論體系起源</h4>
+                        <p>TRIZ（俄語：Теория решения изобретательских задач，發明問題解決理論）由前蘇聯科學家<strong>根里奇·阿奇舒勒 (Genrich Altshuller)</strong> 於 1946 年創立。研究團隊分析了全球超過 250 萬份高水準專利，揭示出技術系統演化的客觀規律，證實創新發明並非隨機靈感，而是具備嚴密的科學方法與可重複模式。</p>
+                    </div>
+
+                    <div class="theory-section">
+                        <h4>2. 40 個發明創新原理 (40 Inventive Principles)</h4>
+                        <p>阿奇舒勒提煉出解決一切技術矛盾的 40 種通用思維模式。例如：</p>
+                        <div class="principles-mini-grid">
+                            <div class="mini-card"><strong>#1 分割原理</strong>：模組化、微服務、拆分部件</div>
+                            <div class="mini-card"><strong>#2 抽取原理</strong>：抽出核心功能、隔離噪聲</div>
+                            <div class="mini-card"><strong>#10 預先作用</strong>：預防性維護、快取預載</div>
+                            <div class="mini-card"><strong>#25 自助原理</strong>：自我修復、雲端自動伸縮</div>
+                        </div>
+                    </div>
+
+                    <div class="theory-section">
+                        <h4>3. 39 標準工程參數與矛盾矩陣 (Contradiction Matrix)</h4>
+                        <p>將工程與系統特性標準化為 39 個參數（如移動物體重量、速度、強度、溫度、操作方便性、可靠性等），透過 39x39 交叉矩陣直接查詢歷史發明中解決該矛盾頻率最高的 4 個核心原理。</p>
+                    </div>
+
+                    <div class="theory-section">
+                        <h4>4. 物理矛盾四大分離原理 (Separation Principles)</h4>
+                        <ul>
+                            <li><strong>空間分離 (Separation in Space)</strong>：在不同的空間區域賦予相反屬性（如：自行車鏈條外硬內軟）。</li>
+                            <li><strong>時間分離 (Separation in Time)</strong>：在不同的時間階段展現相反狀態（如：飛機起落架起飛時展開、飛行時收回）。</li>
+                            <li><strong>條件分離 (Separation upon Condition)</strong>：在不同溫度/壓力/情境下變化屬性（如：非牛頓流體防彈衣、自適應懸吊）。</li>
+                            <li><strong>系統層級分離 (Separation between System Levels)</strong>：微觀子系統具備屬性 A，巨觀超系統具備相反屬性 非 A（如：液晶螢幕單個像素與整體畫面）。</li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-section">
+                        <h4>5. 技術系統 8 大進化法則與 ARIZ-85C 演算法</h4>
+                        <p>包括 S 曲線進化、向微觀層次躍遷、系統完備性、動態化增強等客觀規律；針對極端困難且無標準解的複雜問題，則啟動 ARIZ-85C 演算法進行逐步推演。</p>
+                    </div>
+                </div>
+
+                <!-- TAB 3: AI 雙引擎協同指南 -->
+                <div class="manual-content" id="manual-tab-ai">
+                    <div class="ai-guide-card">
+                        <h4>🌟 Agnes AI 原生端點整合</h4>
+                        <p>專為複雜非工程與跨領域語意解構打造：</p>
+                        <ul>
+                            <li><strong>官方 API Base URL</strong>：<code>https://apihub.agnes-ai.com/v1</code></li>
+                            <li><strong>核心模型 ID</strong>：<code>agnes-2.5-flash</code></li>
+                            <li><strong>鑑權機制</strong>：<code>Authorization: Bearer &lt;AGNES_API_KEY&gt;</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="ai-guide-card">
+                        <h4>⚡ Google AI Studio 官方最新旗艦系列</h4>
+                        <p>支援 Google 最新世代全系列推理模型：</p>
+                        <ul>
+                            <li><strong>Gemini 3.x 旗艦</strong>：<code>gemini-3.7-flash</code>、<code>gemini-3.6-flash</code>、<code>gemini-3.5-flash</code>、<code>gemini-3.1-pro</code></li>
+                            <li><strong>Gemini 2.5 穩定</strong>：<code>gemini-2.5-flash</code>、<code>gemini-2.5-pro</code></li>
+                            <li><strong>鑑權雙通道</strong>：<code>x-goog-api-key</code> 標頭與 <code>?key=...</code> 雙重適配</li>
+                        </ul>
+                    </div>
+
+                    <div class="ai-guide-card">
+                        <h4>🔒 數據隱私與本機離線回退機制</h4>
+                        <p>API Key 僅保存在瀏覽器 <code>localStorage</code>，所有請求直連官方端點，絕無後端中轉。若無 API Key 或無網路連線，系統自動無縫切換至本機 130KB 完整結構化規則庫，確保 100% 隨時可用。</p>
+                    </div>
+                </div>
+
+                <!-- TAB 4: 五大工作台速查 -->
+                <div class="manual-content" id="manual-tab-quickref">
+                    <div class="quickref-grid">
+                        <div class="quickref-card">
+                            <h4>🧭 1. 智慧衝突診斷路由</h4>
+                            <p><strong>適用</strong>：剛開始分析問題、問題敘述模糊或屬於非工程/商業衝突時。</p>
+                            <p><strong>功能</strong>：自然語言語意剖析，自動判定矛盾類型並產出 3 套落地解法。</p>
+                        </div>
+
+                        <div class="quickref-card">
+                            <h4>⚙️ 2. 39 技術矛盾矩陣工作台</h4>
+                            <p><strong>適用</strong>：明確知道改善何種參數會惡化何種參數時。</p>
+                            <p><strong>功能</strong>：39 參數交叉查表、經典矩陣原理建議與理想度 IFR 計算器。</p>
+                        </div>
+
+                        <div class="quickref-card">
+                            <h4>⚖️ 3. 物理矛盾四大分離工作坊</h4>
+                            <p><strong>適用</strong>：對同一部件/狀態提出互斥要求（如既高又低、既快又安全）。</p>
+                            <p><strong>功能</strong>：空間、時間、條件、系統分離啟發式提問引導與案例庫。</p>
+                        </div>
+
+                        <div class="quickref-card">
+                            <h4>🌐 4. 40 原理跨領域全景庫</h4>
+                            <p><strong>適用</strong>：尋找具體落地靈感或檢索特定發明原理時。</p>
+                            <p><strong>功能</strong>：工程/軟體/商業三合一檢索，關鍵字與編號即時過濾。</p>
+                        </div>
+
+                        <div class="quickref-card">
+                            <h4>🚀 5. 高階演算法 (ARIZ & 九屏幕法)</h4>
+                            <p><strong>適用</strong>：遭遇瓶頸、無法用常規矩陣解決之系統極限難題。</p>
+                            <p><strong>功能</strong>：ARIZ-85C 4 階段演練、8 大進化法則與九屏幕法筆記 Markdown 導出。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

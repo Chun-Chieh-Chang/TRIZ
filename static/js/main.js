@@ -635,6 +635,17 @@ function closeHelpModal() {
     document.getElementById('help-modal')?.classList.remove('active');
 }
 
+function switchManualTab(tabId) {
+    document.querySelectorAll('.manual-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.manual-content').forEach(c => c.classList.remove('active'));
+
+    const btn = document.querySelector(`.manual-tab[onclick="switchManualTab('${tabId}')"]`);
+    const content = document.getElementById(`manual-tab-${tabId}`);
+
+    if (btn) btn.classList.add('active');
+    if (content) content.classList.add('active');
+}
+
 function openAISettingsModal() {
     const modal = document.getElementById('ai-settings-modal');
     if (!modal) return;
