@@ -407,54 +407,56 @@
     <div class="modal-overlay" id="ai-settings-modal">
         <div class="modal-container glass-card">
             <div class="modal-header">
-                <h3>✨ Google Gemini AI 雲端引擎設定</h3>
+                <h3>✨ AI 雲端語意引擎設定 (Agnes AI / Google Gemini)</h3>
                 <button class="modal-close" onclick="closeAISettingsModal()">&times;</button>
             </div>
             <div class="modal-body">
                 <p class="subtitle" style="margin-bottom: 1rem; color: #94A3B8; font-size: 0.88rem;">
-                    輸入您的 Google Gemini API Key 以啟用非工程/商業複雜語意解構與量身客製化解法生成。
+                    支援 <strong>Agnes AI</strong> (Bearer Token / Chat Completions) 與 <strong>Google Gemini</strong> 系列模型，進行深層語意解構與創新解法生成。
                 </p>
 
                 <div class="form-group">
-                    <label>Gemini API Key</label>
-                    <div class="input-with-action">
-                        <input type="password" id="ai-api-key-input" class="modern-input"
-                            placeholder="貼上您的 Gemini API Key (AIzaSy...)" autocomplete="off">
-                        <button class="btn-icon" onclick="toggleApiKeyVisibility()" title="顯示/隱藏金鑰">👁️</button>
-                    </div>
-                    <small style="color: #64748B; font-size: 0.78rem;">
-                        尚未取得金鑰？可至 <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: #60A5FA;">Google AI Studio</a> 免費申請。
-                    </small>
-                </div>
-
-                <div class="form-group">
                     <label>模型選擇 (Model)</label>
-                    <select id="ai-model-select" class="modern-select" onchange="toggleCustomModelInput()">
-                        <option value="gemini-2.5-flash">Gemini 2.5 Flash (最推薦・最新極速旗艦)</option>
-                        <option value="gemini-2.5-pro">Gemini 2.5 Pro (最新高階深思推理)</option>
-                        <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
-                        <option value="gemini-2.0-flash-thinking-exp">Gemini 2.0 Flash Thinking (深度思考)</option>
-                        <option value="gemini-2.0-pro-exp">Gemini 2.0 Pro Experimental</option>
-                        <option value="agnes">Agnes 專用發明問題求解模型 (Agnes)</option>
-                        <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
-                        <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
-                        <option value="custom">自訂模型名稱 (Custom Model ID)...</option>
+                    <select id="ai-model-select" class="modern-select" onchange="handleModelSelectChange()">
+                        <optgroup label="🌟 Agnes AI 原生模型">
+                            <option value="agnes-2.5-flash" selected>agnes-2.5-flash (推薦・Agnes AI 官方端點)</option>
+                        </optgroup>
+                        <optgroup label="⚡ Google Gemini 系列模型">
+                            <option value="gemini-2.5-flash">Gemini 2.5 Flash (Google 官方最新極速旗艦)</option>
+                            <option value="gemini-2.5-pro">Gemini 2.5 Pro (Google 頂級深思推理)</option>
+                            <option value="gemini-2.0-flash-thinking-exp">Gemini 2.0 Flash Thinking (深度思考)</option>
+                            <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+                            <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+                            <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+                        </optgroup>
+                        <optgroup label="🧩 自訂模型">
+                            <option value="custom">自訂模型名稱 (Custom Model ID)...</option>
+                        </optgroup>
                     </select>
                 </div>
 
                 <div class="form-group" id="custom-model-group" style="display: none;">
                     <label>自訂模型名稱 (Custom Model ID)</label>
-                    <input type="text" id="ai-custom-model-input" class="modern-input" placeholder="例如：agnes, custom-triz-model">
+                    <input type="text" id="ai-custom-model-input" class="modern-input" placeholder="例如：agnes-2.5-flash, custom-model">
                 </div>
 
                 <div class="form-group">
-                    <label>API 端點 Base URL (可選，預設 Google 官方)</label>
-                    <input type="text" id="ai-base-url-input" class="modern-input" placeholder="https://generativelanguage.googleapis.com">
+                    <label>API Key / Auth Token</label>
+                    <div class="input-with-action">
+                        <input type="password" id="ai-api-key-input" class="modern-input"
+                            placeholder="輸入 AGNES_API_KEY 或 GEMINI_API_KEY..." autocomplete="off">
+                        <button class="btn-icon" onclick="toggleApiKeyVisibility()" title="顯示/隱藏金鑰">👁️</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>API Base URL (端點路徑)</label>
+                    <input type="text" id="ai-base-url-input" class="modern-input" placeholder="https://apihub.agnes-ai.com/v1">
                 </div>
 
                 <div class="ai-privacy-note">
                     <strong>🔒 隱私與安全性保證：</strong>
-                    您的 API Key 僅儲存於當前瀏覽器本機的 <code>localStorage</code>，所有請求皆由瀏覽器直接對 Google 官方端點發起，絕不上傳或經過任何第三方伺服器。
+                    您的 API Key 僅加密儲存於當前瀏覽器本機的 <code>localStorage</code>，請求由瀏覽器直連官方 API 端點，絕不經過任何第三方中轉伺服器。
                 </div>
 
                 <div class="modal-actions" style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 1.5rem;">

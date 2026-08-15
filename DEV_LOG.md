@@ -1,18 +1,23 @@
 # TRIZ 專案開發與架構演進日誌 (DEV_LOG.md)
 
-## 2026-08-15: 升級 AI 模型矩陣：支援 Agnes 專用模型、Gemini 2.5/2.0 全系列與自訂端點
+## 2026-08-15: 完整對齊 Agnes AI 官方 API 規範 (Bearer Auth / Chat Completions) 與多 Provider 支援
 
 ### 1. 執行目標 (Goal)
-- **問題回報**：參照 `8D-Creator` 導入之 AI 引擎模型清單不完整，缺少 `agnes` 專用模型與 2.5/2.0 最新推理模型。
+- **規格依據**：
+  - **API Base URL (endpoint)**: `https://apihub.agnes-ai.com/v1`
+  - **核心模型 ID**: `agnes-2.5-flash` (Chat Completions: `/v1/chat/completions`)
+  - **認證機制**: `Authorization: Bearer <AGNES_API_KEY>`
 - **執行範疇**：
-  1. 升級 `js/ai_service.js`：支援 `gemini-2.5-flash`、`gemini-2.5-pro`、`gemini-2.0-flash`、`gemini-2.0-flash-thinking-exp`、`gemini-2.0-pro-exp`、`agnes` 以及自訂模型 ID (`custom`) 與自訂 API Base URL。
-  2. 更新 `index.html` 與 `js/main.js`：提供完整下拉選項、自訂模型輸入框與動態切換支援。
-  3. 將完整靜態資源鏡像同步至 `docs/` 與 `static/`。
-  4. 記錄 RCA/CAPA 並將預防規則萃取至 `AGENTS.md`。
+  1. 重構 `js/ai_service.js` 實現通用 Multi-Provider 架構：
+     - 自動路由：當選取 `agnes-2.5-flash` 時自動調用 `https://apihub.agnes-ai.com/v1/chat/completions`，使用 Bearer Token 驗證；
+     - 當選取 `gemini-*` 時調用 `https://generativelanguage.googleapis.com`；
+     - 支援自訂模型 ID 與端點路徑。
+  2. 升級 UI 設定彈窗 (`index.html` + `js/main.js`)：選取模型時自動切換預設 Base URL 與 Key 提示。
+  3. 鏡像同步至 `docs/` 與 `static/`，並寫入 `AGENTS.md` 自我演化紀錄。
 
 ### 2. 問題分析 (RCA) 與預防措施 (CAPA)
 * **根因分析 (RCA)**：
-  - 初始實作 AI 模組時，僅提供了基礎選項，未納入參照專案生態中的 `agnes` 專屬模型與 Gemini 2.0/2.5 完整思考推理模型，亦缺乏開放式自訂模型 ID 欄位。
+  - 過去將所有模型統一依賴 Google Gemini SDK 請求格式，未考慮 Agnes AI 採用標準 OpenAI-compatible Chat Completions 協議 (`https://apihub.agnes-ai.com/v1/chat/completions`)。
 * **矯正與預防措施 (CAPA)**：
-  - **立即矯正**：將 `agnes` 與 Gemini 2.5/2.0 全系列旗艦模型作為一等公民支援，並加入「自訂模型名稱 (Custom Model ID)」與「自訂 Base URL」輸入功能，無論使用官方或微調端點皆能彈性配置。
-  - **自我演化**：將「現代模型基準線規範」寫入 `AGENTS.md`。
+  - **立即矯正**：實裝雙協定解析器（Agnes / OpenAI-compatible 與 Google Gemini 原生），選取 `agnes-2.5-flash` 時精準調用官方 endpoint 與 Bearer Token 認證。
+  - **自我演化**：將 Agnes 完整技術規格寫入 `AGENTS.md`。

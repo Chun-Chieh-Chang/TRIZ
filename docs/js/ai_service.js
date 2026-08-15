@@ -1,20 +1,38 @@
 /**
- * Gemini & Agnes AI Service for TRIZ Solver
- * Handles semantic problem decomposition, non-engineering contradiction modeling,
- * and context-aware inventive solution generation using Google Gemini & Agnes Models.
+ * Universal Multi-Provider AI Service for TRIZ Solver
+ * Native support for:
+ * 1. Agnes AI Suite (Endpoint: https://apihub.agnes-ai.com/v1, Model: agnes-2.5-flash, Auth: Bearer Token)
+ * 2. Google Gemini Suite (Endpoint: https://generativelanguage.googleapis.com, Models: gemini-2.5-flash, gemini-2.5-pro, gemini-2.0-flash-thinking-exp, etc.)
+ * 3. Custom OpenAI-compatible / Gemini Gateway Endpoints
  */
 
 class GeminiAIService {
     constructor() {
-        this.apiKeyStorageKey = 'TRIZ_GEMINI_API_KEY';
-        this.modelStorageKey = 'TRIZ_GEMINI_MODEL';
-        this.customModelStorageKey = 'TRIZ_GEMINI_CUSTOM_MODEL';
-        this.customBaseUrlStorageKey = 'TRIZ_GEMINI_BASE_URL';
+        this.apiKeyStorageKey = 'TRIZ_AI_API_KEY';
+        this.modelStorageKey = 'TRIZ_AI_MODEL';
+        this.providerStorageKey = 'TRIZ_AI_PROVIDER';
+        this.customModelStorageKey = 'TRIZ_AI_CUSTOM_MODEL';
+        this.customBaseUrlStorageKey = 'TRIZ_AI_BASE_URL';
 
-        this.apiKey = localStorage.getItem(this.apiKeyStorageKey) || '';
-        this.model = localStorage.getItem(this.modelStorageKey) || 'gemini-2.5-flash';
+        // Read or migrate legacy keys
+        this.apiKey = localStorage.getItem(this.apiKeyStorageKey) || localStorage.getItem('TRIZ_GEMINI_API_KEY') || '';
+        this.model = localStorage.getItem(this.modelStorageKey) || 'agnes-2.5-flash';
+        this.provider = localStorage.getItem(this.providerStorageKey) || 'agnes';
         this.customModel = localStorage.getItem(this.customModelStorageKey) || '';
-        this.baseUrl = localStorage.getItem(this.customBaseUrlStorageKey) || 'https://generativelanguage.googleapis.com';
+        this.baseUrl = localStorage.getItem(this.customBaseUrlStorageKey) || 'https://apihub.agnes-ai.com/v1';
+    }
+
+    /**
+     * Determine active provider (agnes | gemini | openai_compatible)
+     */
+    getEffectiveProvider() {
+        if (this.provider === 'agnes' || this.model.startsWith('agnes-') || this.baseUrl.includes('agnes-ai.com')) {
+            return 'agnes';
+        }
+        if (this.provider === 'gemini' || this.model.startsWith('gemini-') || this.baseUrl.includes('googleapis.com')) {
+            return 'gemini';
+        }
+        return 'openai_compatible';
     }
 
     /**
@@ -22,16 +40,16 @@ class GeminiAIService {
      */
     getEffectiveModel() {
         if (this.model === 'custom') {
-            return this.customModel.trim() || 'agnes';
+            return this.customModel.trim() || 'agnes-2.5-flash';
         }
         return this.model;
     }
 
     /**
-     * Check if AI service is ready (has API Key or configured model)
+     * Check if AI service is configured
      */
     isConfigured() {
-        return !!(this.apiKey && this.apiKey.trim().length > 5);
+        return !!(this.apiKey && this.apiKey.trim().length > 3);
     }
 
     /**
@@ -41,6 +59,7 @@ class GeminiAIService {
         return {
             apiKey: this.apiKey,
             model: this.model,
+            provider: this.getEffectiveProvider(),
             customModel: this.customModel,
             baseUrl: this.baseUrl
         };
@@ -49,11 +68,21 @@ class GeminiAIService {
     /**
      * Save configuration to localStorage
      */
-    saveConfig(apiKey, model, customModel = '', baseUrl = '') {
+    saveConfig(apiKey, model, customModel = '', baseUrl = '', provider = '') {
         this.apiKey = (apiKey || '').trim();
-        this.model = model || 'gemini-2.5-flash';
+        this.model = model || 'agnes-2.5-flash';
         this.customModel = (customModel || '').trim();
-        this.baseUrl = (baseUrl || 'https://generativelanguage.googleapis.com').trim().replace(/\/+$/, '');
+
+        // Auto-assign default Base URL if empty
+        if (!baseUrl) {
+            if (this.model.startsWith('agnes-') || provider === 'agnes') {
+                baseUrl = 'https://apihub.agnes-ai.com/v1';
+            } else {
+                baseUrl = 'https://generativelanguage.googleapis.com';
+            }
+        }
+        this.baseUrl = baseUrl.trim().replace(/\/+$/, '');
+        this.provider = provider || this.getEffectiveProvider();
 
         if (this.apiKey) {
             localStorage.setItem(this.apiKeyStorageKey, this.apiKey);
@@ -61,6 +90,7 @@ class GeminiAIService {
             localStorage.removeItem(this.apiKeyStorageKey);
         }
         localStorage.setItem(this.modelStorageKey, this.model);
+        localStorage.setItem(this.providerStorageKey, this.provider);
         localStorage.setItem(this.customModelStorageKey, this.customModel);
         localStorage.setItem(this.customBaseUrlStorageKey, this.baseUrl);
     }
@@ -73,6 +103,7 @@ class GeminiAIService {
         this.customModel = '';
         localStorage.removeItem(this.apiKeyStorageKey);
         localStorage.removeItem(this.customModelStorageKey);
+        localStorage.removeItem('TRIZ_GEMINI_API_KEY');
     }
 
     /**
@@ -80,39 +111,65 @@ class GeminiAIService {
      */
     async testConnection() {
         if (!this.isConfigured()) {
-            throw new Error('請先輸入有效的 API Key。');
+            throw new Error('請先輸入有效的 API Key (或 Bearer Token)。');
         }
 
+        const provider = this.getEffectiveProvider();
         const effectiveModel = this.getEffectiveModel();
-        const base = this.baseUrl || 'https://generativelanguage.googleapis.com';
-        const endpoint = `${base}/v1beta/models/${effectiveModel}:generateContent?key=${this.apiKey}`;
-        
-        const payload = {
-            contents: [
-                {
-                    role: 'user',
-                    parts: [{ text: '請回覆 "OK" 確認 API 連線正常。' }]
-                }
-            ],
-            generationConfig: {
-                maxOutputTokens: 10,
+        const base = this.baseUrl || (provider === 'agnes' ? 'https://apihub.agnes-ai.com/v1' : 'https://generativelanguage.googleapis.com');
+
+        if (provider === 'agnes' || provider === 'openai_compatible') {
+            // Agnes / OpenAI Chat Completions endpoint
+            const endpoint = `${base}/chat/completions`;
+            const payload = {
+                model: effectiveModel,
+                messages: [
+                    { role: 'user', content: 'Say OK' }
+                ],
+                max_tokens: 10,
                 temperature: 0.1
+            };
+
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.apiKey}`
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                const errMsg = errData.error?.message || errData.message || `HTTP 錯誤碼: ${response.status}`;
+                throw new Error(`連線失敗 [${effectiveModel} @ ${base}]: ${errMsg}`);
             }
-        };
 
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+            return true;
+        } else {
+            // Google Gemini endpoint
+            const endpoint = `${base}/v1beta/models/${effectiveModel}:generateContent?key=${this.apiKey}`;
+            const payload = {
+                contents: [
+                    { role: 'user', parts: [{ text: '請回覆 "OK" 確認 API 連線正常。' }] }
+                ],
+                generationConfig: { maxOutputTokens: 10, temperature: 0.1 }
+            };
 
-        if (!response.ok) {
-            const errData = await response.json().catch(() => ({}));
-            const errMsg = errData.error?.message || `HTTP 錯誤碼: ${response.status}`;
-            throw new Error(`連線失敗 (${effectiveModel}): ${errMsg}`);
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                const errMsg = errData.error?.message || `HTTP 錯誤碼: ${response.status}`;
+                throw new Error(`連線失敗 [${effectiveModel}]: ${errMsg}`);
+            }
+
+            return true;
         }
-
-        return true;
     }
 
     /**
@@ -123,14 +180,14 @@ class GeminiAIService {
      */
     async analyzeAndSolveWithAI(problemDescription, systemName = '') {
         if (!this.isConfigured()) {
-            throw new Error('AI API 未配置，請點擊「AI 設定」輸入您的 API Key。');
+            throw new Error('AI API 未配置，請點擊「AI 設定」輸入您的 API Key (或 Bearer Token)。');
         }
 
         const systemPrompt = `
 你是一位精通 TRIZ（萃智，發明問題解決理論）、跨領域系統工程與現代商業/軟體架構的資深首席科學家。
 請分析使用者提出的問題（無論是工程物理、軟體架構、商業管理、服務流程或組織瓶頸），進行深層語意解構，並精準形式化為 TRIZ 衝突模型，最後給出具體的落地創新解法。
 
-你必須輸出合法的 JSON 物件，格式如下（請勿在 JSON 前後加入額外 markdown 說明以外的無效字元）：
+你必須輸出合法的 JSON 物件，格式如下（請勿在 JSON 前後加入額外說明）：
 {
   "domain": "軟體架構 / 商業管理 / 服務流程 / 經典工程",
   "conflict_type": "technical" 或 "physical" 或 "trimming",
@@ -183,39 +240,71 @@ class GeminiAIService {
 請以第一性原理進行深度語意剖析，辨識底層衝突本質，並給出結構化 JSON 回應。
 `;
 
+        const provider = this.getEffectiveProvider();
         const effectiveModel = this.getEffectiveModel();
-        const base = this.baseUrl || 'https://generativelanguage.googleapis.com';
-        const endpoint = `${base}/v1beta/models/${effectiveModel}:generateContent?key=${this.apiKey}`;
-        
-        const payload = {
-            contents: [
-                {
-                    role: 'user',
-                    parts: [{ text: `${systemPrompt}\n\n${userPrompt}` }]
-                }
-            ],
-            generationConfig: {
+        const base = this.baseUrl || (provider === 'agnes' ? 'https://apihub.agnes-ai.com/v1' : 'https://generativelanguage.googleapis.com');
+
+        if (provider === 'agnes' || provider === 'openai_compatible') {
+            // Agnes / OpenAI Chat Completions call
+            const endpoint = `${base}/chat/completions`;
+            const payload = {
+                model: effectiveModel,
+                messages: [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: userPrompt }
+                ],
                 temperature: 0.3,
-                topP: 0.95,
-                maxOutputTokens: 2500
+                max_tokens: 3000,
+                response_format: { type: 'json_object' }
+            };
+
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.apiKey}`
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                const errMsg = errData.error?.message || errData.message || `HTTP 錯誤碼: ${response.status}`;
+                throw new Error(`AI API 請求失敗 [${effectiveModel}] (${response.status}): ${errMsg}`);
             }
-        };
 
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+            const data = await response.json();
+            const rawContent = data.choices?.[0]?.message?.content || '';
+            return this.parseJSONResponse(rawContent);
+        } else {
+            // Google Gemini API call
+            const endpoint = `${base}/v1beta/models/${effectiveModel}:generateContent?key=${this.apiKey}`;
+            const payload = {
+                contents: [
+                    { role: 'user', parts: [{ text: `${systemPrompt}\n\n${userPrompt}` }] }
+                ],
+                generationConfig: {
+                    temperature: 0.3,
+                    topP: 0.95,
+                    maxOutputTokens: 3000
+                }
+            };
 
-        if (!response.ok) {
-            const errData = await response.json().catch(() => ({}));
-            throw new Error(`AI API 請求失敗 [${effectiveModel}] (${response.status}): ${errData.error?.message || '未知錯誤'}`);
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                throw new Error(`Gemini API 請求失敗 [${effectiveModel}] (${response.status}): ${errData.error?.message || '未知錯誤'}`);
+            }
+
+            const data = await response.json();
+            const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+            return this.parseJSONResponse(rawText);
         }
-
-        const data = await response.json();
-        const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-
-        return this.parseJSONResponse(rawText);
     }
 
     /**
@@ -243,3 +332,4 @@ class GeminiAIService {
 
 // Export for global access
 window.GeminiAIService = GeminiAIService;
+window.AIService = GeminiAIService;

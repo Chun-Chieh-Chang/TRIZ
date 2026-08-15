@@ -662,10 +662,29 @@ function closeAISettingsModal() {
 }
 
 function toggleCustomModelInput() {
+    handleModelSelectChange();
+}
+
+function handleModelSelectChange() {
     const modelSelect = document.getElementById('ai-model-select');
     const customGroup = document.getElementById('custom-model-group');
-    if (modelSelect && customGroup) {
-        customGroup.style.display = (modelSelect.value === 'custom') ? 'block' : 'none';
+    const baseUrlInput = document.getElementById('ai-base-url-input');
+    const keyInput = document.getElementById('ai-api-key-input');
+    if (!modelSelect) return;
+
+    const val = modelSelect.value;
+    if (customGroup) {
+        customGroup.style.display = (val === 'custom') ? 'block' : 'none';
+    }
+
+    if (baseUrlInput) {
+        if (val.startsWith('agnes-') || val === 'agnes') {
+            baseUrlInput.value = 'https://apihub.agnes-ai.com/v1';
+            if (keyInput) keyInput.placeholder = '輸入 AGNES_API_KEY (Bearer Token)...';
+        } else if (val.startsWith('gemini-')) {
+            baseUrlInput.value = 'https://generativelanguage.googleapis.com';
+            if (keyInput) keyInput.placeholder = '貼上 Gemini API Key (AIzaSy...)';
+        }
     }
 }
 
