@@ -1405,27 +1405,234 @@ body {
     gap: 4px;
 }
 
-/* Theory & AI Sections */
-.theory-section, .ai-guide-card {
+/* Theory Hero & Deep Cards */
+.theory-hero-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.theory-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-brand), var(--accent-sky));
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.theory-hero-card h3 {
+    color: #F1F5F9;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.theory-hero-card p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.theory-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    transition: var(--transition-fast);
+}
+
+.theory-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    background: rgba(15, 23, 42, 0.75);
+}
+
+.theory-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.theory-icon {
+    font-size: 1.3rem;
+}
+
+.theory-card-header h4 {
+    color: var(--accent-sky);
+    font-size: 1.02rem;
+    margin: 0;
+}
+
+.theory-card-body {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.formula-box {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    margin: 10px 0;
+}
+
+.formula-title {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent-sky);
+    margin-bottom: 4px;
+}
+
+.formula-math {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.84rem;
+    color: #6EE7B7;
+    font-weight: 600;
+}
+
+/* Conflict Comparison Grid */
+.conflict-compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.compare-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+}
+
+.compare-box h5 {
+    color: #F8FAFC;
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+}
+
+.compare-desc {
+    font-size: 0.82rem;
+    color: #94A3B8;
+    margin-bottom: 6px;
+}
+
+.compare-eg {
+    font-size: 0.82rem;
+    color: #CBD5E1;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.compare-solve {
+    font-size: 0.82rem;
+    color: #93C5FD;
+}
+
+/* Four Separations Grid */
+.separation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.sep-item {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--accent-brand);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 12px 14px;
+}
+
+.sep-title {
+    font-weight: 700;
+    color: #F8FAFC;
+    font-size: 0.9rem;
+}
+
+.sep-subtitle {
+    font-size: 0.78rem;
+    color: var(--accent-sky);
+    margin: 4px 0 6px 0;
+}
+
+.sep-item p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Principles Showcase Grid */
+.principles-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.p-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    font-size: 0.82rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.p-num {
+    font-weight: 700;
+    color: #60A5FA;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+}
+
+.p-card p {
+    margin: 0;
+    line-height: 1.45;
+    color: var(--text-secondary);
+}
+
+.p-card strong {
+    color: #E2E8F0;
+}
+
+/* AI Guide Card */
+.ai-guide-card {
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius-md);
     padding: 16px;
 }
 
-.theory-section h4, .ai-guide-card h4 {
+.ai-guide-card h4 {
     color: var(--accent-sky);
     font-size: 1rem;
     margin-bottom: 8px;
 }
 
-.theory-section p, .ai-guide-card p {
+.ai-guide-card p {
     font-size: 0.86rem;
     color: var(--text-secondary);
     line-height: 1.6;
 }
 
-.theory-section ul, .ai-guide-card ul {
+.ai-guide-card ul {
     margin-top: 8px;
     padding-left: 18px;
     font-size: 0.86rem;
@@ -1433,26 +1640,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-}
-
-.principles-mini-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.mini-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: var(--radius-sm);
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-.mini-card strong {
-    color: #93C5FD;
 }
 
 .quickref-grid {

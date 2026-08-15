@@ -465,43 +465,137 @@
                     </div>
                 </div>
 
-                <!-- TAB 2: TRIZ 核心原理概述 -->
+                <!-- TAB 2: TRIZ 核心原理概述 (深入淺出完全圖解手冊) -->
                 <div class="manual-content" id="manual-tab-theory">
-                    <div class="theory-section">
-                        <h4>1. TRIZ 理論體系起源</h4>
-                        <p>TRIZ（俄語：Теория решения изобретательских задач，發明問題解決理論）由前蘇聯科學家<strong>根里奇·阿奇舒勒 (Genrich Altshuller)</strong> 於 1946 年創立。研究團隊分析了全球超過 250 萬份高水準專利，揭示出技術系統演化的客觀規律，證實創新發明並非隨機靈感，而是具備嚴密的科學方法與可重複模式。</p>
+                    
+                    <!-- 核心靈魂 -->
+                    <div class="theory-hero-card">
+                        <div class="theory-badge">TRIZ 的核心靈魂</div>
+                        <h3>「拒絕折中妥協，把『魚與熊掌不可兼得』變成『魚與熊掌兼得』的創新科學」</h3>
+                        <p>傳統思維遇到難題往往選擇<strong>折中妥協</strong>（想要車跑得快，就忍受高油耗；想要手機續航長，就忍受厚重電池）。而 TRIZ 的核心哲學是：<strong>絕不妥協！必須找出底層相互掐架的衝突，並用客觀發明規律直接消滅衝突！</strong></p>
                     </div>
 
-                    <div class="theory-section">
-                        <h4>2. 40 個發明創新原理 (40 Inventive Principles)</h4>
-                        <p>阿奇舒勒提煉出解決一切技術矛盾的 40 種通用思維模式。例如：</p>
-                        <div class="principles-mini-grid">
-                            <div class="mini-card"><strong>#1 分割原理</strong>：模組化、微服務、拆分部件</div>
-                            <div class="mini-card"><strong>#2 抽取原理</strong>：抽出核心功能、隔離噪聲</div>
-                            <div class="mini-card"><strong>#10 預先作用</strong>：預防性維護、快取預載</div>
-                            <div class="mini-card"><strong>#25 自助原理</strong>：自我修復、雲端自動伸縮</div>
+                    <!-- 1. 最終理想解 IFR -->
+                    <div class="theory-card">
+                        <div class="theory-card-header">
+                            <span class="theory-icon">🌟</span>
+                            <h4>一、最終理想解 (IFR, Ideal Final Result) — 「最好的系統，是沒有系統」</h4>
+                        </div>
+                        <div class="theory-card-body">
+                            <p><strong>通俗比喻：</strong>最好的割草機不是更大馬力的機器，而是<strong>「自己長不高的草」</strong>；最好的黑板擦不是更吸灰的擦子，而是<strong>「不會產生粉塵的電子黑板」</strong>。</p>
+                            <div class="formula-box">
+                                <span class="formula-title">📐 理想度公式 (Ideality Formula)：</span>
+                                <div class="formula-math">理想度 (I) = 總有用功能 (Benefits) / [ 總獲取成本 (Cost) + 總有害副作用 (Harm) ]</div>
+                            </div>
+                            <p><strong>終極心法：</strong>讓系統本身「消失」（不花錢、不佔空間、不耗能量），但它的功能卻 100% 被完整實現！</p>
                         </div>
                     </div>
 
-                    <div class="theory-section">
-                        <h4>3. 39 標準工程參數與矛盾矩陣 (Contradiction Matrix)</h4>
-                        <p>將工程與系統特性標準化為 39 個參數（如移動物體重量、速度、強度、溫度、操作方便性、可靠性等），透過 39x39 交叉矩陣直接查詢歷史發明中解決該矛盾頻率最高的 4 個核心原理。</p>
+                    <!-- 2. 兩種矛盾 -->
+                    <div class="theory-card">
+                        <div class="theory-card-header">
+                            <span class="theory-icon">⚖️</span>
+                            <h4>二、矛盾的兩個境界 — 技術矛盾 vs 物理矛盾</h4>
+                        </div>
+                        <div class="theory-card-body">
+                            <div class="conflict-compare-grid">
+                                <div class="compare-box">
+                                    <h5>⚔️ 技術矛盾（A 與 B 拔河）</h5>
+                                    <p class="compare-desc"><strong>現象：</strong>你想提升性能 A，卻導致性能 B 變差。</p>
+                                    <p class="compare-eg"><strong>實例：</strong>手機螢幕想要變大（視覺爽），但耗電與重量隨之劇增（攜帶痛苦）。</p>
+                                    <p class="compare-solve"><strong>🎯 破局法：</strong>查閱 <strong>39 矛盾矩陣</strong>，借鑒歷史專利中最常用的 4 個發明原理打破僵局。</p>
+                                </div>
+                                <div class="compare-box">
+                                    <h5>🤯 物理矛盾（對同一物件的精神分裂要求）</h5>
+                                    <p class="compare-desc"><strong>現象：</strong>對同一個物件，既要求它是 P，又要求它是 非 P。</p>
+                                    <p class="compare-eg"><strong>實例：</strong>自行車鏈條——「既要硬（承受拉力），又要軟（繞齒輪彎曲）」。飛機起落架——「既要有（起降支撐），又要沒有（飛行減阻）」。</p>
+                                    <p class="compare-solve"><strong>🎯 破局法：</strong>運用 <strong>四大分離原理</strong>（空間、時間、條件、系統層級）將衝突徹底拆開！</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="theory-section">
-                        <h4>4. 物理矛盾四大分離原理 (Separation Principles)</h4>
-                        <ul>
-                            <li><strong>空間分離 (Separation in Space)</strong>：在不同的空間區域賦予相反屬性（如：自行車鏈條外硬內軟）。</li>
-                            <li><strong>時間分離 (Separation in Time)</strong>：在不同的時間階段展現相反狀態（如：飛機起落架起飛時展開、飛行時收回）。</li>
-                            <li><strong>條件分離 (Separation upon Condition)</strong>：在不同溫度/壓力/情境下變化屬性（如：非牛頓流體防彈衣、自適應懸吊）。</li>
-                            <li><strong>系統層級分離 (Separation between System Levels)</strong>：微觀子系統具備屬性 A，巨觀超系統具備相反屬性 非 A（如：液晶螢幕單個像素與整體畫面）。</li>
-                        </ul>
+                    <!-- 3. 四大分離原理 -->
+                    <div class="theory-card">
+                        <div class="theory-card-header">
+                            <span class="theory-icon">🔮</span>
+                            <h4>三、四大分離原理 (解決物理矛盾的 4 種神奇拆解術)</h4>
+                        </div>
+                        <div class="theory-card-body">
+                            <div class="separation-grid">
+                                <div class="sep-item">
+                                    <div class="sep-title">🗺️ 1. 空間分離 (Separation in Space)</div>
+                                    <div class="sep-subtitle">心法：讓衝突在不同的地方發生（這裡 P，那裡 非 P）</div>
+                                    <p><strong>生活範例：</strong>自行車鏈條——外殼與銷軸堅硬耐磨（硬），關節軸承內部圓滑可活動（軟）；老花與近視雙焦點眼鏡。</p>
+                                </div>
+                                <div class="sep-item">
+                                    <div class="sep-title">⏰ 2. 時間分離 (Separation in Time)</div>
+                                    <div class="sep-subtitle">心法：讓衝突在不同的時間發生（這時 P，那時 非 P）</div>
+                                    <p><strong>生活範例：</strong>飛機起落架——起飛降落時展開（有起落架），飛行巡航時收進機腹（沒有起落架）；紅綠燈交叉路口交替通行。</p>
+                                </div>
+                                <div class="sep-item">
+                                    <div class="sep-title">🧪 3. 條件分離 (Separation upon Condition)</div>
+                                    <div class="sep-subtitle">心法：在特定環境或刺激下才切換狀態</div>
+                                    <p><strong>生活範例：</strong>非牛頓流體防彈衣——平時穿著柔軟舒適（軟），遭子彈高速撞擊瞬間硬化阻擋（硬）；光致變色太陽眼鏡。</p>
+                                </div>
+                                <div class="sep-item">
+                                    <div class="sep-title">🧩 4. 系統層級分離 (Separation between System Levels)</div>
+                                    <div class="sep-subtitle">心法：單個零件沒有此屬性，但組裝成群體時具備該屬性</div>
+                                    <p><strong>生活範例：</strong>電腦螢幕——放大看每個像素只是孤立的紅綠藍光點（無意義），但縮小看整個螢幕就呈現出生動高清的電影畫面。</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="theory-section">
-                        <h4>5. 技術系統 8 大進化法則與 ARIZ-85C 演算法</h4>
-                        <p>包括 S 曲線進化、向微觀層次躍遷、系統完備性、動態化增強等客觀規律；針對極端困難且無標準解的複雜問題，則啟動 ARIZ-85C 演算法進行逐步推演。</p>
+                    <!-- 4. 40 發明原理 -->
+                    <div class="theory-card">
+                        <div class="theory-card-header">
+                            <span class="theory-icon">💡</span>
+                            <h4>四、40 發明原理 — 全宇宙創新的 40 把萬能金鑰</h4>
+                        </div>
+                        <div class="theory-card-body">
+                            <p>阿奇舒勒研究發現，<strong>人類 95% 以上的專利發明，本質上都是在重複使用這 40 個思維套路</strong>！無論造火箭、寫程式還是做商業模式，都能一通百通：</p>
+                            <div class="principles-showcase-grid">
+                                <div class="p-card">
+                                    <span class="p-num">#1 分割原理 (Segmentation)</span>
+                                    <p><strong>工程：</strong>模組化組合家具、分段火箭</p>
+                                    <p><strong>軟體：</strong>微服務架構 (Microservices)、資料庫分庫分表</p>
+                                    <p><strong>商業：</strong>敏捷小團隊、軟體訂閱制拆分付費</p>
+                                </div>
+                                <div class="p-card">
+                                    <span class="p-num">#10 預先作用 (Preliminary Action)</span>
+                                    <p><strong>工程：</strong>預應力鋼筋混凝土、手術前預先消毒</p>
+                                    <p><strong>軟體：</strong>快取預加載 (Cache Pre-fetching)、CDN 邊緣分發</p>
+                                    <p><strong>商業：</strong>預售眾籌 (Kickstarter)、會員預充值</p>
+                                </div>
+                                <div class="p-card">
+                                    <span class="p-num">#25 自助原理 (Self-service)</span>
+                                    <p><strong>工程：</strong>自潤滑軸承、自動補胎液</p>
+                                    <p><strong>軟體：</strong>雲端自動伸縮 (Auto-scaling)、微服務自我修復</p>
+                                    <p><strong>商業：</strong>自助結帳櫃檯、IKEA 自行組裝、SaaS 自助註冊</p>
+                                </div>
+                                <div class="p-card">
+                                    <span class="p-num">#13 反向作用 (The Other Way Round)</span>
+                                    <p><strong>工程：</strong>讓工件不動、工具旋轉；跑步機（人在原地跑，地面往後滾動）</p>
+                                    <p><strong>軟體：</strong>控制反轉 (IoC / DI)、反向代理 (Reverse Proxy)</p>
+                                    <p><strong>商業：</strong>倒過來收費（Freemium 免費增值、向廣告主收費對用戶免費）</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- 5. 8 大進化法則與九屏幕法 -->
+                    <div class="theory-card">
+                        <div class="theory-card-header">
+                            <span class="theory-icon">🚀</span>
+                            <h4>五、技術進化法則與九屏幕法 — 預測未來的望遠鏡</h4>
+                        </div>
+                        <div class="theory-card-body">
+                            <p><strong>技術系統進化客觀規律：</strong>系統就像生物演化一樣，必然朝向<strong>「動態化、柔性化、微觀化、自協調」</strong>演進（例如：實體按鍵手機 ➔ 電容觸控螢幕 ➔ 語音/手勢 ➔ 腦機介面）。</p>
+                            <p style="margin-top: 8px;"><strong>九屏幕法 (3×3 時空透視鏡)：</strong>遇到瓶頸時，跳出當前系統：<strong>向上看超系統（環境/生態）、向下看子系統（元件/微觀），向前看過去、向後看未來</strong>，從未被發現的時空角落挖掘免費資源！</p>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- TAB 3: AI 雙引擎協同指南 -->
