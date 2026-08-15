@@ -425,7 +425,57 @@ class TRIZEngine {
             logs: [...logs, ...(localResult.logs || [])]
         };
     }
+
+    /**
+     * Get ARIZ Stages
+     */
+    getARIZStages() {
+        return this.arizStages || [];
+    }
+
+    /**
+     * Get Laws of Technological Evolution
+     */
+    getEvolutionLaws() {
+        return this.evolutionLaws || [];
+    }
+
+    /**
+     * Get Separation Principles
+     */
+    getSeparationPrinciples() {
+        return this.separationPrinciples || [];
+    }
+
+    /**
+     * Get all 39 Engineering Parameters
+     */
+    getAllParameters() {
+        return Object.values(this.parameters).sort((a, b) => a.id - b.id);
+    }
+
+    /**
+     * Get all 40 Inventive Principles
+     */
+    getAllPrinciples() {
+        return Object.values(this.principles).sort((a, b) => a.id - b.id);
+    }
+
+    /**
+     * Get specific parameter by ID
+     */
+    getParameter(id) {
+        return this.parameters[id] || null;
+    }
+
+    /**
+     * Get specific principle by ID
+     */
+    getPrinciple(id) {
+        return this.principles[id] || null;
+    }
 }
 
 // Export for global access in browser
 window.TRIZEngine = TRIZEngine;
+
