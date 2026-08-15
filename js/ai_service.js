@@ -148,7 +148,7 @@ class GeminiAIService {
             return true;
         } else {
             // Google Gemini endpoint
-            const endpoint = `${base}/v1beta/models/${effectiveModel}:generateContent?key=${this.apiKey}`;
+            const endpoint = `${base}/v1beta/models/${effectiveModel}:generateContent?key=${encodeURIComponent(this.apiKey)}`;
             const payload = {
                 contents: [
                     { role: 'user', parts: [{ text: '請回覆 "OK" 確認 API 連線正常。' }] }
@@ -158,7 +158,10 @@ class GeminiAIService {
 
             const response = await fetch(endpoint, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-goog-api-key': this.apiKey
+                },
                 body: JSON.stringify(payload)
             });
 
@@ -277,8 +280,8 @@ class GeminiAIService {
             const rawContent = data.choices?.[0]?.message?.content || '';
             return this.parseJSONResponse(rawContent);
         } else {
-            // Google Gemini API call
-            const endpoint = `${base}/v1beta/models/${effectiveModel}:generateContent?key=${this.apiKey}`;
+            // Google Gemini API call (Google AI Studio Endpoint)
+            const endpoint = `${base}/v1beta/models/${effectiveModel}:generateContent?key=${encodeURIComponent(this.apiKey)}`;
             const payload = {
                 contents: [
                     { role: 'user', parts: [{ text: `${systemPrompt}\n\n${userPrompt}` }] }
@@ -292,7 +295,10 @@ class GeminiAIService {
 
             const response = await fetch(endpoint, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-goog-api-key': this.apiKey
+                },
                 body: JSON.stringify(payload)
             });
 
